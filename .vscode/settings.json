@@ -14,7 +14,7 @@
         "editor.defaultFormatter": "vscode.json-language-features"
     },
     "ruff.lint.args": [
-        "--config=~/django-react-tasks-manager/pyproject.toml",
+        "--config=~/the-win-manager/pyproject.toml",
     ],
     "flake8.args": [
         "--max-line-length=119",
@@ -63,9 +63,9 @@
     "chat.editor.fontSize": 16,
     "markdown.preview.fontSize": 16,
     "editor.tokenColorCustomizations": {
-        "[August - Radical 2]": {}
+        "[Sauna Dark]": {}
     },
-    "ruff.configuration": "/workspace/django-react-tasks-manager/pyproject.toml",
+    "ruff.configuration": "/workspace/the-win-manager/pyproject.toml",
     "[toml]": {
         "editor.defaultFormatter": "tamasfe.even-better-toml"
     },
@@ -88,4 +88,7 @@
     "editor.guides.bracketPairsHorizontal": true,
     "editor.linkedEditing": true,
     "codium.codeCompletion.enable": true,
+    "ruff.format.args": [
+        "--config=~/the-win-manager/pyproject.toml"
+    ],
 }
