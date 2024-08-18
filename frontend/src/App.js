@@ -6,7 +6,7 @@ import { Box } from "@mui/material";
 // import { SnackbarProvider } from "notistack";
 
 import Categories from "./pages/Categories";
-// import CategoryDetails from "./pages/Categories/CategoryDetails";
+import CategoryDetails from "./pages/Categories/CategoryDetails";
 // import LoadingOverlayResource from "./components/LoadingOverlayResource";
 
 export default function App() {
@@ -20,6 +20,7 @@ export default function App() {
         <Routes>
           <Route path="/categories"
             element={<Categories />} />
+          <Route path="/categories/create" element={<CategoryDetails />} />
         </Routes>
       </Box>
     </Router>
