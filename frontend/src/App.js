@@ -18,7 +18,7 @@ export default function App() {
         minHeight: "100vh"
       }}>
         <Routes>
-          <Route path="/categories"
+          <Route path="/Categories"
             element={<Categories />} />
           <Route path="/categories/create" element={<CategoryDetails />} />
         </Routes>
