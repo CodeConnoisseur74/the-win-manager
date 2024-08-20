@@ -13,12 +13,12 @@ import AuthContextProvider from "./contexts/AuthContextProvider";
 import RequireAuth from "./components/RequireAuth";
 import RequireNotAuth from "./components/RequireNotAuth";
 import BaseLayout from "./components/BaseLayout";
-import Tasks from "./pages/Tasks";
-import TaskDetails from "./pages/Tasks/TaskDetails";
+import Wins from "./pages/Wins";
+// import WinDetails from "./pages/wins/WinDetails";
 import Dashboard from "./pages/Dashboard";
-import "./index.css";
-import RequestResetPassword from "./pages/Auth/RequestResetPassword";
-import ResetPasswordConfirm from "./pages/Auth/ResetPasswordConfirm";
+// import "./index.css";
+// import RequestResetPassword from "./pages/Auth/RequestResetPassword";
+// import ResetPasswordConfirm from "./pages/Auth/ResetPasswordConfirm";
 import ThemeModeProvider from "./contexts/ThemeModeProvider";
 import Admin from "./pages/Admin";
 
@@ -44,9 +44,9 @@ export default function App() {
                   <Route path="/categories" element={<Categories />} />
                   <Route path="/categories/create" element={<CategoryDetails />} />
                   <Route path={`/categories/edit/:id`} element={<CategoryDetails />} />
-                  <Route path="/tasks" element={<Tasks />} />
-                  <Route path="/tasks/create" element={<TaskDetails />} />
-                  <Route path="/tasks/edit/:id" element={<TaskDetails />} />
+                  <Route path="/wins" element={<Wins />} />
+                  {/* <Route path="/wins/create" element={<WinDetails />} />
+                  <Route path="/wins/edit/:id" element={<WinDetails />} /> */}
                   <Route path="/" element={<Dashboard />} />
                 </Route>
 
@@ -55,8 +55,8 @@ export default function App() {
               <Route element={<RequireNotAuth />} >
                 <Route path="/auth/signup" element={<SignUp />} />
                 <Route path="/auth/signin" element={<SignIn />} />
-                <Route path="/auth/password-reset" element={<RequestResetPassword />} />
-                <Route path="/auth/password-reset/confirm/:uid/:token" element={<ResetPasswordConfirm />} />
+                {/* <Route path="/auth/password-reset" element={<RequestResetPassword />} />
+                <Route path="/auth/password-reset/confirm/:uid/:token" element={<ResetPasswordConfirm />} /> */}
               </Route>
 
             </Routes>
@@ -64,12 +64,6 @@ export default function App() {
         </Router>
       </SnackbarProvider>
     </AuthContextProvider>
-
-
-
-
-
-
   </ThemeModeProvider>;
 }
 
