@@ -27,7 +27,7 @@
     "editor.formatOnPaste": true,
     "editor.formatOnSave": true,
     "editor.rulers": [
-        119
+        120
     ],
     "[python]": {
         "editor.formatOnSave": true,
@@ -40,7 +40,7 @@
             "source.organizeImports": "explicit"
         }
     },
-    "ruff.lineLength": 119,
+    "ruff.lineLength": 80,
     "editor.guides.bracketPairs": true,
     "emmet.includeLanguages": {
         "javascript": "javascriptreact",

@@ -1,5 +1,5 @@
 [tool.ruff]
-# Allow lines to be as long as 120.
+# Allow lines to be as long as 119.
 line-length = 120
 src = ["the-win-manager/manager"]
 exclude = ["example", "**/migrations/*"]

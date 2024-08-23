@@ -15,7 +15,7 @@ import RequireNotAuth from "./components/RequireNotAuth";
 import BaseLayout from "./components/BaseLayout";
 import Wins from "./pages/Wins";
 // import WinDetails from "./pages/wins/WinDetails";
-import Dashboard from "./pages/Dashboard";
+// import Dashboard from "./pages/Dashboard";
 // import "./index.css";
 // import RequestResetPassword from "./pages/Auth/RequestResetPassword";
 // import ResetPasswordConfirm from "./pages/Auth/ResetPasswordConfirm";
@@ -47,7 +47,7 @@ export default function App() {
                   <Route path="/wins" element={<Wins />} />
                   {/* <Route path="/wins/create" element={<WinDetails />} />
                   <Route path="/wins/edit/:id" element={<WinDetails />} /> */}
-                  <Route path="/" element={<Dashboard />} />
+                  {/* <Route path="/" element={<Dashboard />} /> */}
                 </Route>
 
               </Route>
