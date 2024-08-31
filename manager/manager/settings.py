@@ -36,7 +36,7 @@ SECRET_KEY = os.environ.get('SECRET_KEY')
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = env('DEBUG', default='False') == 'True'
 
-ALLOWED_HOSTS = ['*']
+ALLOWED_HOSTS = ['localhost', '127.0.0.1']
 
 
 # Application definition
@@ -48,16 +48,22 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'rest_framework',
-    'rest_framework.authtoken',
-    'djoser',
+    # 'rest_framework',
+    # 'rest_framework.authtoken',
+    # 'anymail',
+    # 'djoser',
     'users',
     'wins',
 ]
 
+# EMAIL_BACKEND = 'anymail.backends.mailgun.EmailBackend'
+# DEFAULT_FROM_EMAIL = 'you@sandboxf1453c298a1544c8bbfb6ac1fde7bbf9.mailgun.org'
+
+# ANYMAIL = {'MAILGUN_API_KEY': env('MAILGUN_API_KEY', default='')}
+
 AUTH_USER_MODEL = 'users.CustomUser'
 
-DJOSER = {'PASSWORD_RESET_CONFIRM_URL': 'auth/password-reset/confirm/{uid}/{token}'}
+# DJOSER = {'PASSWORD_RESET_CONFIRM_URL': 'auth/password-reset/confirm/{uid}/{token}'}
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
@@ -69,9 +75,9 @@ MIDDLEWARE = [
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
 
-REST_FRAMEWORK = {
-    'DEFAULT_AUTHENTICATION_CLASSES': ('rest_framework.authentication.TokenAuthentication',),
-}
+# REST_FRAMEWORK = {
+#     'DEFAULT_AUTHENTICATION_CLASSES': ('rest_framework.authentication.TokenAuthentication',),
+# }
 
 ROOT_URLCONF = 'manager.urls'
 
@@ -104,6 +110,10 @@ DATABASES = {
     }
 }
 
+# IS_HEROKU = (env('IS_HEROKU', default='False') == 'True')
+# if (IS_HEROKU == True):
+#     DATABASES['default'] = dj_database_url.parse(env('DATABASE_URL'))
+#     ALLOWED_HOSTS = ['winsmanagertest1.herokuapp.com']
 
 # Password validation
 # https://docs.djangoproject.com/en/4.0/ref/settings/#auth-password-validators
