@@ -1,52 +1,46 @@
-// frontend/src/pages/Categories/index.js
+/* eslint-disable no-unused-vars */
 import React, { useEffect, useState } from 'react';
-import { Button, Box, Paper, Table, TableBody, TableCell, TableContainer, TableHead, TableRow, IconButton, Dialog, DialogTitle, DialogActions } from "@mui/material";
+import { Button, Box, Paper, Table, TableBody, TableCell, TableContainer, TableHead, TableRow, IconButton } from
+    "@mui/material";
 import EditIcon from "@mui/icons-material/Edit";
 import DeleteIcon from "@mui/icons-material/Delete";
-import { Link } from "react-router-dom";
+import { BrowserRouter as Router, Link } from "react-router-dom";
 import useRequestResource from 'src/hooks/useRequestResource';
-import ColorBox from "src/components/ColorBox";
+
+// const results = [
+//     {
+//         id: 1,
+//         name: "Feature",
+//         color: "cccccc"
+//     },
+//     {
+//         id: 2,
+//         name: "Bug",
+//         color: "eeeeee"
+//     }
+// ];
 
 export default function Categories() {
-    const { getResourceList, resourceList, deleteResource } = useRequestResource({ endpoint: "categories", resourceLabel: "Category" });
-    const [open, setOpen] = useState(false);
-    const [idToDelete, setIdToDelete] = useState(null);
+    const { getResourceList, resourceList } = useRequestResource({ endpoint: "categories" });
 
     useEffect(() => {
         getResourceList();
     }, [getResourceList]);
 
-    const handleConfirmDelete = (id) => {
-        setIdToDelete(id);
-        setOpen(true);
-    };
-
-    const handleDeleteClose = () => {
-        setOpen(false);
-    };
-
-    const handleDelete = () => {
-        setOpen(false);
-        deleteResource(idToDelete);
-    };
-
     return (
         <div>
-            <Dialog open={open} onClose={handleDeleteClose}>
-                <DialogTitle>
-                    Are you sure you want to delete this category?
-                </DialogTitle>
-                <DialogActions>
-                    <Button onClick={handleDelete} color="primary">
-                        Yes
-                    </Button>
-                    <Button onClick={handleDeleteClose} color="secondary">
-                        No
-                    </Button>
-                </DialogActions>
-            </Dialog>
-            <Box sx={{ display: "flex", justifyContent: "flex-end", mb: 4 }}>
-                <Button component={Link} variant="contained" color="primary" to="/categories/create">
+            <Box sx={{
+                display: "flex",
+                justifyContent: "flex-end",
+                mt: 4,
+                mb: 4
+            }}>
+                <Button
+                    component={Link}
+                    variant="contained"
+                    color="primary"
+                    to="/categories/create"
+                >
                     Create Category
                 </Button>
             </Box>
@@ -54,17 +48,25 @@ export default function Categories() {
                 <Table sx={{ minWidth: 360 }} size="small">
                     <TableHead>
                         <TableRow>
-                            <TableCell align="left">Name</TableCell>
-                            <TableCell align="left">Color</TableCell>
-                            <TableCell align="right">Actions</TableCell>
+                            <TableCell align="left">
+                                Name
+                            </TableCell>
+                            <TableCell align="left">
+                                Color
+                            </TableCell>
+                            <TableCell align="right">
+                                Actions
+                            </TableCell>
                         </TableRow>
                     </TableHead>
                     <TableBody>
-                        {resourceList.results.map((r) => (
-                            <TableRow key={r.id}>
-                                <TableCell align="left">{r.name}</TableCell>
+                        {resourceList.results.map((r) => {
+                            return <TableRow key={r.id}>
                                 <TableCell align="left">
-                                    <ColorBox color={`#${r.color}`} />
+                                    {r.name}
+                                </TableCell>
+                                <TableCell align="left">
+                                    {r.color}
                                 </TableCell>
                                 <TableCell align="right">
                                     <Box sx={{ display: "flex", justifyContent: "flex-end" }}>
@@ -73,13 +75,13 @@ export default function Categories() {
                                                 <EditIcon />
                                             </IconButton>
                                         </Link>
-                                        <IconButton size="large" onClick={() => handleConfirmDelete(r.id)}>
+                                        <IconButton size="large" onClick={null}>
                                             <DeleteIcon />
                                         </IconButton>
                                     </Box>
                                 </TableCell>
-                            </TableRow>
-                        ))}
+                            </TableRow>;
+                        })}
                     </TableBody>
                 </Table>
             </TableContainer>
