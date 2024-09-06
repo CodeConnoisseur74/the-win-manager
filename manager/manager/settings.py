@@ -53,6 +53,8 @@ INSTALLED_APPS = [
     'frontend',
 ]
 
+# Google Recaptcha for password reset
+
 GOOGLE_RECAPTCHA_SECRET = env('GOOGLE_RECAPTCHA_SECRET', default='')
 EMAIL_BACKEND = 'anymail.backends.mailgun.EmailBackend'
 DEFAULT_FROM_EMAIL = env('DEFAULT_FROM_EMAIL', default='you@localhost')
