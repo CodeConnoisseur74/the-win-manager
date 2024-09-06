@@ -15,10 +15,6 @@ from pathlib import Path
 
 import environ
 
-# env = environ.Env(
-#     # set casting, default value
-#     DEBUG=(bool, False)
-# )
 env = environ.Env()
 environ.Env.read_env()
 
@@ -48,22 +44,28 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    # 'rest_framework',
-    # 'rest_framework.authtoken',
-    # 'anymail',
-    # 'djoser',
+    'rest_framework',
+    'rest_framework.authtoken',
+    'anymail',
+    'djoser',
     'users',
     'wins',
+    'frontend'
 ]
 
-# EMAIL_BACKEND = 'anymail.backends.mailgun.EmailBackend'
-# DEFAULT_FROM_EMAIL = 'you@sandboxf1453c298a1544c8bbfb6ac1fde7bbf9.mailgun.org'
+GOOGLE_RECAPTCHA_SECRET = env('GOOGLE_RECAPTCHA_SECRET', default='')
+EMAIL_BACKEND = 'anymail.backends.mailgun.EmailBackend'
+DEFAULT_FROM_EMAIL = env('DEFAULT_FROM_EMAIL', default='you@localhost')
 
-# ANYMAIL = {'MAILGUN_API_KEY': env('MAILGUN_API_KEY', default='')}
+ANYMAIL = {'MAILGUN_API_KEY': env('MAILGUN_API_KEY', default='')}
 
 AUTH_USER_MODEL = 'users.CustomUser'
 
-# DJOSER = {'PASSWORD_RESET_CONFIRM_URL': 'auth/password-reset/confirm/{uid}/{token}'}
+DJOSER = {
+    'PASSWORD_RESET_CONFIRM_URL': 'auth/password-reset/confirm/{uid}/{token}',
+    'SERIALIZERS': {'password_reset': 'users.serializers.CustomSendEmailResetSerializer'},
+    'PASSWORD_RESET_CONFIRM_RETYPE': True,
+}
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
@@ -75,9 +77,9 @@ MIDDLEWARE = [
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
 
-# REST_FRAMEWORK = {
-#     'DEFAULT_AUTHENTICATION_CLASSES': ('rest_framework.authentication.TokenAuthentication',),
-# }
+REST_FRAMEWORK = {
+    'DEFAULT_AUTHENTICATION_CLASSES': ('rest_framework.authentication.TokenAuthentication',),
+}
 
 ROOT_URLCONF = 'manager.urls'
 
@@ -148,8 +150,8 @@ USE_TZ = True
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/4.0/howto/static-files/
-
-STATIC_URL = 'static/'
+STATIC_ROOT = os.path.join(BASE_DIR, 'frontend/static')
+STATIC_URL = '/static/'
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/4.0/ref/settings/#default-auto-field
