@@ -14,7 +14,7 @@ const getDesignTokens = (mode) => {
                 main: mode === 'light' ? '#6A1B9A' : '#bb86fc', // Customize your primary color for dark mode
             },
             secondary: {
-                main: mode === 'light' ? '#1976d2' : '#333333', // Customize your secondary color for dark mode
+                main: mode === 'light' ? '#bb86fc' : '#333333', // Customize your secondary color for dark mode
             },
             background: {
                 default: mode === 'light' ? '#F3E5F5' : '#333333', // Customize your background color for dark mode
