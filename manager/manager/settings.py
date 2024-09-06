@@ -13,6 +13,7 @@ https://docs.djangoproject.com/en/4.0/ref/settings/
 import os
 from pathlib import Path
 
+import dj_database_url
 import environ
 
 env = environ.Env()
@@ -32,7 +33,7 @@ SECRET_KEY = os.environ.get('SECRET_KEY')
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = env('DEBUG', default='False') == 'True'
 
-ALLOWED_HOSTS = ['winmanager-6a83a594eb75.herokuapp.com', 'localhost']
+ALLOWED_HOSTS = []
 
 
 # Application definition
@@ -115,10 +116,10 @@ DATABASES = {
     }
 }
 
-# IS_HEROKU = (env('IS_HEROKU', default='False') == 'True')
-# if (IS_HEROKU == True):
-#     DATABASES['default'] = dj_database_url.parse(env('DATABASE_URL'))
-#     ALLOWED_HOSTS = ['winsmanagertest1.herokuapp.com']
+IS_HEROKU = (env('IS_HEROKU', default='False') == 'True')
+if (IS_HEROKU == True):  # noqa: E712
+    DATABASES['default'] = dj_database_url.parse(env('DATABASE_URL'))
+    ALLOWED_HOSTS = ['winmanager-6a83a594eb75.herokuapp.com']
 
 # Password validation
 # https://docs.djangoproject.com/en/4.0/ref/settings/#auth-password-validators
