@@ -21,12 +21,12 @@ import RequestResetPassword from "./pages/Auth/RequestResetPassword";
 import ResetPasswordConfirm from "./pages/Auth/ResetPasswordConfirm";
 import ThemeModeProvider from "./contexts/ThemeModeProvider";
 import Admin from "./pages/Admin";
+import PageNotFoundAuth from "./pages/PageNotFoundAuth";
+import PageNotFoundNotAuth from "./pages/PageNotFoundNotAuth";
 
 export default function App() {
   return <ThemeModeProvider>
     <CssBaseline />
-
-
     <AuthContextProvider>
       <SnackbarProvider>
         <Router>
@@ -48,6 +48,7 @@ export default function App() {
                   <Route path="/wins/create" element={<WinDetails />} />
                   <Route path="/wins/edit/:id" element={<WinDetails />} />
                   <Route path="/" element={<Dashboard />} />
+                  <Route path="*" element={<PageNotFoundAuth />} />
                 </Route>
 
               </Route>
@@ -57,6 +58,8 @@ export default function App() {
                 <Route path="/auth/signin" element={<SignIn />} />
                 <Route path="/auth/password-reset" element={<RequestResetPassword />} />
                 <Route path="/auth/password-reset/confirm/:uid/:token" element={<ResetPasswordConfirm />} />
+                <Route path="*" element={<PageNotFoundNotAuth />} />
+                
               </Route>
 
             </Routes>
