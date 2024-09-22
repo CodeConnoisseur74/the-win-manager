@@ -1,3 +1,4 @@
+import winLogo from "../../assets/win-logo.svg";
 import {
     AppBar,
     IconButton,
@@ -17,7 +18,7 @@ import MenuIcon from "@mui/icons-material/Menu";
 import React from "react";
 import { AuthContext } from "src/contexts/AuthContextProvider";
 import Brightness4Icon from "@mui/icons-material/Brightness4";
-import Brightness7Icon from "@mui/icons-material/Brightness7"
+import Brightness7Icon from "@mui/icons-material/Brightness7";
 import { ThemeModeContext } from "src/contexts/ThemeModeProvider";
 import useRequestAuth from "src/hooks/useRequestAuth";
 
@@ -36,7 +37,7 @@ const modalStyle = {
 
 export function AppHeader({ mobileOpen, setMobileOpen }) {
     const themeMode = React.useContext(ThemeModeContext);
-    const theme = useTheme()
+    const theme = useTheme();
     const [anchorEl, setAnchorEl] = React.useState(null);
     const open = Boolean(anchorEl);
     const [modalIsOpen, setModalIsOpen] = React.useState(false);
@@ -45,16 +46,16 @@ export function AppHeader({ mobileOpen, setMobileOpen }) {
 
     const handleLogout = () => {
         logout();
-    }
+    };
 
     const handleOpenModal = () => {
         setModalIsOpen(true);
         setAnchorEl(null);
-    }
+    };
 
     const handleCloseModal = () => {
         setModalIsOpen(false);
-    }
+    };
 
     const handleClose = () => {
         setAnchorEl(null);
@@ -98,7 +99,7 @@ export function AppHeader({ mobileOpen, setMobileOpen }) {
                 />
             </Box>
         </Modal>
-    )
+    );
 
     const authLinks = (
         <Box sx={{ display: "flex", alignItems: "center" }}>
@@ -170,8 +171,17 @@ export function AppHeader({ mobileOpen, setMobileOpen }) {
                 >
                     <MenuIcon />
                 </IconButton>
+
+                {/* Logo */}
+                <Box
+                    component="img"
+                    sx={{ height: 50, mr: 2 }}
+                    alt="Logo"
+                    src={winLogo}  // Use the imported logo variable
+                />
+
                 <Typography variant="h6" noWrap sx={{ flexGrow: 1 }}>
-                    Wins Manager
+                    The Wins Manager
                 </Typography>
                 {authLinks}
             </Toolbar>

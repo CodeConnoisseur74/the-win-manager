@@ -4,7 +4,7 @@ import CssBaseline from "@mui/material/CssBaseline";
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import { Box } from "@mui/material";
 import { SnackbarProvider } from "notistack";
-
+import Joyride from "react-joyride";
 import Categories from "./pages/Categories";
 import CategoryDetails from "./pages/Categories/CategoryDetails";
 import SignUp from "./pages/Auth/SignUp";
@@ -21,8 +21,35 @@ import RequestResetPassword from "./pages/Auth/RequestResetPassword";
 import ResetPasswordConfirm from "./pages/Auth/ResetPasswordConfirm";
 import ThemeModeProvider from "./contexts/ThemeModeProvider";
 import Admin from "./pages/Admin";
-import PageNotFoundAuth from "./pages/PageNotFoundAuth";
-import PageNotFoundNotAuth from "./pages/PageNotFoundNotAuth";
+import PageNotFound from "./pages/PageNotFound";
+
+// Define Joyride steps
+const steps = [
+  {
+    target: ".header > h3", // Adjust as per your component structure
+    content: "Welcome!! Please spare a minute to learn about our page",
+  },
+  {
+    target: ".login", // Adjust as per your component structure
+    content: "You can log in here",
+  },
+  {
+    target: ".signup", // Adjust as per your component structure
+    content: "Sign up here, if you're new",
+  },
+  {
+    target: ".categories", // Adjust as per your component structure
+    content: "Here you can manage categories.",
+  },
+  {
+    target: ".wins", // Adjust as per your component structure
+    content: "Here you can manage wins.",
+  },
+  {
+    target: ".dashboard", // Adjust as per your component structure
+    content: "This is the dashboard overview.",
+  },
+];
 
 export default function App() {
   return <ThemeModeProvider>
@@ -30,6 +57,12 @@ export default function App() {
     <AuthContextProvider>
       <SnackbarProvider>
         <Router>
+          <Joyride
+            steps={steps}
+            continuous
+            showProgress
+            showSkipButton
+          />
           <Box sx={{
             bgcolor: (theme) => theme.palette.background.default,
             minHeight: "100vh",
@@ -48,7 +81,7 @@ export default function App() {
                   <Route path="/wins/create" element={<WinDetails />} />
                   <Route path="/wins/edit/:id" element={<WinDetails />} />
                   <Route path="/" element={<Dashboard />} />
-                  <Route path="*" element={<PageNotFoundAuth />} />
+                  <Route path="*" element={<PageNotFound />} />
                 </Route>
 
               </Route>
@@ -58,8 +91,7 @@ export default function App() {
                 <Route path="/auth/signin" element={<SignIn />} />
                 <Route path="/auth/password-reset" element={<RequestResetPassword />} />
                 <Route path="/auth/password-reset/confirm/:uid/:token" element={<ResetPasswordConfirm />} />
-                <Route path="*" element={<PageNotFoundNotAuth />} />
-                
+
               </Route>
 
             </Routes>

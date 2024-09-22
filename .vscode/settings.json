@@ -91,4 +91,6 @@
     "ruff.format.args": [
         "--config=~/the-win-manager/pyproject.toml"
     ],
+    "svg.preview.autoShow": true,
+    "pieces.autocomplete": true,
 }

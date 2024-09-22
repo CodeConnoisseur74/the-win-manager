@@ -27,16 +27,16 @@ const listItems = [
         icon: <DashboardIcon />
     },
     {
-        key: "wins",
-        to: "/wins",
-        name: "Wins",
-        icon: <ListAltIcon />
-    },
-    {
         key: "categories",
         to: "/categories",
         name: "Categories",
         icon: <CategoryIcon />,
+    },
+    {
+        key: "wins",
+        to: "/wins",
+        name: "Wins",
+        icon: <ListAltIcon />
     },
 ];
 
@@ -105,7 +105,6 @@ export function SideMenu(props) {
             sx={{ width: { md: drawerWidth }, flexShrink: { sm: 0 } }}
         >
             <SidebarGlobalStylesMemo />
-
             <Drawer
                 variant="temporary"
                 open={mobileOpen}

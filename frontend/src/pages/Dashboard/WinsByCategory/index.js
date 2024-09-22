@@ -7,30 +7,6 @@ import formatHttpApiError from 'src/helpers/formatHttpApiError';
 import StatChart from "./StatChart";
 import Filters from "./Filters";
 
-// const tableData = [
-//     {
-//         label: "Feature",
-//         color: "#ff0000",
-//         count: 5
-//     },
-//     {
-//         label: "Bug",
-//         color: "#cccccc",
-//         count: 2
-//     }
-// ];
-// const chartData = {
-//     datasets: [
-//         {
-//             backgroundColor: ["#ff0000", "#cccccc"],
-//             borderColor: ["#ff0000", "#cccccc"],
-//             borderWidth: 1,
-//             data: [2, 5]
-//         }
-//     ],
-//     labels: ["Feature", "Bug"]
-// }
-
 const generateChartData = (data = []) => {
     let chartData = {
         labels: [],
