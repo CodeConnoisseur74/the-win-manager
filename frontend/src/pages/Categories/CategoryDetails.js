@@ -53,11 +53,14 @@ export default function CategoryDetails() {
     };
 
     return (
-        <Paper sx={{
-            borderRadius: "2px",
-            boxShadow: (theme) => theme.shadows[5],
-            padding: (theme) => theme.spacing(2, 4, 3)
-        }}>
+        <Paper
+            className="category-details"  // Add this class to target in the tour
+            sx={{
+                borderRadius: "2px",
+                boxShadow: (theme) => theme.shadows[5],
+                padding: (theme) => theme.spacing(2, 4, 3)
+            }}
+        >
             <Typography variant="h6" mb={4}>
                 {id ? "Edit Category" : "Create Category"}
             </Typography>

@@ -46,7 +46,13 @@ export default function Categories() {
                 </DialogActions>
             </Dialog>
             <Box sx={{ display: "flex", justifyContent: "flex-end", mb: 4 }}>
-                <Button component={Link} variant="contained" color="primary" to="/categories/create">
+                <Button
+                    className="create-category-button"  // Add className here
+                    component={Link}
+                    variant="contained"
+                    color="primary"
+                    to="/categories/create"
+                >
                     Create Category
                 </Button>
             </Box>

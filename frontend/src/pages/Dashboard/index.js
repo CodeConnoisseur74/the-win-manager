@@ -5,7 +5,7 @@ import WinsByCategory from './WinsByCategory';
 
 export default function Dashboard() {
     return (
-        <div>
+        <div className="dashboard">
             <WinsByCategory />
             <WinsCompletion />
         </div>
