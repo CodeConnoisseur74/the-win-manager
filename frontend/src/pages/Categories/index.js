@@ -47,7 +47,6 @@ export default function Categories() {
             </Dialog>
             <Box sx={{ display: "flex", justifyContent: "flex-end", mb: 4 }}>
                 <Button
-                    className="create-category-button"  // Add className here
                     component={Link}
                     variant="contained"
                     color="primary"

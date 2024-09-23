@@ -3,7 +3,6 @@ import { Formik } from "formik";
 import { Grid, TextField, Typography, Paper, Button, Box } from "@mui/material";
 import * as yup from "yup";
 import { Link, useNavigate, useParams } from "react-router-dom";
-
 import useRequestResource from 'src/hooks/useRequestResource';
 import ColorPicker from "src/components/ColorPicker";
 
@@ -54,7 +53,6 @@ export default function CategoryDetails() {
 
     return (
         <Paper
-            className="category-details"  // Add this class to target in the tour
             sx={{
                 borderRadius: "2px",
                 boxShadow: (theme) => theme.shadows[5],

@@ -1,11 +1,11 @@
 import React from 'react';
 
-import WinsCompletion from "./WinsCompletion";
 import WinsByCategory from './WinsByCategory';
+import WinsCompletion from "./WinsCompletion";
 
 export default function Dashboard() {
     return (
-        <div className="dashboard">
+        <div>
             <WinsByCategory />
             <WinsCompletion />
         </div>
