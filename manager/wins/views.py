@@ -68,7 +68,7 @@ class WinViewSet(viewsets.ModelViewSet):
 class DashboardWinCompletionStatViewSet(viewsets.ViewSet):
     permission_classes = [permissions.IsAuthenticated]  # noqa: RUF012
 
-    def list(self, request):
+    def list(self, request):  # noqa: ARG002
         user = self.request.user
         queryset = Win.objects.filter(created_by=user).values('completed').annotate(count=Count('completed'))
         serializer = DashboardWinCompletionStatSerializer(queryset, many=True)
@@ -78,7 +78,7 @@ class DashboardWinCompletionStatViewSet(viewsets.ViewSet):
 class DashboardWinByCategoryViewSet(viewsets.ViewSet):
     permission_classes = [permissions.IsAuthenticated]  # noqa: RUF012
 
-    def list(self, request):
+    def list(self, request):  # noqa: ARG002
         user = self.request.user
         wins_filter = {}
         completed = self.request.query_params.get('completed')
