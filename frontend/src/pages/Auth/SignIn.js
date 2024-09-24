@@ -12,7 +12,7 @@ import { Formik } from "formik";
 import * as yup from "yup";
 import useRequestAuth from "src/hooks/useRequestAuth";
 import { Link } from "react-router-dom";
-// import signInBg from "src/assets/sign-in-bg.png"; // Import the image
+import signInBg from "src/assets/sign-in-bg.png"; // Import the image
 
 function Copyright(props) {
     return (
@@ -49,7 +49,7 @@ export default function SignIn() {
                 md={7}
                 sx={{
                     backgroundImage:
-                        'url("/assets/sign-in-bg.png")',
+                        `url(${signInBg})`,
                     backgroundColor: (t) =>
                         t.palette.mode === "light"
                             ? t.palette.grey[50]
