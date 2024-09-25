@@ -1,732 +1,1877 @@
-# Project Name - The Win Mnager
-
-
-* [Link to Deployed Project](https://winmanager-6a83a594eb75.herokuapp.com/)
-
-## CONTENTS
-* [USER EXPERIENCE (UX)](#user-experience)
-  * [Purpose & target audience](#purpose-and-target-audience)
-  * [Goals](#goals)
-* [PROJECT DESIGN](#project-design)
-  * [Agile Approach](#agile-approach)
-  * [Wireframes](#wireframes)
-  * [User Stories](#user-stories)
-  * [Logic](#logic)
-  * [Color Scheme](#color-scheme)
-  * [Imagery](#imagery)
-  * [Typography](#typography)
-  * [MVP](#mvp)
-* [FEATURES](#features)
-* [VALIDATION](#validation)
-* [TECH STACK](#tech-stack)
-  * [Languages and Frameworks](#languages-and-frameworks)
-  * [Tools and Libraries](#tools-and-libraries)
-  * [React Components](#react-components)
-  * [Refactoring Opportunities](#refactoring-opportunities)
-* [TESTING](#testing)
-  * [Tests performed](#tests-performed)
-  * [User Story Tests](#user-story-tests)
-  * [Bugs resolved](#bugs-resolved)
-  * [Unresolved bugs](#unresolved-bugs)
-  * [Improvements & future developments](#improvements-and-future-developments)
-* [DEPLOYMENT](#deployment)
-* [FORKING & CLONING INSTRUCTIONS](#forking-and-cloning-instructions)
-* [SECURITY SETTINGS](#security-settings)
-* [CREDITS](#credits)
-  * [Code](#code)
-  * [Resources](#resources)
-  * [Content](#content)
-  * [Media](#media)
-  * [Acknowledgements](#acknowledgements)
-
-
-## USER EXPERIENCE
-
-   ### Purpose and target audience
-
-GarageGuru is a collaborative job management app aimed at vehicle service centres.
-
-It is designed with the employee in mind, where jobs can be created, and assigned to different users, and job status can be tracked. Jobs can be viewed, watched, edited, filtered and searched.  In addition, an invoice can be created and its status can also be separately managed.
-
-Each job card also has a comments section where users can collaborate on the job and specific comments in the form of a conversation thread.
-
-This fully responsive accessible website can be used on a  desktop or the employee's mobile device on the workshop floor.
-
-
-<img src="">
-
-* [Back to Contents](#contents)
-
-  ### Goals
-  #### Goals for the first time user
-  1. To be able to create an account easily.
-  2. To be able to customise and update their profile.
-  3. To easily understand what the app is supposed to do and how to navigate it on a desktop or mobile device.
-  4. To easily be able to add a job, choose from a selection of job types, assign a job by default to themselves, or to be able to select another user.
-  5. To be able to select a due date for the job, while defaulting to the current day.
-  6. To be unable to choose a date in the past.
-  7. To be able to watch various jobs and view them on a dashboard.
-  8. To be able to view the jobs they have created on a dashboard.
-  9. To be able to view jobs assigned to them on a specific dashboard.
-  10. To be able to easily create and edit an invoice associated with a job.
-  11. To be able to leave comments about any job.
-  12. To view all the invoices in the system and manage their status.
-
-  #### Goals for the returning user <br>
-  13. All the pages of the app should be secure, so once logged out, the only way to access any pages is via the login page.<br>
-  14. The app should feel familiar to the returning user.
-
-  #### Goals for the Administrator <br>
-  15. The administrator can easily update or override any information on the backend as a superuser.
-
-  #### Goals for the Site Owner <br>
-  16. The app should have the capacity to scale. <br>
-  17. More choices of services can easily be added and customised for different businesses. <br>
-  18. Images are validated to ensure they are not oversized dragging on site performance and storage resources. <br>
-  19. Jobs, invoices and comments are pulled as required, to avoid dragging on site performance and storage resources.
-
-
-* [Back to Contents](#contents)
-
-## PROJECT DESIGN
-
-  ### Agile Approach
-  From the start the project was managed using [GitHub Projects (View Here - ensure labels are activated)](https://github.com/users/rstan-dev/projects/8/views/2?filterQuery=), using an agile approach.
-  - The project goals were broken into epics, which were broken into user stories with acceptance criteria and individual tasks.
-  - Each User Story was allocated a certain number of story points based on a rough estimation of time to complete the work.
-  - This allowed me to create a roadmap with milestones and target dates. [View Roadmap Here(ensure milestone and start date markers are activated)](https://github.com/users/rstan-dev/projects/8/views/1)
-  - Each User Story was assigned a label according to the MoSCoW system so I could prioritise the work.
-  - <img src="https://github.com/rstan-dev/GarageGuru-PP5/blob/main/documentation/images/wireframes/moscow_labels.png">
-
-  ### Wireframes
-   The initial wireframes were created in [Balsamiq](https://balsamiq.cloud/) to understand how the site would work, and this layout would drive User Stories, the logic required and overall design artwork decisions.
-
-   The final app deviated slightly in a couple of areas as improvements were made while the site was being built and user functions could be tested.
-
-   The Invoice functionality was added midway through the project because I felt not only would it complete the app, but it would add a layer of much-needed functionality.
-
-   The Comments design and functionality was also enhanced later in the project when I added the ability to leave a reply to a comment, ensuring it was a fully collaborative system.
-
-   General visual styling improvements were made during the project that were not considered during wireframing or when I received some early-stage user feedback, which resulted in a better UX.
-
-   - <img src="https://github.com/">
-
-   <details>
-    <summary><u>Click to View More Wireframe Images</u></summary>
-   - <img src">
-   <br>
-   <br>
-   <br>
-
-   New wireframe for including the invoice module was conceived halfway through the project.
-   - <img src="https://github.com/rstan-dev/GarageGuru-PP5/blob/main/documentation/images/wireframes/wf_newalljobs.png">
-   </details>
-
-* [Back to Contents](#contents)
-
-  ### User Stories
-  All epics, user stories with their acceptance criteria and tasks can be viewed on the GarageGuru [GitHub Project board]()
-
-  There were 12 Epics created from Project Concept to Project Submission.
-
-  There were 35 User Stories Created including:
-
-1. [US1] Project General Requirements
-    - As a developer, I can understand the goals of the site so that development decisions can be made accordingly.
-    - Maps to Project Goal 16, 17, 18 and 19
-2. [US2] Setup Repo
-    - As a developer, I will set up the repo and install the necessary packages so that I can start building the initial models to view on the React front-end
-3. [US3] Profiles Model
-    - As a superuser, I can log in to the admin panel	so that I can manage users and other parts of the system as it develops
-    - Maps to Project Goal 15
-4. [US4] Jobs Model
-    - As a superuser, I can create a Job Card so that I can capture the details of the job I wish to display
-5. [US5] Create NavBar
-    - As a website user, I can view the basic navbar so that I can easily navigate the website on desktop and mobile
-    - Maps to Project Goal 14
-6. [US6] Link NavBar
-    - As a website user, I can navigate each page seamlessly so that I do not need to wait for page refresh
-    - Maps to Project Goal 3
-7. [US7] User Login frontend
-    - As a website user, I can log in so that I can access all the functions of the site, and I can easily see if I am logged in or not
-    - Maps to Project Goal 1 and 13
-8. [US8] User Logout frontend
-    - As a website user, I can log out so that I can protect my profile data, and I can easily see if I need to log in again
-9. [US9] User Registration Frontend
-    - As a website user, I can register for an account so that I can access the functions of the site
-10. [US10] Refresh Access Tokens
-    - As a website user, I can maintain my logged-in status until I decide to log out So that my user experience is not interrupted
-11. [US11] View Profile Page frontend
-    - As a logged in user I can view my profile so that I can see the details I have entered about myself
-12. [US12] Edit Profile Page frontend
-    - As a logged in user I can edit my profile so that I can change my personal info
-    - Maps to Project Goal 2
-13. [US13] Update Password frontend
-    - As a logged-in user, I can update my password so that I can change my password if I need to
-14. [US14] Update Username frontend
-    - As a logged-in user, I can change my username so that I can change my username if I want to
-15. [US15] View all jobs
-    - As a logged-in user, I can click on the All Jobs button in the NavBar so that I can see all the jobs in the system
-16. [US16] Search all jobs
-    - As a logged-in user, I can enter a query in the search bar so that I can find a job easily
-17. [US17] Filter jobs
-    - As a logged-in user, I can filter the job cards so that I can display them in the order I want
-18. [US18] Add Job
-    - As a logged-in user, I can click on the Add Job button in the NavBar so that I can add the job details to a form and save them to the database
-    - Maps to Project Goal 4 and 5 and 6
-19. [US19] Edit Job Card
-    - As a logged-in user, and creator of a job, I can click on the edit icon on the JobCard so that I can edit the job details
-20. [US20] Delete a Job
-    - As a logged-in user, and creator of a job, I can click on the edit icon on the JobCard so that I can delete the job details
-21. [US21] Add comment
-    - As a logged-in user, I can add a comment so that I can leave any comments about a particular job
-22. [US22] View Job Comments
-    - As a logged-in user I can click on the comments bubble so that I can view all the comments that have been made about the job
-23. [US23] Edit Comment
-    - As a logged-in user, and creator of a comment, I can click on the edit icon of a comment I have written so that I can update it if I want to
-24. [US24] Delete Comment
-    - As a logged-in user, and creator of a comment, I can click on the edit item of a comment I have written so that I can delete it if I want to
-    - Maps to Project Goal 11
-25. [US25] Add Invoice details
-    - As an Owner or Assigned person of a JobCard, I can add invoice details to a job so that a financial record can be maintained
-26. [US26] View Invoice Details on the JobCard
-    - As any user of a JobCard, I can view invoice details on a job card so that I can see the status of the invoices for a job
-27. [US27] Edit Invoice Details on the JobCard
-    - As an Owner or Assigned person of a JobCard, I can edit invoice details on a job card so that I can edit any of the details of the invoices for a job
-28. [US28] Delete Invoice details on the JobCard
-    - As an Owner or Assigned person of a JobCard, I can delete an invoice related to a job card so that I can delete an invoice if a job is cancelled
-29. [US29] View Invoice Details on AllInvoicesPage
-    - As any user of a JobCard, I can view invoice details on the AllInvoicesPage so that I can see the status of the invoices for a job
-    - Maps to Project Goal 11
-30. [US30] Edit Invoice Details on AllInvoicesPage
-    - As an Owner or Assigned person of an Invoice, I can edit invoice details on the AllInvoicesPage so that I can edit any of the details of the invoices for a job
-    - Maps to Project Goal 10
-31. [US31] My Jobs & Assigned Jobs View
-    - As a logged-in user, I can click on the MyJobs button or the Assigned Jobs button in the NavBar so that I can see all of the jobs that I have created or that have been assigned to me in the system
-    - Maps to Project Goal 8 and 9
-32. [US32] Watch Jobs
-    - As a logged-in user, I can click on the eye icon on a job card so that I can add it to my watch list where I can keep an eye on a job
-    - Maps to Project Goal 7
-33. [US33] UX & Testing
-    - As a developer, I can test each user story function so that I can verify each function works as intended
-34. [US34] Deploy to Heroku
-    - As a developer, I can deploy to Heroku so that I can host the site in production
-35. [US35] Complete Readme Documentation
-    - As a developer, I can submit a comprehensive Readme document so that other developers can understand the project's development process
-
-
-* [Back to Contents](#contents)
-
-  ### Logic
-  The database schema and website logic was conceived and created using [Lucid](https://lucid.app/) as follows:
-
-  Database Structure:
-  - <img src="https://github.com/rstan-dev/GarageGuru-PP5/blob/main/documentation/images/wireframes/garageguru_schematic_dec_2023.png">
-
-* [Back to Contents](#contents)
-
-  ### Color Scheme
-  The main colours of blue, white and grey were chosen for maximum contrast. I used [Coolors](https://coolors.co) to generate a colour palette.
-
-  - <img src="https://github.com/rstan-dev/GarageGuru-PP5/blob/main/documentation/images/wireframes/color_pallette.png">
-
-  I used [Canva](https://www.canva.com/) to generate a logo and a style guide.
-
-  - <img src="https://github.com/rstan-dev/GarageGuru-PP5/blob/main/documentation/images/site_images/garageguru_logo.jpg">
-  <br>
-
-  <details>
-    <summary><u>Click to View More Color Scheme Images</u></summary>
-
-  With a color palette in mind, I could create a project style guide:
-  <br>
-
-  - <img src="https://github.com/rstan-dev/GarageGuru-PP5/blob/main/documentation/images/wireframes/garageguru_project_colors.jpg">
-
-    <br>
-  - <img src="https://github.com/rstan-dev/GarageGuru-PP5/blob/main/documentation/images/site_images/gg_icon.png">
-
-  </details>
-
-  * [Back to Contents](#contents)
-
-  ### Imagery
-  - I used FontAwesome https://fontawesome.com/ for various icons in the navbar, JobCard, and other places for visual effects.
-
-   <br>
-
-  - I used [Unsplash](https://unsplash.com/) to populate the site with realistic royalty-free images while testing.
-
-  * [Back to Contents](#contents)
-
-  ### Typography
-   * I used a default Google font of Raleway and sans serif throughout the website for visual clarity and consistency.
-
-
-  ### MVP
-  Using the GitHub project board I prioritised user stories to give me an incremental MVP.
-
-  At each stage of achieving an MVP, I would aim to complete a piece of functioning work.  Styling issues would be noted as a small-item, logged to the Kanban board and I would revisit to make incremental visual improvements once the functionality logic was completed.
-
-  Every commit message thoroughly detailed the work that had been completed.  Some of the more complex pieces of functionality required updates and development across several pages for the functions to work as expected and this was captured in the commit history.
-
-1. I created the basic models for profiles and jobs first so I could upload information to pull into the front end.
-2. I built the Navbar and routes
-3. I built the Login, Logout and registration functionality
-4. I built the Profile Area with CRUD functionality
-5. I built the Jobs section with CRUD functionality
-6. I built the comments section below each job card with CRUD functionality
-7. I built the Invoice Model and frontend components and linked them to the relevant JobCard
-8. I built the Watch Jobs functionality and views
-9. I built the filters and views for My Jobs and Assigned Jobs
-
-
-   * [Back to Contents](#contents)
-
-## FEATURES
-* The following fully responsive website pages have been implemented:
-1. Register
-2. Login
-3. AllJobs with Status Dashboard, filter and search functionality
-4. MyJobs with Status Dashboard, filter and search functionality
-5. Assigned Jobs with Status Dashboard, filter and search functionality
-6. Watched Jobs with Status Dashboard, filter and search functionality
-7. Job Card with comments and links to assigned user profile, invoice, and conditional editing and ability to watch a job
-8. Add Invoice functionality with custom validation and alerts
-9. AddJob form with custom validation and alerts
-10. All Invoices with Status Dashboard, filter and search functionality, links to conditional editing, assigned users and relevant JobCard
-11. Profile page with editing functionality and custom validation
-
-  <details>
-    <summary><u>Click to View Images</u></summary>
-   
-
-  </details>
-
-
-  * [Back to Contents](#contents)
-
-* UX features and User Interactions to note:
-  - Unauthenticated users can only access the login or register page.  All other pages are protected at the Route level and only available to users who have registered and logged in to their account.
-  - Users can always see where they are by the nav icon that highlights yellow or by the breadrcumb Viewing bar at the top of each screen. [US5, US6,]
-  - Users can hover over each icon in the NavBar to see the Nav label, and users will know they are logged in by seeing their name next to the Profile link.
-  - All users can access their own Profile page where they can view or edit their profile, username or password. [US3, US11, US12, US13, US14]
-  - Users can view all the jobs, jobs only created by them or jobs assigned to them. [US4, US15, US31 and US32]
-  - A dashboard allows them to organise each view according to its status and the status counter lets the user filter by and know at all times how many jobs are Pending, Underway or Completed. [US16, US17]
-  - Users can filter by jobs that are recently created (the default), recently updated or by their due date. [US16, US17]
-  - Users can enter a keyword to search by job type, description, created by or assigned to. [US16, US17]
-  - On each job card, users can click through to view the profiles of the user who created the job or the user who is assigned to the job. [ US11 ]
-  - A jobs can be edited by the person who created it and allows updates to any of the fields including the image. [ US19 ]
-  - An invoice can be added by the two users involved in the job - those who created it and those who are assigned to the job. [ US25 ]
-  - Any user can view the invoice summary by opening the accordion feature by clicking "Click To View Invoice Summary", where they can find a button to view the invoice card or edit it if they have permission. [ US26 ]
-  - Users can also click an eye icon which will add the job to a Watch list if they want to keep track of a job. [ US32 ]
-  - Users will see if any comments have been left on a job and will know the amount of comments that have been left on that specific job. [US21, US22, US23, US24]
-  - Users can click on the comment bubble icon and view the job card, and invoice summary, leave a comment, leave a reply to a comment and edit or delete any of their comments. [US21, US22, US23, US24]
-  - Users can view all invoices in the system and use familiar dashboard features to view and filter the status, order by dates and search using keywords. [ US29 ]
-  - On each invoice card, users can click through to view the profiles of the user who created the invoice or the user who is assigned to the job. [ US11 ]
-  - Invoices can be edited only by those who created or were assigned to the job. [US27 and US30]
-  - Any user can click on the "View Job Summary" accordion and find a link to view the full job card
-  - Any user can click the "BackToTop" button incorporated on Jobs and Invoices pages to help navigate long page lists.
-  <br>
-
-  <details>
-    <><u>Click to View UX Features Images</u></
-  </details>
-
-  * [Back to Contents](#contents)
-
-## VALIDATION
-Various validation methods have been incorporated:
- 1. Onscreen success messages after user actions
- 2. Onscreen warnings if form fields have been omitted
- 3. Onscreen modal confirmation step before updating or deleting items
- 4. No-Data to display icon
- 5. Custom 404 page for redirecting logged-in users to non-existing pages
- 6. General catch-all redirects for logged-out users to the Login page for non-existing pages.
- 7. Date validation to prevent booking or invoicing a past date
- 8. Image validation to prevent oversized images from being uploaded
- 9. Infinite scroll on jobs and invoices to reduce server load
- 10. Form validation to capture email and phone formats correctly
-
-
- <details>
-  <summary><u>Click to View Validation Images</u></summary>
-
- 
+# **Rewind**
+
+<br>
+
+![Deployed Site Responsive Views](docs/features/)
+
+<br>
+
+[View the deployed site on Heroku](https://)
+
+<br>
+
+Rewind has been developed as part of the [Code Institute](https://codeinstitute.net/) Diploma in Full Stack Software Development (Advanced Front End Portfolio Project #5).  The Django REST Framework has been used to build a backend API.  This returns JSON data to the front end which has been built using React.  The aim of the site is to provide a platform for a community of like minded music/technology enthusiasts who enjoy sharing snippets of nostalgia to evoke memories of the past and engaging in conversations about these snapshots in time.
+
+## **CONTENTS**
+
+* [User Experience (UX)](#user-experience-ux)
+    * [Strategy Plane](#strategy-plane)
+        * [Project Goals](#project-goals)
+    * [Agile Methodology](#agile-methodology)
+        * [Epics](#epics)
+        * [User Stories](#user-stories)
+    * [Scope Plane](#scope-plane)
+    * [Skeleton Plane](#skeleton-plane)
+        * [Database Schema](#database-schema)
+        * [Security](#security)
+        * [Wireframes](#wireframes)
+    * [Structure Plane](#structure-plane)
+        * [Features](#features)
+        * [Re-use of components](#re-use-of-components)
+        * [Custom hooks](#custom-hooks)
+        * [Custom contexts](#custom-contexts)
+    * [Surface Plane](#surface-plane)
+* [Technologies Used](#technologies-used)
+    * [Languages Used](#languages-used)
+    * [Programs and Tools Used](#programs-and-tools-used)
+    * [Backend Frameworks and Libraries](#backend-frameworks-and-libraries)
+    * [Frontend Frameworks and Libraries](#frontend-frameworks-and-libraries)
+* [Testing](#testing)
+* [Deployment and Local Development](#deployment-and-local-development)
+* [Bugs](#bugs)
+    * [Solved Bugs](#solved-bugs)
+    * [Known Bugs](#known-bugs)
+* [Credits](#credits)
+    * [Code Used and Referenced](#code-used-and-referenced)
+    * [Media](#media)
+    * [Acknowledgements](#acknowledgements)
+
+# **User Experience (UX)**
+
+## **STRATEGY PLANE**
+
+## **Project Goals**
+
+The aim of the site is to create a community for music/technology enthusiasts with a particular emphasis on the ability to share memories and reminisce.  The term 'nostalgia' can be defined as "a feeling of sadness mixed with pleasure and affection when you think of happy times in the past".  This is a powerful emotion to tap into and cyclical patterns can be seen in fashion, music and technology.  The resurgence in the Vinyl market is a great demonstration of this.  Although the primary target site user may be those wishing to share their memories, this does not limit the target audience to those who witnessed trends and movements the first time round.  It will also engage a new generation where there is great interest for all things 'retro' and an enthusiasm to discover more about these bygone eras.
+
+Rewind will give users a platform to post their own 'snapshots' from the past and enter into discussion about fellow user's memories.  To ensure that site users can intuitively and effortlessly access content most relevant to their interests, they will be given the opportunity to tailor their user profiles to indicate their preferences.  This data will be used to recommend other profiles and snapshots that may be of interest to the user.  Users will also have the ability to recommend snapshots that they have enjoyed and this data will be stored in the database, so it can then be used as a mechanism for users to sort content.  To fit in with the busy lives of site users, they will also have the ability to pin snapshots while they scroll, so they can easily return to them at a later date.
+
+Although the initial build of the site focuses on music/technology, site traffic could be increased by expanding genres / categories to appeal to a more diverse range of users.  For example additional categories such as Fashion, Art, Design could be added as instances in the Category Model.
+
+<br>
+
+[Back to top &uarr;](#contents)
+
+## **AGILE METHODOLOGY**
+
+This project was approached following the principles of Agile Development, building the solution incrementally through repeated iterations.  Initially, 6 [epics](#Epics) were defined.  These were broad definitions of functionality for the site that would not fit into a single iteration.
+
+Epics were then broken down into user stories and logged as issues on GitHub using the following [customised template](https://github.com/rkillickdev/rewind/blob/main/.github/ISSUE_TEMPLATE/user-story.md).  Acceptance Criteria were defined as part of each user story to clearly present the objectives and conditions that must be satisfied for the user story to be marked as complete.  Implementation of the user story was then broken down into tasks - technical work required to facilitate execution of the user story.  Each user story was given a story points label to indicate the estimated amount of work required to complete the story.
+
+A 7th [DRF API Epic](https://github.com/rkillickdev/rewind/issues/30) was defined to plan work required to build the backend API using the Django REST Framework.  This epic was broken down into the key backend resources required to implement the functionality of the site.  Relevant user stories were linked and tasks allocated to complete the build of each resource. 
+
+A [Product Backlog](https://github.com/rkillickdev/rewind/milestone/1) milestone was created on GitHub to establish a 'single authoritative source of work'.  I initially moved all user stories to the backlog before they were allocated to sprints.  The product backlog was refined throughout the course of development with user stories reprioritised as the project evolved.
+
+Timeboxing was used throughout the development of the project.  Week long 'sprints' (otherwise referred to as iterations) were defined using Milestones on Github.  User stories from the product backlog were then allocated to a sprint following the principles of MoSCoW prioritisation.  Each user story was assigned a label specifying "Must Have", "Could Have" or "Should Have" to indicate expectation of its completion.  Stories were then tackled according to level of priority.  When defining prioritisation levels for each user story in a sprint, I was mindful that the percentage of "Must Haves" should 'not exceed 60% of the overall effort planned for the iteration'.  A 20% contingency of "Could Haves" was set, therefore leaving the remaining 20% for "Should Haves".  If it was clear that a user story would not be completed in the current sprint, it was labelled as "Won't Have" and returned to the Product Backlog.  This was then allocated to a future sprint with a higher prioritisation level.
+
+Throughout the development process, I used a kanban board to provide up to date information about the status of progress for each iteration.  The board was created and managed using GitHub Projects and can be viewed [here](https://github.com/users/rkillickdev/projects/5).
+
+![Rewing Kanban Board](docs/agile/pp5-kanaban-board.png)
+
+User stories for each sprint were initially allocated to the 'Todo' column and then transferred to the 'In Progress' column as they were worked on.  Once each task for the user story had been completed and all acceptance criteria satisfied, the issue was marked as complete and moved to the 'Done' column.
+
+[Back to top &uarr;](#contents)
+
+### **Epics**
+
+#### **EPIC: Navigation & User Authentication [#1](https://github.com/rkillickdev/rewind/issues/1)**
+
+`
+Users should be able to navigate the site effortlessly and access the site content in an intuitive manner. Certain features should only be accessible to authenticated users that have created a user profile.
+`
+
+#### **EPIC: Snapshot Lists [#8](https://github.com/rkillickdev/rewind/issues/8)**
+
+`
+Snapshots posted to the site should be available for all user to view, with authenticated users given additional control over the type of content they want to view.
+`
+
+#### **EPIC: Create Snapshots [#12](https://github.com/rkillickdev/rewind/issues/12)**
+
+`
+Logged in users should have the ability to post snapshots that will then be attached to their profile and available for other site users to enjoy.
+`
+
+#### **EPIC: Snapshot Details [#15](https://github.com/rkillickdev/rewind/issues/15)**
+
+`
+The detail page should display a specified snapshot post. All site users should have the ability to 'read' snapshots, logged in users should have the ability to comment on other user's snapshots and update/delete their own.
+`
+
+#### **EPIC: Recommend and Pin Snapshots [#21](https://github.com/rkillickdev/rewind/issues/21)**
+
+`
+As the user is viewing content on the site, they should have the ability to recommend snapshots and also pin any snapshot that catches their interest that they might want to return to later.
+`
+
+#### **EPIC: Profiles [#24](https://github.com/rkillickdev/rewind/issues/24)**
+
+`
+Logged in users should have the ability to update and tailor their own profile details. They should also be able to view the profiles of other site users and their associated snapshot posts. Users should be recommended other profiles to follow based on musical genre preferences specified in their own profiles.
+`
+
+#### **EPIC: DRF API [#30](https://github.com/rkillickdev/rewind/issues/30)**
+
+`
+Build and deploy an API using the Django REST Framework that enables implementation of the functionality outlined in the project user stories.
+`
+
+<br>
+
+[Back to top &uarr;](#contents)
+
+### **User Stories**
+
+#### **EPIC: Navigation & User Authentication [#1](https://github.com/rkillickdev/rewind/issues/1)**
+
+* As a **user** I can **access a navbar on every page** so that **navigation of the site is intuitive** [#2](https://github.com/rkillickdev/rewind/issues/2)
+* As a **user** I can **navigate the content of the site without the page refreshing** so that **content is accessed quickly and user experience is enhanced** [#3](https://github.com/rkillickdev/rewind/issues/3)
+* As a **user** I can **sign up and create a user account** so that **I can access additional site functionality only available to authenticated users** [#4](https://github.com/rkillickdev/rewind/issues/4)
+* As a **user** I can **sign in using my existing credentials** so that **I can view my account and continue enjoying site functionality only accessible to authenticated users** [#5](https://github.com/rkillickdev/rewind/issues/5)
+* As a **user** I can **see whether I am already logged in** so that **I am aware of my status and the features of the site I can access** [#6](https://github.com/rkillickdev/rewind/issues/6)
+* As a **user** I can **sign out from the site** so that **no one else using my device can access my account** [#7](https://github.com/rkillickdev/rewind/issues/7)
+
+#### **EPIC: Snapshot Lists [#8](https://github.com/rkillickdev/rewind/issues/8)**
+
+* As a **user** I can **view all snapshots posted** so that **I can get an overview of the type of content available on the site and decide whether I would like to sign up** [#9](https://github.com/rkillickdev/rewind/issues/9)
+* As a **user** I can **search snapshots by keywords** so that **I can filter results displayed by their text content or by era, genre or category of a snapshot** [#10](https://github.com/rkillickdev/rewind/issues/10)
+* As a **user** I can **choose to order the list by 'most recommended' or 'most talked about'** so that **I can view most popular snapshots first** [#11](https://github.com/rkillickdev/rewind/issues/11)
+* As a **user** I can **filter the list of snapshots on the home page by era, genre and category** so that **I can view snapshots most relevant to my interests** [#39](https://github.com/rkillickdev/rewind/issues/39)
+
+#### **EPIC: Create Snapshots [#12](https://github.com/rkillickdev/rewind/issues/12)**
+
+* As a **logged in user** I can **post image snapshots** so that **I can share my nostalgic memories with other site users** [#13](https://github.com/rkillickdev/rewind/issues/13) 
+* As a **logged in user** I can **upload audio clips when creating a snapshot** so that **I can share audio memories with other site users** [#14](https://github.com/rkillickdev/rewind/issues/14)
+
+#### **EPIC: Snapshot Details [#15](https://github.com/rkillickdev/rewind/issues/15)**
+
+* As a **user** I can **view a snapshot detail page** so that **I can read the full description of the snapshot and any associated comments and samples** [#16](https://github.com/rkillickdev/rewind/issues/16)
+* As a **logged in user** I can **edit my own snapshots** so that **I can update and amend the details of my original post** [#17](https://github.com/rkillickdev/rewind/issues/17)
+* As a **logged in user** I can **comment on another user's snapshot** so that **I can share my thoughts and interact with the Rewind community** [#18](https://github.com/rkillickdev/rewind/issues/18)
+* As a **logged in user** I can **edit my own comments** so that **I can amend and update my thoughts**
+ [#19](https://github.com/rkillickdev/rewind/issues/19)
+* As a **logged in user** I can **delete my own comments** so that **I can control whether a previous comment remains visible to other site users** [#20](https://github.com/rkillickdev/rewind/issues/20)
+
+#### **EPIC: Recommend and Pin Snapshots [#21](https://github.com/rkillickdev/rewind/issues/21)**
+
+* As a **logged in user** I can **recommend a snapshot** so that **I can show my appreciation of another user's post and encourage others to view it** [#22](https://github.com/rkillickdev/rewind/issues/22)
+* As a **logged in user** I can **pin any snapshots of interest while browsing the site** so that **I can build a list of posts to return to later** [#23](https://github.com/rkillickdev/rewind/issues/23)
+
+#### **EPIC: Profiles [#24](https://github.com/rkillickdev/rewind/issues/24)**
+
+* As a **logged in user** I can **edit the details of my profile** so that **I can update my profile pic, bio details and preferences for era, musical genre and category** [#25](https://github.com/rkillickdev/rewind/issues/25)
+* As a **user** I can **view the profile pages of other site users** so that **I can learn more about them and the type of content they are posting** [#26](https://github.com/rkillickdev/rewind/issues/26)
+* As a **logged in user** I can **update my username  and password** so that **I can choose how my name is displayed to other users and to ensure my login credentials remain secure** [#27](https://github.com/rkillickdev/rewind/issues/27)
+* As a **logged in user** I can **view suggested profiles** so that **I can decide whether their previous snapshot posts are of interest to me** [#28](https://github.com/rkillickdev/rewind/issues/28)
+* As a **logged in user** I can **choose to follow profiles that are posting interesting content** so that **I can be updated with more of their posts in the future** [#29](https://github.com/rkillickdev/rewind/issues/29)
+
+<br>
+
+[Back to top &uarr;](#contents)
+
+## **SCOPE PLANE**
+
+In order to satisfy the goals and user stories outlined in the [strategy plane](#strategy-plane), I will implement the following features:
+
+* Implement functionality for all users to read snapshots posted by other site users.
+* Implement functionality for all users to read comments relating to user's snapshot posts.
+* Implement functionality for all users to view the profiles of other site users.
+* Implement functionality for users to create a user account and access additional site features.
+* Implement functionality for logged in users to create, update and delete their own snapshot posts.
+* Implement functionality for logged in users to create, update and delete their own comments about a particular snapshot post.
+* Implement functionality for logged in users to upload and delete their own audio samples relating to a particular snapshot post. 
+* Implement functionality for logged in users to recommend snapshots posted by other site users
+* Implement functionality for logged in users to pin snapshots posted by other site users so they can easily return to them
+* Implement functionality for displaying suggested profiles to logged  in users, based on their own preferences
+* Implement functionality to allow logged in users to follow profiles they want to hear more from
+
+<br>
+
+[Back to top &uarr;](#contents)
+
+## **SKELETON PLANE**
+
+## **Database Schema**
+
+![rewind final database schema](docs/database-schema/pp5-rewind-database-schema-final.png)
+
+From the original planning phase to the final site, a few tweaks were made to the database schema to suit the functionality of the site.  In particular, I eventually decided to create a model for samples rather than including it as a field in the snapshot model.  The soundbyte field remains as part of the snapshot model for now but is redundant.  The original database schema v01 can be viewed [here](docs/database-schema/pp5-rewind-database-schema-v01.png)
+
+The following custom models have been implemented as part of the development process:
+
+### **PROFILE**
+
+An instance of the Profile model is created automatically when a user signs up for an account and is connected to the User model via a one to one field.  Users are able to edit the `name`, `bio` and `image` fields.
+
+There is a one to many relationship connecting the Profile model to the Era, Genre and Category models.  This gives the user the ability to set their preferences for the type of snapshot posts they are most interested in viewing.  In future iterations of the project, the relationship could be changed to 'many to many' in order to provide greater flexibility when setting preferences.
+
+### **Profile API Endpoints**
+___
+
+| HTTP REQUEST | URI | CRUD Operation | View Type |
+| ------------ | --- | -------------- | --------- |
+| GET | /profiles | List all profiles | LIST |
+| GET | /profiles/:id | Retrieve a profile by id | DETAIL |
+| PUT | /profiles/:id | Update a profile by id | DETAIL |
+
+___
+
+### **ERA / GENRE/ CATEGORY**
+
+One instance of Era / Genre/ Category can belong to multiple profiles.  This data will then be used to tailor content presented to site users and make suggestions for other profiles to follow.  
+
+The Era / Genre / Category models are linked to the Snapshot model via a foreign key field.  For example, a single instance of Era,Genre or Category can belong to many different instances of Snapshot.
+
+The API endpoints detailed below have been built to allow for eventual implementation of 'Create', 'Read' and 'Update' functionality on these models from the front end.  Although not included in the initial scope of the project, building this functionality into the backend will allow for a future feature whereby a site administrator can add additional eras/ genres/ categories via the site interface rather than using the Django admin panel.  This functionality could be implemented in future sprints.
+
+The `IsAdminUser` class from rest_framwork permissions has been used in combination with a custom `ReadOnly` permissions class in the list views for eras, genres and categories.  This is to ensure only staff users have permission for POST requests, but all users can make GET requests.  The `IsAdminUser` permissions class is also allocated to the detail views for era, genres and categories, ensuring that only admin users can make GET or PUT requests for a specific id.
+
+### **Era API Endpoints**
+___
+
+| HTTP REQUEST | URI | CRUD Operation | View Type |
+| ------------ | --- | -------------- | --------- |
+| GET | /eras | List all eras | LIST |
+| POST | /eras | Create an era | LIST |
+| GET | /eras/:id | Retrieve an era by id | DETAIL |
+| PUT | /eras/:id | Update an era by id | DETAIL |
+
+### **Genre API Endpoints**
+___
+
+| HTTP REQUEST | URI | CRUD Operation | View Type |
+| ------------ | --- | -------------- | --------- |
+| GET | /genres | List all genres | LIST |
+| POST | /genres | Create a genre | LIST |
+| GET | /genres/:id | Retrieve a genre by id | DETAIL |
+| PUT | /genres/:id | Update a genre by id | DETAIL |
+
+### **Category API Endpoints**
+___
+
+| HTTP REQUEST | URI | CRUD Operation | View Type |
+| ------------ | --- | -------------- | --------- |
+| GET | /categories | List all categories | LIST |
+| POST | /categories | Create a category | LIST |
+| GET | /categories/:id | Retrieve a category by id | DETAIL |
+| PUT | /categories/:id | Update a category by id | DETAIL |
+
+___
+
+### **SNAPSHOT**
+
+As noted above, there is a 'One To Many' relationship linking the Era, Genre and Category models to the Snapshot model.  The User model is also linked to the Snapshot model via a 'One To Many' relationship, whereby a single instance of User can own many instances of Snapshot.  When a new instance of Snapshot is created (only available to authenticated users), the owner field of the Snapshot model is automatically populated with the logged in user.  The perform_create method defined in the [snapshots/views](snapshots/views.py) takes care of this task.  Authenticated users are able to perform full CRUD functionality on the Snapshot model, although the ability to Update or Delete an instance is only available if the user owns the specified instance.
+
+### **Snapshot API Endpoints**
+___
+
+| HTTP REQUEST | URI | CRUD Operation | View Type |
+| ------------ | --- | -------------- | --------- |
+| GET | /snapshots | List all snapshots | LIST |
+| POST | /snapshots | Create a snapshot | LIST |
+| GET | /snapshots/:id | Retrieve a snapshot by id | DETAIL |
+| PUT | /snapshots/:id | Update a snapshot by id | DETAIL |
+| DELETE | /snapshots/:id | Delete a snapshot by id | DETAIL |
+
+___
+
+### **RECOMMENDATION**
+
+The Snapshot model is linked to the Recommendation model via a 'One To Many relationship' - Many instances of Recommendation can belong to a single instance of Snapshot.  As was the case with the Snapshot model above, the User model is also linked to the Recommendation model via a 'One To Many' relationship.  The relationship is automatically established each time a new instance of Recommendation is created. Authenticated users are able to Create and Retrieve instances of Recommendation and delete them if the user owns the instance.  There is no need to provide the ability to update an instance of Recommendation, and this is reflected in the specified API Endpoints below.
+
+### **Recommendation API Endpoints**
+___
+
+| HTTP REQUEST | URI | CRUD Operation | View Type |
+| ------------ | --- | -------------- | --------- |
+| GET | /recommendations | List all recommendations | LIST |
+| POST | /recommendations | Create a recommendation | LIST |
+| GET | /recommendations/:id | Retrieve a recommendation by id | DETAIL |
+| DELETE | /recommendations/:id | Delete a recommendation by id | DETAIL |
+
+___
+
+### **COMMENT**
+
+There are 'One To Many' relationships between User / Snapshot models and Comment Model.  Many comments could be associated with either a single User or Snapshot.  All users can retrieve comments, authenticated users can create an instance and update/delete an instance if they are the owner. 
+
+### **Comment API Endpoints**
+___
+
+| HTTP REQUEST | URI | CRUD Operation | View Type |
+| ------------ | --- | -------------- | --------- |
+| GET | /comments | List all comments | LIST |
+| POST | /comments | Create a comment | LIST |
+| GET | /comments/:id | Retrieve a comment by id | DETAIL |
+| PUT | /comments/:id | Update a comment by id | DETAIL |
+| DELETE | /comments/:id | Delete a comment by id | DETAIL |
+
+___
+
+### **SAMPLE**
+
+There are 'One To Many' relationships between User / Snapshot models and Sample Model.  Many samples could be associated with either a single User or Snapshot.  All users can retrieve samples, authenticated users can create an instance and delete an instance if they are the owner. 
+
+### **Sample API Endpoints**
+___
+
+| HTTP REQUEST | URI | CRUD Operation | View Type |
+| ------------ | --- | -------------- | --------- |
+| GET | /samples | List all samples | LIST |
+| POST | /samples | Create a sample | LIST |
+| GET | /samples/:id | Retrieve a sample by id | DETAIL |
+| DELETE | /samples/:id | Delete a sample by id | DETAIL |
+
+___
+
+### **FOLLOWER**
+
+There are two relationships between the User model and the Follower model.  Both are 'One To Many' relationships.  It is important to include 'related_names' in this case to distinguish between the two.  A user could be connected to an instance of Follower because they are the owner (i.e. following another user), or because they are being 'followed'.  Either way, many instances of Follower can be associated with a User.  They might be following many others, or being followed by many others.  Authenticated users can 'follow' another user (i.e. create an instance).  There is no need to include an API endpoint for updating an instance of Follower.  Deleting an instance is the equivalent of 'unfollowing' another user and can only be carried out by an authenticated user who owns the instance.
+
+### **Follower API Endpoints**
+___
+
+| HTTP REQUEST | URI | CRUD Operation | View Type |
+| ------------ | --- | -------------- | --------- |
+| GET | /followers | List all followers | LIST |
+| POST | /followers | Create a follower | LIST |
+| GET | /followers/:id | Retrieve a follower by id | DETAIL |
+| DELETE | /followers/:id | Delete a follower by id | DETAIL |
+
+___
+
+### **PIN**
+
+Relationship between User and Snapshot models via 'One To Many' relationship.  Authenticated users can create a new pin.  If the authenticated user also owns the pin they can delete it. 
+
+### **Pin API Endpoints**
+___
+
+| HTTP REQUEST | URI | CRUD Operation | View Type |
+| ------------ | --- | -------------- | --------- |
+| GET | /pins | List all pins | LIST |
+| POST | /pins | Create a pin | LIST |
+| GET | /pins/:id | Retrieve a pin by id | DETAIL |
+| DELETE | /pins/:id | Delete a pin by id | DETAIL |
+
+<br>
+
+## **Security**
+___
+
+### **Defensive Programming**
+___
+
+To secure certain Django Views and ensure they are only accessible to registered users, permission classes have been set in the views.py file of each Django App.  Three classes have been used:
+
+* `IsAuthenticatedOrReadOnly` is a Django REST Framework built in permission class.  Requests for unauthenticated users are only permitted if the request method is one of the "safe" methods; `GET`, `HEAD` or `OPTIONS`.  This ensures that only logged in users are granted write permissions.
+
+* `IsOwnerOrReadOnly` is a custom class stored in rewind/permissions.py which extends DRF permissions.BasePermission. The method `has_object_permissions` defined within the class, returns a boolean value.  If the request method received is one of the "safe" methods, true is returned as all users are permitted to make these requests.  If not a safe method, true is only returned if the current user is the owner of an object.  This ensures that users can only update or delete an object that they own.  This is an important security consideration .  Although functionality to update and delete objects owned by another user is not provided in the user interface, this alone does not provide adequate protection.  Objects in the database could still be targeted using specific urls.  The inclusion of permission_classes add an additional layer of defence.
+
+* `ReadOnly` is a custom class stored in rewind/permissions.py which extends DRF permissions.BasePermission.  If the request method received is one of the "safe" methods, true is returned.  I added this custom permission to the ListCreateAPIView for eras, genres and categories to ensure that all users have read permissions but only admin users have permission to create new instances.
+
+```python
+permission_classes = [permissions.IsAdminUser|ReadOnly]
+```
+
+* Unit tests have been written to check the functionality of these permission classes.  Documentation for this can be found in the [TESTING.md](https://github.com/rkillickdev/rewind/blob/main/TESTING.md) file.
+
+### **Protection Of Sensitive Details**
+___
+
+Any keys containing sensitive data were stored in and retrieved from the env.py file during development. This was added to the gitignore file to ensure this data was never pushed to the GitHub repo.  For the deployed production version of the site hosted on Heroku, these sensitive keys are stored securely in the config vars.
+
+In the settings.py file, I have declared ```DEBUG = 'DEBUG' in os.environ```.  This means that DEBUG will only equate to True in development mode.  In production, the 'DEBUG' variable is not stored and therefore equates to False.  It is important for DEBUG not to be enabled in production, as this prevents users from seeing the detailed traceback displayed by Django if an exception is raised.  Although this is useful while in development mode, these messages could contain information about the site that we would not want the final user to see.
+
+<br>
+
+[Back to top &uarr;](#contents)
+
+## **Wireframes**
+
+Wireframes were created using [Balsamiq](https://balsamiq.com/wireframes/) and served as a blueprint for development of the site layout and structure.  Some layout modifications were made throughout the development process to provide better user experience, and these changes therefore supersede the wireframes.  The era/ genre/ category filtering functionality that has been marked as a future feature appears on the wireframes but has not yet been implemented in the production version of the app.
+
+<details><summary>Mobile devices</summary>
+
+<br>
+
+![Rewind wireframe mobile List Views](docs/wireframes/mobile/pp5-wireframe-mobile-list-views.png)
+
+![Rewind wireframe mobile Detail Views](docs/wireframes/mobile/pp5-wireframe-mobile-detail-views.png)
+
+![Rewind wireframe mobile Profile Views](docs/wireframes/mobile/pp5-wireframe-mobile-profile-views.png)
+
+![Rewind wireframe mobile Snapshot Forms](docs/wireframes/mobile/pp5-wireframe-mobile-form-views.png)
+
 </details>
 
- * [Back to Contents](#contents)
-
-## TECH STACK
-The site has been built with the following tech, tools and libraries
-
-### Languages and Frameworks
-
-* HTML5
-* CSS
-* JavaScript
-* React - javascript library
-* JSX - syntax extension for JavaScript
-* Python
-* Django - web framework
-* Django REST Framework - API framework
-* Django CORS - handles Cross Origin Resource Sharing
-* Django AllAuth - user authentication
-* Django Filter - filtering querysets
-* Psycopg2 - postgreSQL adapter for python
-* ElephantSQL - database hosting
-* Axios - promise API
-* JWT - JSON web token
-* Cloudinary - media hosting
-* Pillow - python image processing library
-* Gunicorn - WSGI HTTP server for UNIX
-* Bootstrap 4 and react-bootsrap - frontend responsive styling framework
-* Heroku - live site hosting
-
-
-### Tools and Libraries
-* GitHub Projects - agile management, kanban, roadmap and milestones
-* GitHub Repo - code storage
-* Git - version control
-* GitPod & VS Code - IDE
-* [Balsamiq](https://balsamiq.com/) - creating wireframes
-* [Coolors](https://coolors.co) - color pallette generator
-* [Image resizer](https://www.reduceimages.com/) - resizing images for optimal storage
-* [Canva](https://www.canva.com/) - creating artwork
-* Google Fonts - consistent typography
-* [Lucid Chart](https://lucid.app/) - creating a database schema
-* [Favicon](https://favicon.io/favicon-converter/) - favicon generator
-* [Responsive Image Generator](https://ui.dev/amiresponsive)
-* [BrowserStack](https://live.browserstack.com/) browser compatability tests
-* [Unsplash](https://unsplash.com/) - stock images
-* [FontAwesome](https://fontawesome.com/) - icons
-* [W3C HTML Validator](https://validator.w3.org/) - html code validation
-* [W3C CSS Jigsaw Validator](https://jigsaw.w3.org/css-validator/) - css code validation
-* LightHouse - measures performance, accessibility, best practices and SEO
-* Chrome Dev Tools - for development debugging
-* [PycodeStyle](https://pypi.org/project/pycodestyle/) - code analysis tool conforming to pep8
-* [CI Python Linter](https://pep8ci.herokuapp.com/) - code analysis tool conforming to pep8
-* Black - code formatter for python
-* Prettier - code formatter for html, css and javascript
-* ESLint - code analysis tool for javascript
-* APITestCase - DjangoRESTFramework test library
-* Jest - frontend testing library
-* MSW - Mock Service Worker for front-end testing
-* Coverage - measures code coverage of Python programs
-* Whitenoise - serving static files
-* React Router - routing and navigation, url management
-* React Infinite Scroll - continuous content loading
-
-### React Components
-
-React’s strengths come from reusable components.
-The following components were built and reused in different parts of the application, contributing to improved user experience:
-* < AllInvoicesPage />  - the main page that was used for viewing All Jobs, My Jobs, Assigned Jobs and Watched Jobs.
-   - This reusable component ensures that all views are based on the same code and therefore familiar to the user.
-* < Asset /> - used to display a spinner icon while loading data.
-   - Signals to the user that there is more data or actions to follow.
-* < BackToTop /> -  used to quickly navigate the user back to the top of the page.
-   - Assists the user with site navigation, especially on pages with a lot of data to scroll through.
-* < ConfirmationModal /> - used to add a confirmation layer for users before updating or deleting content.
-   - Assists the user by adding a step in between the action to confirm they want to make the change.
-* < FixedHeader /> - used to create a breadcrumb bar for viewing status
-   - Improves the user experience by letting them know which page they are on, especially useful for pages that look very similar such as the AllJobs, MyJobs and WatchedJobs pages.
-* < Footer /> - used on the Login and register screen.
-* < NavBar /> - used above every page.
-   - Improves the user experience by being fixed to the top of the page, the active page is highlighted very prominently in yellow, and if the user hovers over the icons on a desktop, they will see the menu label, or it will be identified by the aria-label for screen readers.
-* < Page Not Found /> - used as a landing page for any redirects.
-   - Ensures the user does not come across any broken links while navigating the site or entering non-existent urls.
-* < TimedAlert > - used to control how long alert and success messages are displayed on the screen.
-   - Improves the user experience by keeping them informed of actions and system updates.
-
-
-### Refactoring Opportunities
-
-Due to time constraints on completing this project, I was unable to refactor all of the code.  Two notable components could help streamline the app further:
-
-1. Dashboard used in AllJobs Page and AllInvoices Page
-2. Accordion used in JobCard and InvoiceCard
-3. Confrimation Modal used in Editing Jobs, Editing Invoices, Editing Profiles, and Deleting Jobs and Deleting Invoices.
-4. SuccessMessage Timeout function could benefit from being a resusable component.
-
-* [Back to Contents](#contents)
-
-
-## TESTING
-FOR DETAILED TEST REPORTS AND RESULTS PLEASE [VIEW THEM HERE:](https://github.com/rstan-dev/GarageGuru-PP5/blob/main/TESTING.md).
-
-  ### Tests performed
-  The site was thoroughly tested during development with each feature tested before committing to GitHub.  The testing regime included the following:
-  1. Incremental development and live testing.
-  2. Django Models Automated Testing using Jest.
-  3. Early user observation test.
-  4. React Tests.
-  5. Manual user story tests.
-  6. Django APITest re-run and additional automated testing using jest.
-  7. HTML, CSS, ESLINT, PYLINT, Lighthouse tests.
-  8. Browser Compatibility tests.
-  9. Final Production user tests
+<details><summary>Laptop/ Desktop/ Tablet(landscape)</summary>
 
-  ### User Story Tests
-  Each user story was tested manually according to a structured test sheet [VIEW IT HERE:](https://docs.google.com/spreadsheets/d/1esaHTm738sbXP-JMxzEvQ63mgN3IazsXGUL8tRsX0ZI/edit#gid=165646488), with results being recorded and any failures rectified.
+<br>
 
-  * [Back to Contents](#contents)
+![Rewind wireframe desktop List Views](docs/wireframes/desktop/pp5-wireframe-desktop-list-views.png)
 
-  ### Bugs resolved:
-  The following bugs were recorded and rectified [See test sheet](https://docs.google.com/spreadsheets/d/1esaHTm738sbXP-JMxzEvQ63mgN3IazsXGUL8tRsX0ZI/edit#gid=165646488)
-  1. Initially, there was a console warning “Access to XMLHttpRequest…from origin…has been blocked by CORS policy: No 'Access-Control-Allow-Origin' header is present on the requested resource.
-     * This was resolved by replacing and setting up the CI template correctly which had a lot of necessary settings
-  2. When refreshing the JobCard page the user was logged out.
-     * This was resolved by adding a missing "/" in axiosRes.get('/dj-rest-auth/user'). Helpfully discovered by tutor support.
-  3. Status Counts were not decrementing correctly.
-     * This was resolved by overriding the list and creating a function to calculate status counts on a distinct list of jobs by id in Jobs Views.py.
-  4. Watched Jobs icon was not toggling-on correctly on JobCard, AllJobs page and WatchedJobs page.
-     * Due to the complexity of the architecture, several attempts were made to resolve this. Eventually, a Route prop was passed from App.js to AllJobs page, depending on if it was filtering for Watched Jobs or not. A handleWatchStatusChange function was passed to JobCard. A similar function was added to JobPage which passed a prop to JobCard. The behaviour of the watch icon could then be managed depending on which page was serving the JobCard.
-  5. Deleting a reply was not working.
-     * This was resolved by creating a custom permission and updating the handleDelete function in EditCommentForm to filter out deleted comments to ensure a state update.
-  6. Comment Counter was not decrementing correctly when deleting comments and replies. This had been working previously but there were console warnings regarding updating state on unmounted components - caused by the confirmation modal. I addressed this warning by implementing an additional isMountedRef flag, however the counter was inadvertently affected, only when deleting a comment or reply.
-     * This was resolved by moving the decrement function from inside the isMountedRef flag.
-
-
-  * [Back to Contents](#contents)
-
-  ### Unresolved bugs:
-
-  There are no other known bugs at this time.
-
-
-  ### Improvements and future developments:
-  The app was initially built with enough basic fields and functionality to ensure I could deliver an MVP that would meet assessment criteria within the allocated time frame.
-
-  There is scope to improve the app that would enhance the user experience and add more valuable functions, that could easily be developed on top of the existing structure:
-
-  * Add consistent user feedback on the email and phone fields validation. Currently it is using the default browser message validation, and was left as is due to time constraints.
-
-  * Create a Manager Profile who has access to all profiles, jobs and invoices on the front end, to allow moderation and site overrides.  Currently, this work can be undertaken in the Django Admin area which has not been configured for any UX.
-
-  * Upgrade to Bootstrap 5 - will allow improved design and functionality for the Accordion and Modal components - negating the need for the deprecated findDOMNode method.
-
-  * Consider using a modal to contain comments and replies as per the original concept.
-
-  * Consider adding InfiniteScroll to the comment-replies section. This was left as it was deemed unlikely that there would be a vast number of replies to a single comment.  InfiniteScroll has been added to the parent comment list.
-
-  * The app has scope to extend its usability.  Additional fields can be added to the JobCard to capture more vehicle details.
-
-  * An Overdue status was originally added to the Job Status dropdown and is available as a choice in the model.  However, due to time constraints, this was omitted from the dashboard design.  It might be useful to filter and see Overdue Jobs
-
-  * Reports would be useful to the business to summarize Jobs and Invoices by User, Customer, Vehicle Type, Month, Job Type, Amount etc
-
-  * Additional functionality could be added to the Invoice module to be able to create and email the customer a PDF invoice.
-
-  * Additional fields could be added to the Profile Model allowing the user to update their email address and other contact details.
-
-  * A customer profile model and a resource availability model could be created allowing them to book a service for their own vehicle.
-
-  * There is scope to adapt this for other service businesses that need to track job details with an invoice function.
-
-
-  * [Back to Contents](#contents)
-
-## DEPLOYMENT
-  This project was built as a unified project, the benefits of this approach were:
-   * CORS would not be an issue as requests and responses will come from a shared base URL, both in development and production environments.
-   * Terminal logs for the API would be visible while interacting with the React side of the project during development, making debugging significantly easier.
-   * Development of both the API and the React project could take place simultaneously.
-   * With the front and back-end applications on the same domain, Cookies (containing the JSONWebToken) required for authentication would not be blocked from being set on browsers that currently have cross-site tracking protection enabled by default.
-
-  Initially, Django was installed following this Code Institute [DRF Cheatsheet](https://docs.google.com/document/d/1LCLxWhmW_4VTE4GXsnHgmPUwSPKNT4KyMxSH8agbVqU/edit#heading=h.mpopj7v69qqn)
-
-   1. Create a Cloudinary account and gather API key
-   2. Create ElephantSQL database and gather API key
-   3. Install Django
-   4. Create project
-   5. Install Cloudinary Storage
-   6. Install Pillow (image processing)
-   7. Update INSTALLED_APPs
-   8. Create env.py file
-       * Add CLOUDINARY_KEY (from Cloudinary API key)
-       * Add SECRET_KEY - (a unique password)
-       * ADD DATABASE_URL - (postgres ElephantSQL API key)
-       * ADD CLIENT_ORIGIN - (set to the value of your development environment URL, wrapped in quotes, prepended with https://)
-       * ADD ALLOWED_HOST - (set to the value of the development environment URL, wrapped in quotes)
-       * Add os.environ['DEBUG'] = '1'
-       * Add os.environ['DEV'] = '1'
-   9. Update settings.py
-       * CLOUDINARY_STORAGE
-       * Define Media Storage URL
-       * Set DEFAULT_FILE_STORAGE
-       * Set DATABASES
-
-  ### React was installed using the following steps
-
-   1. Create a folder in the root directory named “frontend”
-   2. Type “cd frontend” to change directory
-   3. Run this command: npx create-react-app . --template git+https://github.com/Code-Institute-Org/cra-template-moments.git --use-npm.
-   4. Remove redundant files from the frontend folder: rm -rf .git .gitignore README.md.
-   5. Freeze requirements
-   6. In settings.py remove all CORS code leaving only CORS_ALLOWED_ORIGINS
-   7. Add key to package.json - "proxy": "http://localhost:8000/"
-   8. Create “api” directory and axiosDefaults.js file in frontend/src/
-       * Add the following comment:
-       * // IMPORTANT!!
-       * // Because this React app is running in the same workspace as the API, there is no need to set a separate baseURL until you reach deployment. Setting a baseURL before you reach deployment will cause errors
-   9. Open the terminal and type python3 manage.py runserver - (the Django API will run on port 8000)
-   10. Open another terminal, cd frontend, and type npm start (the React application will run on port 8080 or 3000)
-   11. The React front-end logo should be visible.
-
-  ### Working in both the front and backend
-   1. Stop both servers
-   2. Set DEV in env.py - either commented out for frontend development or uncommented for backend dev.
-       * os.environ['DEV'] = '1'
-   3. Start backend server: python3 manage.py runserver
-   4. Start frontend server: npm start
-
-  ### Deployment to Heroku involved the following steps and changes:
-   1. Setup WhiteNoise for static files
-      * pip3 install whitenoise==6.4.0
-      * pip3 freeze > requirements.txt
-   2. Create a new empty folder called staticfiles in the root directly
-      * mkdir staticfiles
-   3. In settings.py,
-      * ensure ‘cloudinary_storage’ app name is below ‘django.contrib.staticfiles’.
-      * Add WhiteNoise below SecurityMiddleware and above SessionMiddleware in MIDDLEWARE list 'whitenoise.middleware.WhiteNoiseMiddleware',
-      * In TEMPLATES list set the DIRS key: os.path.join(BASE_DIR, 'staticfiles', 'build')
-      * In the static files section, add the STATIC_ROOT and WHITENOISE_ROOT variables and values:
-        * STATIC_ROOT = BASE_DIR / 'staticfiles'
-        * WHITENOISE_ROOT = BASE_DIR / 'staticfiles' / 'build'
-   4. In urls.py
-        * remove root_route view from imports, replace with: from django.views.generic import TemplateView
-        * In urlpatterns remove root_route and replace with: path('', TemplateView.as_view(template_name='index.html')),
-        * Add 404 handler below urlpatterns: handler404 = TemplateView.as_view(template_name='index.html')
-        * Update all urls except home and admin with: api/
-   5. Update axiosDefaults with baseURL: axios.defaults.baseURL = “/api”;
-   6. Collect the admin and DRF staticfiles to the empty staticfiles directory created earlier, with the following command in the terminal:
-       * python3 manage.py collectstatic
-       * cd frontend
-       * npm run build && mv build ../staticfiles/.
-   7. NOTE:  Anytime that static files are updated, including the react code:
-       * npm run build && rm -rf ../staticfiles/build && mv build ../staticfiles/.
-   8. Create a runtime.txt file and add the following: Python-3.9.16
-   9. Create a Procfile in the root directory and add: web: gunicorn drf_api.wsgi
-   10. Terminate all servers.
-       * Ensure DEBUG and DEV in env.py are commented out
-       * python3 manage.py runserver
-   11. Check project is displaying in the preview on port 8000
-   12. Log into your Heroku account, create a new app, and access the dashboard for your application
-   13. Go to Settings and open the Config Vars
-       * Add CLOUDINARY_KEY (the Cloudinary API key)
-       * Add SECRET_KEY - (the unique password)
-       * Add DATABASE_URL - (postgres ElephantSQL API key)
-       * Add CLIENT_ORIGIN - (set to the URL of the combined project, keeping the https:// at the beginning but removing the trailing slash at the end)
-       * Add ALLOWED_HOST - (set to the URL of your combined project, remove the https:// at the beginning and remove the trailing slash at the end)
-   14. Ensure your application has an ALLOWED_HOST key, set to the URL of your combined project, remove the https:// at the beginning and remove the trailing slash at the end
-   15. Ensure your application has a CLIENT_ORIGIN key and set it to the URL of your combined project. This time keep the https:// at the beginning but remove the trailing slash at the end
-   16. Go to the Deploy tab, connect the project to GitHub, and choose main branch to deploy
-       * Click Deploy Branch (manually)
-       * (Optional) Select Enable Automatic Deploys
-
-
-* [Back to Contents](#contents)
-
-## FORKING AND CLONING INSTRUCTIONS
-You can create a copy of a GitHub Repository without affecting the original by forking or cloning it.
-
-### Here's a step-by-step guide to forking:
-Forking is often used for proposing changes or using the project as a starting point for your own idea. Forking will apear on your GitHub profile.
-1. Log into GitHub or sign up for an account.
-2. Go to the [GarageGuru Repository](https://github.com/rstan-dev/GarageGuru-PP5)
-3. Click "Fork" on the right side of the repository's page to create a copy in your own repository.
-
-### Here's a step-by-step guide to cloning:
-Cloning is often used for experimenting locally.  It will not show up on your GitHub profile.
-1. Go to the [GarageGuru Repository](https://github.com/rstan-dev/GarageGuru-PP5)
-2. Click the green code button, then the arrow, and select the "clone by https" option to copy the URL.
-3. Open your preferred code editor and navigate to the directory where you want to clone the repository.
-4. Type 'git clone', paste the copied URL, and press enter. The repository will then be cloned to your machine.
-
-* [Back to Contents](#contents)
-
-## SECURITY SETTINGS
-The following precautions were taken regarding the security of the site:
-1. An env.py was created at the start of the project, and added to .gitignore, to contain the following settings:
-   - CLOUDINARY_URL
-   - SECRET_KEY
-   - DATABASE_URL
-   - CLIENT_ORIGIN
-   - ALLOWED_HOST
-2. These values were added to the Config Vars section of Heroku's Settings page.
-3. Heroku is configured with 2FA
-
-
-* [Back to Contents](#contents)
-
-## CREDITS:
-The entire concept was created specifically for this assessment and is not a copy of any walkthrough project.
-
-Initially, parts of the project were based on the Moments walkthrough project:
-  * CI Template for setting up the repo - [View Here](https://github.com/Code-Institute-Org/cra-template-moments)
-  * The Profile Model - similar to the Moments Profile model
-  * The Comments model - similar to the Moments Comments model but customised further for replies
-  * The Watch model - similar to the Moments Like model - with enhanced UX
-  * image_filter and validate_image - used from the Moments walkthrough
-  * APITestCase - Jobs tests initially written based on Moments PostList tests
-
-In React, certain components from the Moments walkthrough project were used or closely adapted:
-  * CurrentUserProvider - for current user context
-  * useToggleMenu -  similar to useClickOutsideToggle hook from Moments, to close the mobile nav menu
-  * InfintityScroll setup for Jobs, Invoices and Comments
-  * fetchMoredata - utility function to get more API data for use with Infinity Scroll
-  * setTokenTimestamp - utility function to decode the JWT refresh token and store its expiration timestamp in local storage.
-  * shouldRefreshToken - utility function to check if the refresh token's timestamp is stored in local storage.
-  * removeTokenTimestamp - utility function to remove the stored refresh token's expiration timestamp from local storage.
-  * React NavBar tests - adapted from Moments
-
-  ### Code
-  * All Python logic was written and developed specifically for this project, using the Moments walkthrough as a reference.
-  * All frontend HTML, CSS, JavaScript and JSX were incrementally written specifically for this project.
-
-  * [Back to Contents](#contents)
-
-  ### Resources
-  I used the following resources to help develop features and functionality:
-  1. [DjangoREST Framework](https://www.django-rest-framework.org/)
-  2. [Installing all-auth](https://dj-rest-auth.readthedocs.io/en/latest/installation.html)
-  3. [QuerySet annotate](https://docs.djangoproject.com/en/3.2/ref/models/querysets/#django.db.models.query.QuerySet.annotate)
-  4. [Django Filtering](https://www.django-rest-framework.org/api-guide/filtering/)
-  5. [Form Control elements](https://react-bootstrap.netlify.app/docs/forms/form-control/)
-  6. [Passing State through Link](https://medium.com/frontendweb/how-to-pass-state-or-data-in-react-router-v6-c366db9ee2f4)
-  7. [Use the describe test feature in React tests](https://jestjs.io/docs/api#describename-fn)
-  8. ChatGPT was used to help troubleshoot and explain code functions
-  9. Google and StackOverflow were also used for more context and understanding
-  10. I reached out to Code Institute team members and tutor support from time to time
-
-  I referred to several alumni student’s projects for further ideas and guidance:
-  * [MikeR94 - LeagueHub](https://github.com/MikeR94/ci-project-portfolio-5)
-  * [Mathew Hurrel - GearAddict](https://github.com/Matthew-Hurrell/gear-addict)
-  * [Jamie King - Tickit](https://github.com/jkingportfolio/ci_pp5_tick_it_react)
-
-  * [Back to Contents](#contents)
-
-  ### Content
-  * All profile names, content, jobs, invoices and comments are fictional and written specifically for this project.
-
-  * [Back to Contents](#contents)
-
-  ### Media
-  * The GarageGuru logo was custom-designed for this project.
-  * 24/7 icon created in Canva Pro.
-  * Vehicle pics - Royalty free from Canva Pro and Unsplash
-  * Profile pics - Royalty free from Unsplash
-  * Van pics - Royalty free from Canva Pro and Unsplash
-  * Icons - font awesome.
-
-  * [Back to Contents](#contents)
-
-  ### Acknowledgements
-  * Thanks to my mentor Mitko for your guidance through our project meetings
-  * I would like to thank several of the Code Institute staff for their help and support:
-    - Sean Murphy - for our weekly cohort slot where you gave me some invaluable help and advice on tricky issues.
-    - Oisin, Gemma, Martin and Joanne in Tutor Support for helping me solve a few issues throughout the times I needed help.
-  * And a special thanks to Jeffrey Frankfort for all your patience and support when I was spinning my wheels and doubting myself - You never stopped believing in me!
-
-  * [Back to Contents](#contents)
+![Rewind wireframe desktop Detail Views](docs/wireframes/desktop/pp5-wireframe-desktop-detail-views.png)
+
+![Rewind wireframe desktop Profile Views](docs/wireframes/desktop/pp5-wireframe-desktop-profiles-views.png)
+
+![Rewind wireframe desktop Form Views](docs/wireframes/desktop/pp5-wireframe-desktop-form-views.png)
+
+</details>
+
+<br>
+
+[Back to top &uarr;](#contents)
+
+## **STRUCTURE PLANE**
+
+## **Features**
+
+<details>
+<summary> Navbar
+</summary>
+
+<br>
+
+![Nav bar for unauthenticated user](docs/features/pp5-features-unauth-nav-bar.png)
+
+| | User Story | Acceptance Criteria Satisfied | 
+| --- | ------------ | :---: | 
+| [#2](https://github.com/rkillickdev/rewind/issues/2) | As a user I can access a navbar on every page so that navigation of the site is intuitive | Pass |
+___
+
+The NavBar component is displayed at the top of all pages.  In order to achieve this, it has been included as the first component in the return statement of `App.js`
+
+To the left of the navbar is the brand logo that is designed to instantly communicate the core aims of the site.  The use of a cassette tape aims to immediately make the user subconsciously aware that 'retro technology and music' is at the heart of the site's objectives.  The colours used in the brand logo are consistent with the colour scheme used throughout the rest of the site, which are designed to be retro in their feel.  The hover effect applied to the brand logo is consistent with the effect used for other clickable links throughout.  Clicking on the logo takes the site user back to the home page.
+
+To the right of the navbar, page links are displayed and a hover effect applied so users know they are clickable.  Links for the currently active page are styled using the site's dark colour.  Dependent on the status of the site user, links display as shown in the table below.  This helps to signal to the user their current authentication status.
+
+| Link | Visibility |
+| ---- | -------- |
+| Home |  All users |
+| For You | Logged in users |
+| Pinned |  Logged in users |
+| Profile | Logged in users |
+| Sign up |  Logged out users |
+| Sign in | Logged out users |
+| Sign out | Logged in users |
+
+___
+
+![Nav bar for authenticated user](docs/features/pp5-features-auth-nav-bar.png)
+
+The Profile link is coupled with an avatar.  If the user has edited their profile and added their own personal image, this is displayed.  A default image is displayed in cases where the user has not yet added an image.
+
+| | User Story | Acceptance Criteria Satisfied | 
+| --- | ------------ | :---: | 
+| [#6](https://github.com/rkillickdev/rewind/issues/6) | As a user I can see whether I am already logged in so that I am aware of my status and the features of the site I can access | Pass |
+___
+
+To ensure good user experience and satisfy the site owner's goal of responsive design across a range of device sizes, the navigation menu collapses down into a hamburger menu on screen sizes below 992px.  This prevents the navbar from feeling cluttered on smaller devices and the instantly recognisable hamburger icon ensures that site navigation remains intuitive for users.
+
+![Collapsed mobile nav links](docs/features/pp5-features-nav-bar-mobile-collapsed.png)
+
+___
+
+Clicking on the hamburger icon expands the nav links which are stacked vertically to the left of the screen.  Clicking on a link, the icon or anywhere else on the page collapses the nav menu.
+
+![Expanded mobile nav links](docs/features/pp5-features-nav-bar-mobile-expanded.png)
+
+___
+
+The React Router library is used to handle routing for the application, with specified urls routing the user to different pages.  However this happens without the browser refreshing as the router handles these changes in the React virtual DOM.  In reality each time a user navigates to a new 'page', it is always the same HTML page but with  different components rendered.
+
+| | User Story | Acceptance Criteria Satisfied | 
+| --- | ------------ | :---: | 
+| [#3](https://github.com/rkillickdev/rewind/issues/3) | As a user I can navigate the content of the site without the page refreshing so that content is accessed quickly and user experience is enhanced | Pass |
+___
+
+</details>
+
+<details>
+<summary> Sign Up Form
+</summary>
+
+<br>
+
+![Sign up form](docs/features/pp5-features-sign-up.png)
+
+Clicking on the 'Sign up' nav link renders the `SignUpForm` component where a new user can create an account.  This also provides a link to the 'Sign in' page, in case the user already has an account.
+
+| | User Story | Acceptance Criteria Satisfied | 
+| --- | ------------ | :---: | 
+| [#4](https://github.com/rkillickdev/rewind/issues/4) | As a user I can sign up and create a user account so that I can access additional site functionality only available to authenticated users  | Pass |
+___
+
+</details>
+
+<details>
+<summary> Sign In Form
+</summary>
+
+<br>
+
+![Sign in form](docs/features/pp5-features-sign-in.png)
+
+Clicking on the 'Sign in' nav link renders the `SignInForm` component where a user with existing credentials can sign in.  This also provides a link to the 'Sign up' page, in case the user does not yet have an account.
+
+| | User Story | Acceptance Criteria Satisfied | 
+| --- | ------------ | :---: | 
+| [#5](https://github.com/rkillickdev/rewind/issues/5) | As a user I can sign in using my existing credentials so that I can view my account and continue enjoying site functionality only accessible to authenticated users | Pass |
+___
+
+</details>
+
+<details>
+<summary> Snapshots Page
+</summary>
+
+<br>
+
+The SnapshotsPage component is rendered using the React Router whenever the user navigates to the exact url for 'Home', 'For You' or 'Pinned'.  
+
+![Snapshots search bar](docs/features/gifs/search-bar.gif)
+
+* A search bar positioned at the top of the page allows the user to search for snapshots based on their title, era, musical genre or category.  The filtering happens dynamically as the user types via the backend using the DRF SearchFilter as specified in `snapshots/views.py`.  Below the search bar, a list of snapshots is displayed.
+
+| | User Story | Acceptance Criteria Satisfied | 
+| --- | ------------ | :---: |
+| [#10](https://github.com/rkillickdev/rewind/issues/10) | As a user I can search snapshots by keywords so that I can filter results displayed by their text content or by era, genre or category of a snapshot | Pass |
+
+___
+
+![Sort snapshots](docs/features/gifs/pp5-sort-snapshots.gif)
+
+* Icons allowing user to sort snapshots by recommendation count, comment count or most recently updated are displayed when the SnapshotsPage component is rendered with the `home` prop passed to it.  Clicking on each of the icons re-orders the list of snapshots accordingly.
+
+| | User Story | Acceptance Criteria Satisfied | 
+| --- | ------------ | :---: |
+| [#11](https://github.com/rkillickdev/rewind/issues/11) | As a user I can choose to order the list by 'most recommended' or 'most talked about' so that I can view most popular snapshots first | Pass |
+
+___
+
+![Snapshots list all users infinite scroll](docs/features/gifs/pp5-infinite-snapshot.gif)
+
+* The `Snapshot` component is rendered for each snapshot in the list, each with a unique key (this is provided by the snapshot id).  This displays the Profile avatar and name of the owner, Snapshot image, title, date updated and description if available.  Exactly what else the user sees is determined by their authentication status and props passed into the component.  Pagination is set in Django so 5 snapshots are fetched at a time.  Infinite scrolling has been implemented so additional snapshots will be loaded as the user scrolls.
+
+___
+
+### **All Users**
+
+* All users navigating to the 'Home' page can view a list of all snapshots, ordered by the most recently updated.
+
+| | User Story | Acceptance Criteria Satisfied | 
+| --- | ------------ | :---: | 
+| [#9](https://github.com/rkillickdev/rewind/issues/9) | As a user I can view all snapshots posted so that I can get an overview of the type of content available on the site and decide whether I would like to sign up | Pass |
+
+___
+
+### **Unauthenticated User**
+
+![Snapshot unauthenticated user](docs/features/pp5-features-snapshot-unauth.png)
+
+* Icons and tallies for recommendation and comment counts are displayed.  If the user tries to recommend the snapshot, a tooltip provides feedback that they must be signed in to carry out this action.  If audio samples belong to the snapshot, a waveform icon is displayed.  Clicking on the comments icon or waveform directs the user to the Snapshot Detail Page.
+
+___
+
+![Home unauthenticated user](docs/features/pp5-features-home-unauth.png)
+
+* To the right of the Snapshot list, a re-useable `UserDirection` component is rendered to display a hero image and 'call to action' button, encouraging the user to 'get started' by signing up.
+
+___
+
+### **Authenticated User**
+
+![Add snapshot icon](docs/features/gifs/add-snapshot.gif)
+
+* The AddSnapshot component is rendered.  This displays a clickable icon which directs the user to the `SnapshotCreateForm`
+
+___
+
+![Recommend snapshots](docs/features/gifs/recommend-snapshot.gif)
+
+* Users can recommend/ remove recommendations for snapshots that they do not own.  If they own the snapshot and attempt to recommend, a tooltip provides feedback that they cannot carry out this action.
+
+| | User Story | Acceptance Criteria Satisfied | 
+| --- | ------------ | :---: | 
+| [#22](https://github.com/rkillickdev/rewind/issues/22) | As a logged in user I can recommend a snapshot so that I can show my appreciation of another user's post and encourage others to view it  | Pass |
+
+___
+
+![Pin snapshots](docs/features/gifs/pin-snapshot.gif)
+
+* Users can pin/ remove pins for any snapshot.
+
+| | User Story | Acceptance Criteria Satisfied | 
+| --- | ------------ | :---: | 
+| [#23](https://github.com/rkillickdev/rewind/issues/23) | As a logged in user I can pin any snapshots of interest while browsing the site so that I can build a list of posts to return to later   | Pass |
+
+___
+
+![Set preferences message](docs/features/new-user-preference-message.png)
+
+* If a user has not set their profile preferences, a `UserDirection` component is rendered with props passed to display a reminder message and button directing them to their profile edit page.
+
+* The RelevantProfiles component is rendered to the right of the snapshot list (see description of the component below).
+
+___
+
+![For You page follow profiles](docs/features/gifs/pp5-follow-profiles-for-you-page.gif)
+
+* Authenticated users navigating to the 'For you' page can view a list of snapshots filtered by any snapshot belonging to a profile they are following.  This stage of the filtering is carried out on the backend, with the required filterset field passed to the component as a prop.  Returned results are ordered according to recommendation count (descending order).
+
+___
+
+![For You page no results](docs/features/pp5-for-you-no-results.png)
+
+* If a user has not followed any other profiles, a reuseable `Asset` component is rendered to display a message encouraging the user to start following other profiles to fill the page.
+
+___
+
+![For You page filtered by user preferences](docs/features/gifs/pp5-for-you-filter-by-prefs.gif)
+
+* If a user has specified their preferences on the profile edit page, Snapshots on the 'For You' page will be further filtered on the frontend to match these preferences.  This ensures that each user receives bespoke content best matched to their interests.  If the frontend filtering returns no results, by default snapshots belonging to all followed profiles are displayed.
+
+___
+
+![Pinned page](docs/features/gifs/add-to-pinned-page.gif)
+
+* Authenticated users navigating to the 'Pinned' page can view a list of all snapshots that they have pinned, ordered by most recently created (descending order).
+
+___
+
+![Remove from Pinned page](docs/features/gifs/remove-pins.gif)
+
+* Pins can be removed for a snapshot on the 'Pinned' page and the list dynamically updates in response to this, so the targeted snapshot is no longer displayed.
+
+___
+
+</details>
+
+<details>
+<summary> SnapshotCreateForm
+</summary>
+
+<br>
+
+![Create snapshot success](docs/features/gifs/pp5-create-snapshot-success.gif)
+
+* The `SnapshotCreateForm` component is rendered by the react router when a user navigates to the `/snapshots/create` url.
+
+* To successfully create a new snapshot, the user must select an image and input a title.  Description is optional.  The snapshot must also be given an era, genre and category.
+
+* On successful submission, a toast alert is used to notify users that the snapshot has been created.
+
+| | User Story | Acceptance Criteria Satisfied | 
+| --- | ------------ | :---: |
+| [#13](https://github.com/rkillickdev/rewind/issues/13) | As a logged in user I can post image snapshots so that I can share my nostalgic memories with other site users | Pass |
+
+___
+
+</details>
+
+<details>
+<summary> Snapshot Page
+</summary>
+
+<br>
+
+![Snapshot detail page](docs/features/pp5-snapshot-detail-unauth.png)
+
+* The SnapshotPage component is rendered using the React Router whenever the user navigates to the exact url `/snapshots/:id`.  This renders a `Snapshot` component, displaying details for a snapshot specified by the id supplied in the url.
+
+| | User Story | Acceptance Criteria Satisfied | 
+| --- | ------------ | :---: |
+| [#16](https://github.com/rkillickdev/rewind/issues/16) | As a user I can view a snapshot detail page so that I can read the full description of the snapshot and any associated comments and samples | Passed |
+
+ ___
+
+ Additionally, the following components are rendered:
+
+### **Unauthenticated User**
+
+* A list of approved samples relating to the associated snapshot is displayed below the `Snapshot` component, with the `Sample` component used to render each sample.  Each has it's own unique key (this is provided by the sample id).  A rendered Sample component displays the Profile avatar and name of the sample owner.  A media player to audition the audio sample is also displayed.  To ensure good user experience, the user must instigate playback of the sample themselves.
+
+* A list of comments relating to the associated snapshot is displayed below the `Snapshot` component, with the `Comment` component used to render each comment.  Each has it's own unique key (this is provided by the comment id).  A rendered Comment component displays the Profile avatar and name of the comment owner, the comment and the date updated.
+
+* If no comments are associated with the snapshot, a message is displayed to the user to convey this information.
+
+### **Authenticated User**
+
+![Sample and comment create forms](docs/features/pp5-snapshot-detail-auth.png)
+
+* The `SampleCreateForm` component is rendered above the `Snapshot` component.  This provides users with the ability to select an audio file and upload.  On successful upload, a toast alert is used to notify users that the new sample has been created.
+
+<br>
+
+![Sample create](docs/features/gifs/pp5-sample-create.gif)
+
+
+| | User Story | Acceptance Criteria Satisfied | 
+| --- | ------------ | :---: |
+| [#14](https://github.com/rkillickdev/rewind/issues/14) | As a logged in user I can upload audio clips when creating a snapshot so that I can share audio memories with other site users | Pass |
+
+___
+
+![Comment create](docs/features/gifs/pp5-comment-create.gif)
+
+* The `CommentCreateForm` component is rendered above the `Snapshot` component.  This provides a text area input field where users can write a comment.  While this field is empty, the 'post' button is disabled.  Only when text has been entered can the comment be posted.  On successful creation of a comment, a toast alert is used to notify users that the new comment has been created.
+
+| | User Story | Acceptance Criteria Satisfied | 
+| --- | ------------ | :---: |
+| [#18](https://github.com/rkillickdev/rewind/issues/18) | As a logged in user I can comment on another user's snapshot so that I can share my thoughts and interact with the Rewind community | Passed |
+
+___
+
+### **Authenticated & Owner of Snapshot**
+
+![Snapshot owner edit delete icons](docs/features/pp5-snapshot-owner-detail.png)
+
+* The `EditDelete` component is rendered within the `Snapshot` component.  This displays clickable icons for editing or deleting the snapshot.
+
+![Snapshot edit](docs/features/gifs/pp5-snapshot-edit.gif)
+
+* Clicking on the edit icon directs the user to the url path `/snapshots/:id/edit`.  This route renders the SnapshotEditForm component.  Here a user can update details of their Snapshot.  On successful submission, a toast alert is used to notify users that the snapshot has been updated.
+
+| | User Story | Acceptance Criteria Satisfied | 
+| --- | ------------ | :---: |
+| [#17](https://github.com/rkillickdev/rewind/issues/17) | As a logged in user I can edit my own snapshots so that I can update and amend the details of my original post | Passed |
+
+___
+
+![Snapshot delete](docs/features/gifs/pp5-snapshot-delete.gif)
+
+* Clicking on the delete icon triggers rendering of the `ModalPopup` component.  This allows the user to confirm that they definitely want to delete the snapshot.  Upon successful deletion, a toast alert is used to notify users that the snapshot has been deleted.
+
+___
+
+### **Authenticated & Owner of Comment**
+
+![Comment owner edit delete icons](docs/features/pp5-snapshot-detail-comment-owner.png)
+
+* The `EditDelete` component is rendered within the `Comment` component.  This displays clickable icons for editing or deleting the snapshot.
+
+![Edit comment](docs/features/gifs/pp5-comment-edit.gif)
+
+* Clicking on the edit icon renders the `CommentEditForm` component in place of the `Comment` component.  Here a user can update the content of their comment.  On successful submission, a toast alert is used to notify users that the comment has been updated.
+
+| | User Story | Acceptance Criteria Satisfied | 
+| --- | ------------ | :---: |
+| [#19](https://github.com/rkillickdev/rewind/issues/19) | As a logged in user I can edit my own comments so that I can amend and update my thoughts | Passed |
+
+___
+
+![Delete comment](docs/features/gifs/pp5-comment-delete.gif)
+
+* Clicking on the delete icon triggers rendering of the `ModalPopup` component.  This allows the user to confirm that they definitely want to delete the comment.  Upon successful deletion, a toast alert is used to notify users that the comment has been deleted.
+
+| | User Story | Acceptance Criteria Satisfied | 
+| --- | ------------ | :---: |
+| [#20](https://github.com/rkillickdev/rewind/issues/20) | As a logged in user I can delete my own comments so that I can control whether a previous comment remains visible to other site users | Passed |
+
+___
+
+### **Authenticated & Owner of Sample**
+
+![Sample owner delete icon](docs/features/pp5-snapshot-detail-sample-owner.png)
+
+* If a sample has not been approved by an administrator, an opacity effect is applied to the sample.  A tooltip is displayed when hovering over the pending icon to notify the user that approval is pending.
+
+* The `EditDelete` component is rendered within the `Sample` component.  As the user only has the ability to delete samples, only the `handleDelete` prop is passed to EditDelete.  This displays a  clickable icon for deleting the sample.
+
+![Sample delete](docs/features/gifs/pp5-sample-delete.gif)
+
+* Clicking on the delete icon triggers rendering of the `ModalPopup` component.  This allows the user to confirm that they definitely want to delete the sample.  Upon successful deletion, a toast alert is used to notify users that the sample has been deleted.
+
+___
+
+</details>
+
+<details>
+<summary> Relevant Profiles
+</summary>
+
+<br>
+
+The `RelevantProfilePage` component is rendered as part of the `SnapshotsPage` component, if the user is authenticated.
+
+![Popular profiles](docs/features/popular-profiles.png)
+
+* If the user has not yet specified any preferences on their profile edit page, the rendered `RelevantProfilePage` component displays a list of popular profiles in descending order, based on the number of followers each profile has.  In this scenario, every user will be presented with the same list.  However, code has been implemented to ensure that the logged in user's own profile does not appear in the list they are presented with.
+
+___
+
+![Relevant profiles](docs/features/relevant-profiles.png)
+
+* If the user has selected their preferences on the Profile Edit page, these are retrieved via the `CurrentUserContext`.  This information is then used to carry out frontend filtering of the 'popular profiles' list to return a list of suggested profiles whose interests/ preferences are most closely aligned with the current user.  It's possible that no results are returned, especially while the database of profiles grows.  In this case, the list of popular profiles are displayed as a default.
+
+<br>
+
+![Set profile prefs](docs/features/gifs/pp5-set-profile-prefs.gif)
+
+| | User Story | Acceptance Criteria Satisfied | 
+| --- | ------------ | :---: |
+| [#28](https://github.com/rkillickdev/rewind/issues/28) | As a logged in user I can view suggested profiles so that I can decide whether their previous snapshot posts are of interest to me | Pass |
+
+___
+
+* For each profile in the returned list, the `Profile` component is rendered.  It accepts the profile data as a prop, destructures this and uses it to display the Avatar and name for the associated profile.  If the logged in user is not following a profile, a 'follow' button is displayed.  Once they are following a profile, an 'unfollow' button is displayed.
+
+| | User Story | Acceptance Criteria Satisfied | 
+| --- | ------------ | :---: |
+| [#29](https://github.com/rkillickdev/rewind/issues/29) | As a logged in user I can choose to follow profiles that are posting interesting content so that I can be updated with more of their posts in the future | Pass |
+
+___
+
+</details>
+
+<details>
+<summary> Profile Page
+</summary>
+
+<br>
+
+### **Unauthenticated User**
+
+![Profile page unauthenticated user](docs/features/profile-page-unauth.png)
+
+* The `ProfilePage` component is rendered using the React Router whenever the user navigates to the exact url `/profiles/:id`.  This displays the following details for a profile specified by the id supplied in the url:
+
+  * Image
+  * Profile Name
+  * The number of snapshots the profile has added
+  * The number of followers the profile has
+  * The number of other profiles that the specified profile is following
+
+* For every snapshot associated with the profile, a `Snapshot` component is rendered beneath the profile details.
+
+| | User Story | Acceptance Criteria Satisfied | 
+| --- | ------------ | :---: |
+| [#26](https://github.com/rkillickdev/rewind/issues/26) | As a user I can view the profile pages of other site users so that I can learn more about them and the type of content they are posting | Pass |
+
+___
+
+### **Authenticated User**
+
+![Profile page follow](docs/features/gifs/profile-follow.gif)
+
+<br>
+
+* The profile id of the selected profile page is compared with the profile id of the current user.  If the logged in user is not the owner of the profile, a follow/ unfollow button is displayed.
+
+___
+
+### **Authenticated & Profile Owner**
+
+![Profile page owner](docs/features/profile-page-owner.png)
+
+* The `ProfileEditOptions` component is rendered below the profile details and 3 icons displayed:
+
+  * Edit profile directs the user to the following url `/profiles/:id/edit`.  The react router renders the `ProfileEditForm` component
+  * Edit username directs the user to the following url `/profiles/:id/edit/username`.  The react router renders the `UsernameForm` component.
+  * Change password directs the user to the following url `/profiles/:id/edit/password`.  The react router renders the `UserPasswordForm` component.
+
+___
+
+</details>
+
+<details>
+<summary> Profile Edit Form
+</summary>
+
+<br>
+
+![Profile edit page](docs/features/gifs/profile-edit.gif)
+
+| | User Story | Acceptance Criteria Satisfied | 
+| --- | ------------ | :---: |
+| [#25](https://github.com/rkillickdev/rewind/issues/25) | As a logged in user I can edit the details of my profile so that I can update my profile pic, bio details and preferences for era, musical genre and category | Pass |
+
+___
+
+</details>
+
+<details>
+<summary> Username Form
+</summary>
+
+<br>
+
+![Profile change username](docs/features/gifs/profile-change-username.gif)
+
+| | User Story | Acceptance Criteria Satisfied | 
+| --- | ------------ | :---: |
+| [#27](https://github.com/rkillickdev/rewind/issues/27) | As a logged in user I can update my username and password so that I can choose how my name is displayed to other users and to ensure my login credentials remain secure | Pass |
+
+___
+
+</details>
+
+<details>
+<summary> User Password Form
+</summary>
+
+<br>
+
+![Profile change password](docs/features/gifs/profile-change-password.gif)
+
+___
+
+</details>
+
+<details>
+<summary> Sign Out
+</summary>
+
+<br>
+
+![User sign out](docs/features/gifs/sign-out.gif)
+
+| | User Story | Acceptance Criteria Satisfied | 
+| --- | ------------ | :---: |
+| [#7](https://github.com/rkillickdev/rewind/issues/7) | As a user I can sign out from the site so that no one else using my device can access my account | Pass |
+
+___
+
+</details>
+
+<details>
+<summary> Footer
+</summary>
+
+<br>
+
+![Footer](docs/features/pp5-feature-footer.png)
+
+* A simple Footer component is rendered on each page.  The GitHub profile name of the site developer is displayed and a clickable GitHub icon that directs the user to the repository for the Rewind App in a new browser tab.
+___
+
+</details>
+
+<details>
+<summary> 404 Error Page
+</summary>
+
+<br>
+
+![404 Error Page](docs/features/gifs/404-error.gif)
+
+I have included a custom 404 error page as a form of defensive design. This improves the user experience by keeping the user informed about the problem and engaged with the site. The styling, imagery and branding used on this page is consistent with the rest of the user experience. To ensure the user does not decide to navigate away from the site, a 'Go Home' button is displayed. This also ensures they do not have to use the back button in their browser for navigation.
+
+The custom error page has been implemented in `App.js`.  If a url entered by the user matches none of the Route paths specified, the NotFound component is rendered.
+
+___
+
+</details>
+
+<details>
+<summary> Modals
+</summary>
+
+<br>
+
+![Modal confirm delete](docs/features/pp5-modal-delete-confirm-merge.png)
+
+Modals are used to confirm delete actions throughout the app.
+
+___
+
+</details>
+
+<details>
+<summary> Toasts
+</summary>
+
+<br>
+
+![Toast notifications 1](docs/features/pp5-toast-notification-merge-1.png)
+
+___
+
+![Toast notifications 2](docs/features/pp5-toast-notification-merge-2.png)
+
+Bootstrap Toasts are used throughout the app to notify users when their actions have been successful.
+
+___
+
+</details>
+
+<details>
+<summary> Alerts
+</summary>
+
+<br>
+
+![Form field alerts](docs/features/pp5-form-field-alerts.png)
+
+___
+
+![API error alerts](docs/features/pp5-api-error-alerts.png)
+
+Alerts are used throughout the app to warn the user of form field errors and errors associated with requests to the DRF API.
+
+___
+
+</details>
+
+<details>
+<summary> Error Boundaries
+</summary>
+
+<br>
+
+Alongside the Alerts I implemented to notify the user of API errors, I also used error boundaries in React as a form of error handling.  I used [this article](https://blog.logrocket.com/react-error-handling-with-react-error-boundary/#error-boundaries-react) to understand and successfully integrate with the project.  I made use of the react-error-boundary library, wrapping the `ErrorBoundary` component round the whole App in `index.js` to catch any errors.  `FallbackComponent` is rendered whenever the ErrorBoundary catches an error, to display a message to the user and provide a button to reset the error state and try rendering the component again.  When this button is clicked, it calls resetErrorBoundary, which triggers the onReset function and clears the error state.  I have specified that the onReset function should direct the user back to the home page.
+
+This is a good example of where installation and implementation of a frontend library has helped to provide an enhanced user experience.  It aims to prevent a situation where the app crashes and the user is faced with a blank screen and no feedback.
+
+<br>
+
+![Error boundaries](docs/features/gifs/error-boundary.gif)
+
+___
+
+</details>
+
+<details>
+<summary> Favicon and Meta Tags
+</summary>
+
+<br>
+
+A favicon link has been included in the head of the index.html file and displays in each browser tab. The image is the same icon that is used in the navbar brand heading, to ensure consistency of styling.  It is a 16px X 16px ico file generated on the [Favicon.ico & App Icon Generator](https://www.favicon-generator.org/)
+
+![Favicon Image](docs/features/pp5-favicon-cassette-orange-logo.png)
+
+Open Graph and Twitter meta tags have been placed in the head of the index.html template to control how the URL is displayed when shared on social media.  It appears as displayed below:
+
+![Meta tag social displays](docs/features/pp5-meta-tags-merged.png)
+
+___
+
+</details>
+
+<details>
+<summary> Responsive Design
+</summary>
+
+<br>
+
+I adopted a mobile first approach when designing and building the site. Bootstrap's grid system and responsiveness tiers were used to provide different layouts according to default breakpoints and ensure responsiveness across a range of device sizes. Additional styling tweaks were made using media queries in component css files.
+
+![Responsive design mobile 1](docs/features/mobile/pp5-mobile-merge-1.png)
+
+___
+
+![Responsive design mobile 2](docs/features/mobile/pp5-mobile-merge-2.png)
+
+___
+
+![Responsive design mobile 3](docs/features/mobile/pp5-mobile-merge-3.png)
+
+___
+
+![Responsive design mobile 4](docs/features/mobile/pp5-mobile-merge-4.png)
+
+___
+
+![Responsive design mobile 5](docs/features/mobile/pp5-mobile-merge-5.png)
+
+___
+
+![Responsive design mobile 6](docs/features/mobile/pp5-mobile-merge-6.png)
+
+___
+
+</details>
+
+<details>
+<summary> Accessibility
+</summary>
+
+<br>
+
+To ensure that the site is as accessible as possible for all users and compatible with screen readers, I have implemented the following:
+
+* Semantic markup used to structure the HTML code.
+* Checked that the colour contrast ratio across the website meets acceptable standards.
+* Descriptive alt attributes have been given to all images.
+* Aria labels have been used for interactive elements where no accessible name is provided.
+
+I used the [Wave Chrome Extension](https://wave.webaim.org/extension/) to check the accessibility of each page,  Results for this can be viewed in the [TESTING.md file](https://github.com/rkillickdev/rewind/blob/main/TESTING.md)
+
+</details>
+
+<details>
+<summary> CRUD functionality
+</summary>
+
+<br>
+
+The Rewind app features full CRUD functionality on the Front-End UI, implemented through the code written in React. This allows users to work with records from the Django REST Framework API.
+
+`CREATE` - Users can sign up which creates a new user account and associated profile.  Once authenticated, users can create snapshots, comments and samples.
+
+`READ` - All users can read their own and other user's snapshots, comments and profile.  They can read their own samples and those of other user's that have been approved by an administrator.
+
+`UPDATE` - Authenticated users can update their own profile, snapshots and comments.  They do not have required permissions to update an object belonging to another user.
+
+`DELETE` - Authenticated users can delete their own snapshots, comments and samples.  They do not have required permissions to delete an object belonging to another user.
+
+I have also ensured that regular site users only have **read only** access to the era, genre and category models.  This is so instances of these models can be displayed in form select fields, but I do not want users to have the ability to create, update or delete instances.  
+
+</details>
+
+<details>
+<summary> Django Admin Panel
+</summary>
+
+<br>
+
+Models for the site can be accessed and manipulated from the Django Admin panel by entering the url `https://rkdev-rewind-ed88f8459fe7.herokuapp.com/admin`.  The designated superuser has total control over this.  At the moment  an administrator can only create update or delete instances of the Era, Genre or Category models via the admin panel.  Eventually functionality to carry out these actions from the frontend user interface could be implemented.  I have also written the `approve_samples` method in samples/admin.py, which enables an administrator to set `approved=True` for a sample once they are satisfied that the content is appropriate for other site users.
+
+![Django Admin Panel](docs/features/pp5-django-admin-panel.png)
+
+</details>
+
+<details>
+<summary> Future Features
+</summary>
+
+<br>
+
+Functionality and features that are not within the scope of this project, but that could be implemented in future sprints to enhance the user experience include:
+
+* Additional filtering capabilities, for example client side filtering to only view snapshots associated with a certain genre/ era/ category.  This would be especially helpful as content on the site increases and additional genres/eras/categories are added.  A user story for this feature was created during the planning phase, so this has been returned to the Product Backlog for now and placed in the Future Features column on the project kanban board.  Implementation of this feature will be addressed in a future sprint.
+
+| | User Story | Acceptance Criteria Satisfied | 
+| --- | ------------ | :---: |
+| [#39](https://github.com/rkillickdev/rewind/issues/39) | As a user I can filter the list of snapshots on the home page by era, genre and category so that I can view snapshots most relevant to my interests  | Future Feature |
+
+___
+
+<br>
+
+* Playback of samples is currently handled using the HTML audio element.  To improve styling and capabilities of this playback controller, it might be worth building an audio player tailored to the requirements of the site.
+
+* Allow users to specify multiple genre/era/category preferences.
+
+* Include option of video upload.
+
+</details>
+
+<br>
+
+[Back to top &uarr;](#contents)
+
+## **Re-use of components**
+
+Custom re-useable components were created with the intention of reducing code duplication throughout the app.
+
+### `AddSnapshot.js`
+
+Used to include the icon for adding a snapshot on any page where this functionality is required.
+
+### `AlertPopup`
+
+Designed to warn and inform users when errors occur.  This calls the useAlert custom hook, de-structures the type and text of the alert and uses this information to display feedback to the user.  I have made use of this component when catching errors related to API requests, so the user is always notified if a problem occurs.
+
+### `Asset.js`
+
+This is a multi purpose component that renders content based on the props passed to it.  It can be used to display an image, message or Bootstrap spinner while waiting for data to load.
+
+### `Avatar`
+
+Used to display the profile images and names of users throughout the app.  It accepts the src and name props as a way of passing the required profile data for each occurrence of the Avatar component.  It also accepts a height prop, set as a default to 45px but this can be over written if a larger version of the Avatar is required.  The height passed is also used to determine the width of the image.
+
+### `EditDelete.js`
+
+A flexible re-useable way of rendering edit and delete icons to the page wherever required.  It accepts handleEdit and handleDelete as props which are used to set the onClick functionality of each icon.  Dependent on the props passed to the component, both or just a single icon can be displayed.  For example when using the EditDelete component next to samples, only the delete icon is required as there is no included functionality to update a sample.
+
+### `Error.js`
+
+Used to render the ErrorFallback page when an error is detected by an error boundary.  It accepts error and resetErrorBoundary as props.  The error prop could be used to display the exact error to the user, although for now I have chosen to use a more generic, less technical message.
+
+### `Footer.js`
+
+Used to render a simple footer to all pages.
+
+### `ModalPopup`
+
+Used throughout the app as an additional layer of protection when deleting snapshots, comments and samples.  It accepts `title`, `message` and `buttonLabel` props so each modal can be rendered according to its required purpose.  The `show` and `handleClose` props handle changes to the state of the modal.  It also accepts the `onChange` prop, as a way of passing a function that is then assigned to the onClick attribute of the confirm button.
+
+### `NavBar.js`
+
+This component is rendered at the top of every page as a way of displaying navigation links based on the user's authentication status.
+
+### `NotFound.js`
+
+Displays a message  and home redirection button if a user attempts to navigate to a url path that does not exist.
+
+### `ToastPopup.js`
+
+Similar in function to the `AlertPopup` but this component is used to handle displaying user feedback for CRUD functionality throughout the app.  For example, successful creation, update or deletion of comments.  When the useAlert hook is called and type/ text de-structured, if the `type` is 'success', a Bootstrap Toast is rendered displaying the `text` as a message.
+
+### `UserDirection.js`
+
+A flexible component used to render images, messages and buttons based on props passed to it.  For example, it is used to display the home page call to action box for non-authenticated users or the 'set preferences' box for newly authenticated users.
+
+## **Custom hooks**
+
+### `useAlert.js`
+
+Calling this hook makes use of the functionality provided by AlertContext.
+
+### `useClickOutsideToggle.js`
+
+Used to ensure that clicks outside of an expanded menu still result in it closing.  This is called in the NavBar component.
+
+### `useRedirect`
+
+Used as a way of redirecting a user to the homepage based on their log in status.
+
+## **Custom contexts**
+
+### `AlertContext.js`
+
+Created to provide users with a range of feedback messages throughout the app, dependent on the alert `type`.
+
+### `CurrentUserContext.js`
+
+Used to determine the current user's logged in state.
+
+### `OptionsContext.js`
+
+Provides available eras, genres and categories to include when rendering form select options.  This is used when creating/ editing snapshots and profiles.
+
+### `ProfileDataContext.js`
+
+Provides profileData to child components throughout the app.  It also provides access to setProfileData, handleFollow and handleUnfollow.  For example, one user following another profile will update the profileData state which will then be reflected to all other users accessing profileData.
+
+<br>
+
+[Back to top &uarr;](#contents)
+
+## **SURFACE PLANE**
+
+## **Colour Palette**
+
+Initial inspiration for the colours used throughout the app came from a classic piece of retro hardware, the Roland TR808 drum machine.
+
+![Colour palette inspiration](docs/surface-plane/roland-808-palette-inspiration.webp)
+
+<br>
+
+I used this imagery to build a colour palette with the palette generator tool on the [coolors](https://coolors.co/) website.  I found that I needed to tweak some colours to ensure contrast ratios meet acceptable standards.
+
+![Generated colour palette](docs/surface-plane/pp5-rewind-colour-palette.png)
+
+___
+
+## **Typography**
+
+Spacing and typography is consistent throughout the app to provide the user with a sense of familiarity as they navigate between pages. Font awesome icons are used alongside informational headings to hint at content. The following fonts have been selected from Google Fonts and imported in the head of the index.html file.
+
+* Ubuntu - main App text
+* Amatic SC - feature text
+* Bungee Spice - Navbar logo
+
+The Bungee Spice font matches well with the colour themes and retro imagery of the site.
+
+![Logo Font](docs/surface-plane/bungee-spice-logo-text.png)
+
+___
+
+## **Imagery**
+
+Static images used throughout the site have been chosen to tie in with the retro theme of the app.
+
+![App surface plane imagery](docs/surface-plane/pp5-surface-plane-imagery-merge.png)
+
+
+The brand logo used in the navbar has been chosen to evoke feelings of nostalgia and links well to the App name 'Rewind' - a nod to an age where 'rewinding cassette tapes was part of daily life. The colour scheme used is consistent with the rest of the site.
+
+![App brand logo](docs/features/pp5-favicon-cassette-orange-logo.png)
+
+___
+
+# **Technologies Used**
+
+## **Languages Used**
+
+* [HTML5](https://developer.mozilla.org/en-US/docs/Glossary/HTML5)
+* [CSS3](https://developer.mozilla.org/en-US/docs/Web/CSS)
+* [Javascript](https://developer.mozilla.org/en-US/docs/Web/JavaScript)
+* [Python](https://www.python.org/)
+
+## **Programs and Tools Used**
+
+* [Git](https://en.wikipedia.org/wiki/Git) -  Version control.
+* [GitHub](https://github.com/) - All files for the project stored and saved in a repository.
+* [Gitpod](https://www.gitpod.io/) - IDE used to write the code, make git commits and push to GitHub.
+* [Heroku](https://dashboard.heroku.com/apps) - For deployment of the project.
+* [ElephantSQL](https://www.elephantsql.com/) - a PostgreSQL database used for the deployed production site.
+* [Cloudinary](https://www.cloudimage.io/) - Used to store user uploaded images and audio files.
+* [W3C](https://validator.w3.org/) - HTML Validator
+* [W3C jigsaw](https://jigsaw.w3.org/css-validator/) - CSS Validator
+* [PEP8](https://pep8ci.herokuapp.com/) - CI Python Linter.
+* [ESLint](https://eslint.org/) - linting utility for JavaScript and JSX
+* [Prettier](https://prettier.io/) - An opinionated code formatter used in conjunction with ESLint
+* [Black](https://www.freecodecamp.org/news/auto-format-your-python-code-with-black/) - Python Auto Formatter.
+* [Google Lighthouse](https://developer.chrome.com/docs/lighthouse/overview/) - Used at testing stage to show statistics for performance, accessibility, best practices and SEO.
+* [Google DevTools](https://developer.chrome.com/docs/devtools/) - Used throughout build of website for debugging, checking responsiveness and trialing new features/ styling.
+* [Google Fonts](https://fonts.google.com/) - Used to import required fonts for the app.
+* [Font Awesome](https://fontawesome.com/) - Used for icons throughout the website.
+* [TinyPNG](https://tinypng.com/) - For compression of image files to improve performance.
+* [Birme](https://www.birme.net/?target_width=425&target_height=450&auto_focal=false&image_format=jpeg&quality_jpeg=100&quality_webp=100) - For resizing and re-formatting images to make them suitable for use on the app.
+* [xnipapp](https://www.xnipapp.com/) - For capturing screenshots used in the README file
+* [jpg2png](https://jpg2png.com/) - For conversion of JPG images to PNG format.
+* [gyazo](https://gyazo.com/captures) - For mp4 screen captures of site functionality
+* [ezgif](https://ezgif.com/video-to-gif) - For conversion of mp4 video files to GIFs
+* [dbdiagram](https://dbdiagram.io/home) - Database Relationship Diagrams Design Tool.
+* [Balsamiq](https://balsamiq.com/wireframes/) - Used to create wireframes.
+* [ImageOnline](https://imageonline.co/merge-png.php) - Used for merging png files
+* [Favicon.ico & App Icon Generator](https://www.favicon-generator.org/) - For creating the 16x16px ico favicon.
+* [Techsini](https://techsini.com/multi-mockup/index.php) - For displaying images of how the app looks across a range of devices.
+* [Meta Tags IO](https://metatags.io/) - For improving visual appearance of links to the app on social media.
+* [Stackoverflow](https://stackoverflow.com/) - Used for researching solutions/ fixing bugs.
+
+
+## **Backend Frameworks and Libraries**
+
+* [Django 3.2.23](https://www.djangoproject.com/) - High level Python web framework used in conjunction with DRF for development of the project backend.
+* [Django REST Framework](https://www.django-rest-framework.org/) - Framework used to develop the backend API.
+* [cloudinary](https://cloudinary.com/) - Python library to facilitate integration of cloudinary with Django
+* [dj-database-url](https://pypi.org/project/dj-database-url/) - A utility that allows use of the DATABASE_URL environment variable to configure a Django application.  This was used for connection to the PostgreSQL database.
+* [dj3-cloudinary-storage](https://pypi.org/project/dj3-cloudinary-storage/) - A Django package that facilitates Cloudinary storage for media files used in the project.
+* [django-filter](https://django-filter.readthedocs.io/en/stable/#) - Enables filtering of a queryset based on a Model's fields.
+* [pillow](https://pypi.org/project/pillow/) - A Python Imaging Library that adds image processing capabilities to your Python interpreter.
+* [django-allauth](https://docs.allauth.org/en/latest/) - An integrated set of Django applications addressing authentication, registration and account management.  Used to implement role based login functionality across the app.
+* [djangorestframework-simplejwt](https://django-rest-framework-simplejwt.readthedocs.io/en/latest/) - Provides a JSON Web Token authentication backend for the Django REST Framework.
+* [dj-rest-auth](https://dj-rest-auth.readthedocs.io/en/latest/) - Provides a set of REST API endpoints to handle User Registration and Authentication tasks.
+* [psycopg2](https://pypi.org/project/psycopg2/) - A Python PostgreSQL Database Adapter.
+* [gunicorn](https://gunicorn.org/) - A Python WSGI HTTP Server for UNIX.
+* [whitenoise](https://pypi.org/project/whitenoise/) - Simplified static file serving for WSGI applications.  I used this to serve static files for both the DRF backend and the React frontend.
+
+## **Frontend Frameworks and Libraries**
+
+* [React](https://react.dev/) - A JavaScript library for building user interfaces.
+* [react-bootstrap 1.6.3](https://react-bootstrap-v4.netlify.app/) - Frontend framework that is compatible with React.  Used to create a responsive site to provide good user experience across a range of devices.
+* [react-router-dom](https://www.npmjs.com/package/react-router-dom) - a library that enables 'client side routing'.  Components used from this library include:
+  1. **Switch:** Component used to render the first route that matches the location rather than rendering all matching routes.
+  2. **Route:** Component that checks current URL and displays the component associated with that exact path.  All routes are placed within the switch components. 
+  3. **Link:** Component used to create links to different routes
+* [axios](https://axios-http.com/docs/intro) - A promise-based HTTP library.  This enabled HTTP requests to be made to the DRF API.
+* [react-infinite-scroll-component](https://www.npmjs.com/package/react-infinite-scroll-component) - A component used to implement infinite scrolling for snapshots and comments.  This improves user experience as there is no need to click on pagination links to load the next set of results.
+* [jwt-decode](https://www.npmjs.com/package/jwt-decode) - Browser library that helps with decoding of Base64URL encoded JSON web tokens.
+* [react-error-boundary](https://github.com/bvaughn/react-error-boundary) - A library that provides a way to handle JavaScript errors in React components.  This was an additional tool to use in overall error handling across the app alongside the catch blocks used in requests to the API.  The error boundary will catch any errors in their child component tree and display a fallback UI, therefore improving user experience.
+
+<br>
+
+[Back to top &uarr;](#contents)
+
+# **Testing**
+
+Please follow this link to the [TESTING.md file](https://github.com/rkillickdev/rewind/blob/main/TESTING.md) for documentation about the testing procedure I followed for this project.
+
+<br>
+
+[Back to top &uarr;](#contents)
+
+# **Deployment and Local Development**
+
+I made sure to keep my requirements.txt file up to date throughout development, running the command `pip3 freeze --local > requirements.txt` from the terminal whenever any new libraries were installed.  It is important that all requirements are added to this file before deployment so Heroku installs the necessary dependencies.
+
+In development mode, the sqlite3 database provided by Django was used but this was not suitable for use in a production environment.  The deployed site uses a PostgreSQL database hosted by [elephantSQL](https://www.elephantsql.com/) that Heroku can access.  It was therefore necessary to create an account with elephantSQL, and create a new database instance selecting the Tiny Turtle(free) plan.  My database instance is also named 'rewind'.  From the ElephantSQL dashboard, clicking on the database reveals a 'details' page where you can access the database URL, which is necessary for use in both the production and development environments.
+
+To implement functionality of the PostgreSQL database with Django, the following libraries were installed using the terminal command:
+
+```
+pip3 install dj_database_url==0.5.0 psycopg2
+```
+
+The database URL contains information that should not be exposed publicly and therefore must not be pushed to the GitHub repository.  For development purposes I stored the database URL in the env.py file which had been added to the gitignore file.  I did not connect to the production Postgres database from my development environment until I was sure that the models were functioning and included all the fields I required.  I used the following code in my settings.py file to enable switching between development and production databases.
+
+```python
+if 'DEV_DB' in os.environ:
+    DATABASES = {
+        'default': {
+            'ENGINE': 'django.db.backends.sqlite3',
+            'NAME': BASE_DIR / 'db.sqlite3',
+        }
+    }
+else:
+    DATABASES = {
+        'default': dj_database_url.parse(os.environ.get("DATABASE_URL"))
+    }
+```
+
+Once happy with the functionality of my models, I temporarily commented out the 'DEV_DB' environment variable so that the IDE could connect with the external database and migrated changes using the following command in the terminal:
+
+```
+python3 manage.py migrate
+```
+
+Any time I made an amendment to a model, once I had thoroughly tested in development mode I then switched and migrated these changes to the production database.  The 'DEV_DB' variable does not exist in the Heroku config vars and therefore the Deployed version of the site connects to the PostgreSQL production database.  I used this naming convention for the environment variable as I also have a 'DEV' variable but this is used to control the rest framework's default renderer. When not in development mode, the classes attribute is set to JSONRenderer so the frontend React app is sent pure JSON:
+
+```python
+if 'DEV' not in os.environ:
+    REST_FRAMEWORK['DEFAULT_RENDERER_CLASSES'] = [
+        'rest_framework.renderers.JSONRenderer',
+    ]
+```
+
+A Procfile file is required that provides the commands to Heroku to build and run the project.  This should be created in the project root directory and contain the following commands:
+
+```
+  release: python manage.py makemigrations && python manage.py migrate
+  web: gunicorn rewind.wsgi
+```
+
+## Setting up a unified project
+
+The app has been developed following a unified approach,  with the DRF API project and React project existing together in one repository and deployed as a single project.  I built the DRF API first and then created and configured a new React project within the existing Django REST Framework workspace.  I followed the steps suggested by Code Institute to achieve this:
+
+1. Open the DRF project workspace and create a new folder in the root directory with the terminal command: ```mkdir frontend```
+
+2. Change directory into the newly created frontend folder, using the terminal command: ```cd frontend```
+
+3. Create a new React app and install all necessary dependencies by running the terminal command: ```npx create-react-app . --template git+https://github.com/Code-Institute-Org/cra-template-moments.git --use-npm```
+
+4. Confirm creation of the app when prompted by entering `y` and then clicking `enter`
+
+5. Wait for all dependencies to be installed. This installation will take some time, the terminal may appear to freeze for a few minutes.
+
+6. Remove the .git folder, .gitignore file and README.md from the frontend folder as these already exist within the root directory of the DRF project.  This can be achieved by entering the following terminal command: ```rm -rf .git .gitignore README.md```
+**Be sure to run this command from the frontend directory**
+
+## Preparation for a unified workspace
+
+One of the benefits of operating with a unified project is that it is possible to work on development versions of the DRF API and React projects simultaneously.  The following Code Institute recommended steps were taken to prepare a combined workspace:
+
+1. Add `os.environ['DEBUG'] = '1'` to the env.py file.  In settings.py we have `DEBUG = 'DEBUG' in os.environ`.  Therefore DEBUG equates to True in development and False in production.  We need to do this as we were previously relying on the 'DEV' variable existing in the env.py file to determine the DEBUG status.  However, this is commented out to allow pure json responses from the API. It's useful to continue viewing the Django logs during development to assist in debugging.
+
+2.  Add a new `ALLOWED_HOST` key to env.py with the value of your development environment URL, wrapped in quotes.
+**Ensure you remove the https:// from the beginning, and the trailing slash / from the end of the development environment URL.**
+
+* In settings.py, the following code is set:
+```python
+ ALLOWED_HOSTS = [
+    os.environ.get('ALLOWED_HOST'),
+    'localhost',
+    ]
+```
+
+3. Add a new `CLIENT_ORIGIN` key to env.py with the value of your development environment URL, wrapped in quotes.
+**This string should include the https:// at the beginning, but the trailing slash / should be removed.**
+
+4. Keys for `DATABASE_URL` and `CLOUDINARY_URL` should also have values set if they have not been already.
+
+5. In settings.py use the following code:
+
+```python
+CORS_ALLOWED_ORIGINS = [
+    os.environ.get('CLIENT_ORIGIN')
+]
+```
+
+6. Open the package.json file in the frontend directory, and at the bottom of the file, add a new key to the JSON object:
+
+* `"proxy": "http://localhost:8000/"`
+
+7. Create the `axiosDefaults.js` file (When it comes to deployment, the BaseURL setting will need to be defined but for now this file is left empty):
+
+* `cd frontend/src`
+* `mkdir api`
+* `cd api`
+* `touch axiosDefaults.js`
+
+## Running the unified development environment
+
+1. Open two terminals, side by side
+2. Check that Terminal 1 is in the root directory and run the Django API with the terminal command: 
+* `python3 manage.py runserver`
+3. Check that Terminal 2 is in the frontend directory.  If necessary use `cd frontend` to change directory from the root.  Run the React app with the terminal command:
+* `npm start`
+
+Both the DRF API and React App should now be running in the same workspace.  The Django API will run on Port 8000, and the React application will run on Port 8080, or Port 3000 depending on which IDE you are using.
+
+
+## Preparation for deployment of the unified project (DRF API)
+
+I followed the following steps recommended by Code Institute:
+
+1. Install whitenoise to enable storage of static files using the terminal command:
+* `pip3 install whitenoise==6.4.0`
+2. Add this dependency to the requirements.txt file using the terminal command:
+* `pip3 freeze > requirements.txt`
+3. Create a new empty folder called staticfiles in the root directory with the terminal command:
+* `mkdir staticfiles`
+4. In the INSTALLED_APPS list, ensure that the ‘cloudinary_storage’ app name is below ‘django.contrib.staticfiles’. This ensures that Cloudinary will not attempt to intervene with staticfiles, and allows whitenoise to become the primary package responsible for static files.
+5. In the MIDDLEWARE list in settings.py, add WhiteNoise below the SecurityMiddleware and above the SessionMiddleware:
+* `'whitenoise.middleware.WhiteNoiseMiddleware',`
+6. In the TEMPLATES list at the DIRS key, add the following code to the DIRS list, to tell Django and WhiteNoise where to look for Reacts index.html file in deployment:
+* `os.path.join(BASE_DIR, 'staticfiles', 'build')`
+7. In the static files section, add the STATIC_ROOT and WHITENOISE_ROOT variables and values to tell Django and WhiteNoise where to look for the admin static files and Reacts static files during deployment:
+* ```
+  STATIC_ROOT = BASE_DIR / 'staticfiles'
+  WHITENOISE_ROOT = BASE_DIR / 'staticfiles' / 'build'
+  ```
+8. In the `urls.py file` of the DRF application (rewind/urls.py):
+
+* Remove the root_route view from the .views imports
+* Import the TemplateView from the generic Django views:
+  * `from django.views.generic import TemplateView`
+* In the url_patterns list, remove the root_route code and replace it with the TemplateView pointing to the index.html file:
+  * `path('', TemplateView.as_view(template_name='index.html')),`
+* At the bottom of the file, add the 404 handler to allow React to handle 404 errors:
+  * `handler404 = TemplateView.as_view(template_name='index.html')`
+* Add `api/` to the beginning of all the API URLs, excluding the path for the home page and admin panel
+
+## Preparation for deployment of the unified project (React App)
+
+1.  In the `axiosDefaults.js` file, set the default base url:
+* ```js
+  axios.defaults.baseURL = "/api";
+  ```
+
+## Compile static files
+
+1. Collect the admin and DRF static files to the staticfiles directory.  Run the following terminal command from the root directory:
+* `python3 manage.py collectstatic`
+2. Compile the React application and move its files to the staticfiles folder.
+* `cd frontend`
+* `npm run build && mv build ../staticfiles/.`
+
+* **This command needs to be re-run prior to deployment if there have been changes to the static files or React code in the project. To do this, delete the existing build folder and rebuild it using the terminal command:**
+
+  * `npm run build && rm -rf ../staticfiles/build && mv build ../staticfiles/.`
+
+## Add runtime.txt file
+
+1. To ensure Heroku uses the correct version of Python to deploy the project, in the root directory create a new file named runtime.txt and add the following:
+* `python-3.9.16`
+
+## **Heroku Deployment**
+
+The following steps were followed to deploy the site to Heroku:
+
+1.  Create an account and login to [Heroku](https://id.heroku.com/login)
+2.  In the Heroku dashboard, click the 'New' button at the top right of the screen and then select "Create new app".
+3.  I selected the name 'rkdev-rewind' ,set my region to Europe and clicked on the 'Create app' button.
+
+![Heroku Create App](docs/deployment/pp5-heroku-create-app.png)
+
+4.  Click on the settings tab and then click the 'Reveal Config Vars' button.
+
+![Heroku Config Var](docs/deployment/pp5-heroku-add-config-var.png)
+
+5. I entered the following Key : Value pairs to config vars:
+
+    * CLOUDINARY_URL : (Enter your [Cloudinary](https://cloudinary.com/) API Credentials)
+    * DATABASE_URL: (Enter your ElephantSQL database URL) 
+    * SECRET_KEY : (Enter your Django Secret Key)
+    * ALLOWED_HOST: (**set to the URL of combined project, remove the https:// at the beginning and remove the trailing slash at the end**)
+    * CLIENT_ORIGIN: (**set to the URL of combined project. Keep the https:// at the beginning but remove the trailing slash at the end**)
+
+6.  Next select the 'Deploy' tab, select GitHub as the deployment method, and click the 'Connect to GitHub' button.
+7.  Search for the GitHub repository name (rewind) in the 'App Connected to GitHub' section and then click the 'connect' button'
+8.  You can now choose to enable automatic deploys or deploy manually.  When the 'automatic deploys' button is clicked and enabled, Heroku will rebuild the app every time a new change is pushed to GitHub.  In the 'Manual deploy' section, the 'Deploy branch' button can be clicked to deploy manually.
+9.  I chose to deploy manually. Once the app is built, a link is provided to the [deployed app](https://rkdev-rewind-ed88f8459fe7.herokuapp.com/).
+
+<br>
+
+## **Local Development**
+
+### **How to fork:**
+
+1. Log in (or sign up) to GitHub.
+2. Find the required repository, in this case: rkillickdev/rewind
+3. Click on the "fork" button at the top right of the page.
+
+### **How to clone:**
+
+1. Log in (or sign up) to GitHub.
+2. Find the required repository, in this case: rkillickdev/rewind
+3. Click on the green code button.  This will give you the choice of cloning the repository using HTTPS, an SSH key or GitHub CLI.  Make your selection and copy the provided URL link.
+4. Open the Terminal in your IDE of choice.
+5. Change the current working directory to the location where you want the cloned directory.
+6. Type 'git clone' and then paste the URL you copied earlier.
+7. Press enter.
+
+[Back to top &uarr;](#contents)
+
+# **Bugs**
+
+## **Solved Bugs**
+
+| Bug Description | Solution |
+| ------------ | --------------- |
+| Using defaultValue on Form.Control selects not displaying required value as select option  | Using 'value' rather than defaultValue as an attribute on the Form.Control component seems to have solved this.  I eventually found the solution in the following [article](https://github.com/react-bootstrap/react-bootstrap/issues/2091)  |
+| Snapshots could be 'unpinned' from the pinned page, but remained visible which made for bad user experience.  I needed the page to update each time a pin was removed to reflect this change | For the handleUnpin function within the Snapshot component, use a filter as part of `setSnapshots` after the delete request has been sent to the API endpoint for pins.  Only snapshots with a pin_id are displayed |
+
+```js
+setSnapshots((prevSnapshots) => ({
+        ...prevSnapshots,
+        results: prevSnapshots.results
+          .map((snapshot) => {
+            return snapshot.id === id
+              ? {
+                  ...snapshot,
+                  pin_id: null,
+                }
+              : snapshot;
+          })
+          .filter((snapshot) => snapshot.pin_id),
+```
+| Bug Description | Solution |
+| ------------ | --------------- |
+| 400 Bad Request error when attempting to upload audio samples to API Endpoint | Although I had called setAudio in the handleChangeAudio function when selecting the sample, I was then trying to append 'audio' to the instance of formData.  On looking back over the Code Institute Moments project, I realised that I needed to reference the audioInput component (created with the useRef hook) |
+
+```js
+formData.append("audio", audioInput.current.files[0]);
+``` 
+| Bug Description | Solution |
+| ------------ | --------------- |
+| User unpins snapshot on home page.  Any snapshots that are not pinned disappear. 'No results found' message displayed if there are no pinned snapshots | This issue related to the handleUnpin function in the Snapshot component.  Filtering was being applied to Snapshots on **any** page where the handleUnpin was called.  However this was only required on the 'pinned' page to ensure that snapshots were removed from this page once unpinned.  To solve this, I pass a `pinboard` prop to the SnapshotsPage component in App.js and then pass this prop down to the Snapshot component.  I then use the && conditional operator in handleUnpin to check if the pinboard prop is present, and only apply filtering if it is. |
+```js
+pinboard &&
+        setSnapshots((prevSnapshots) => ({
+          ...prevSnapshots,
+          results: prevSnapshots.results.filter((snapshot) => snapshot.pin_id),
+        }));
+```
+
+| Bug Description | Solution |
+| ------------ | --------------- |
+| 'No file was submitted' warning when updating a snapshot without changing the image | This bug came about because I removed `blank=True` from my Snapshot model.  The logic in the handleSubmit function of the Snapshot Edit Form looks to see whether a file exists in imageInput, and if so it appends it to the formData.  However, if the user chooses not to change the snapshot image, a warning is displayed on submission of the form as the field cannot be blank.  I only need this rule to be enforced when a user is creating a **new** snapshot, but not when updating.  I therefore created a SnapshotDetailSerializer which inherits from SnapshotSerializer but additionally defines `image = serializers.ImageField(required=False)`.  This ensures that when updating an instance of Snapshot, the image field can be blank  |
+| When signing up as a new user before setting any profile preferences, choosing to follow a profile should mean that all the snapshots associated with that particular profile should be displayed on the 'For You' page.  However, no snapshots appear when navigating to the 'For You' page. | The solution for this was to check the length of CuratedSnapshots (which is a filtered version of snapshots based on profile preferences), and only display results if there are any.  Otherwise just display all snapshots associated with followed profiles.  The problem in this case was that the filter was returning no results as the user had not yet set their profile preferences. |
+```js
+{snapshots.results.length ? (
+                curated && curatedSnapshots.length ? (
+                  <InfiniteScroll
+                    children={curatedSnapshots.map((snapshot) => (
+                      <Snapshot
+                        key={snapshot.id}
+                        {...snapshot}
+                        setSnapshots={setSnapshots}
+                      />
+                    ))}
+                    dataLength={snapshots.results.length}
+                    loader={<Asset spinner />}
+                    hasMore={!!snapshots.next}
+                    next={() => fetchMoreData(snapshots, setSnapshots)}
+                  />
+                ) : (
+                  <InfiniteScroll
+                    children={snapshots.results.map((snapshot) => (
+                      <Snapshot
+                        key={snapshot.id}
+                        {...snapshot}
+                        setSnapshots={setSnapshots}
+                        pinboard={pinboard}
+                      />
+                    ))}
+                    dataLength={snapshots.results.length}
+                    loader={<Asset spinner />}
+                    hasMore={!!snapshots.next}
+                    next={() => fetchMoreData(snapshots, setSnapshots)}
+                  />
+                )
+              ) : (
+                <Container className="appStyles.Content">
+                  <Asset src={NoResults} message={message} />
+                </Container>
+              )}
+```
+
+| Bug Description | Solution |
+| ------------ | --------------- |
+| User inputs snapshot or profile url including an id that doesn't exist.  This is rendering a page but no data exists.  A 400 bad request error is logged in the console.  The error should be handled gracefully and the user redirected back to the home page | In the catch block of the handleMount function for the SnapshotPage component, I have made use of the useHistory hook to redirect the user, and also set an alert to inform them that there has been a problem |
+| On creation of a sample, this is not being displayed immediately to the current user in the samples list below the snapshot.  It appears on refresh of the page | The solution here was that I had not passed `setSamples={setSamples}` to the SampleCreateForm component on the SnapshotPage.  This meant that the samples state was not being updated on creation of the sample |
+| User adds 5 samples to a snapshot without refreshing the page.  Upon attempting to add a sixth sample, no alert is displayed and they are not prevented from continuing to add samples, even though the maximum limit has been reached | The total_samples count was not being updated upon form submission and sample deletion.  It was necessary to specify this as part of setSnapshot. See the code below |
+
+sampleCreateForm handleSubmit function:
+
+```js
+setSnapshot((prevSnapshot) => ({
+        results: [
+          {
+            ...prevSnapshot.results[0],
+            samples_count: prevSnapshot.results[0].samples_count + 1,
+            total_samples: prevSnapshot.results[0].total_samples + 1,
+          },
+        ],
+      }));
+```
+
+sample handleDelete function:
+
+```js
+setSnapshot((prevSnapshot) => ({
+        results: [
+          {
+            ...prevSnapshot.results[0],
+            samples_count: prevSnapshot.results[0].samples_count - 1,
+            total_samples: prevSnapshot.results[0].total_samples - 1,
+          },
+        ],
+      }));
+```
+
+
+| Bug Description | Solution |
+| ------------ | --------------- |
+| Client side sorting by date does not operate as expected.  Most recently updated snapshots are not displayed first | The issue here is attempting to do the ordering on the client side in React using the date strings provided by Django.  I have formatted these in settings.py to provide the user with a readable user friendly format e.g. `15 Feb 2024`.  However these strings were harder to sort as strings rather than numeric values and the code I originally implemented was not working as expected.  I therefore decided to handle this sorting on the backend.  When posts are fetched from the API, they are already sorted by the snapshot `updated_at` field, so the solution was just a case of calling the `fetchSnapshots` function from the onClick attribute of the date sort icon (this is located in `SnapshotsPage.js`).  See the code below for my original `handleSortDate` function (which was ultimately removed when no longer required) |
+
+```js
+// Function to handle sorting of results by created at date
+  function handleDateSort() {
+    setSnapshots((prevSnapshots) => ({
+      ...prevSnapshots,
+      results: prevSnapshots.results.sort((a, b) =>
+        b.created_at.localeCompare(a.created_at),
+      ),
+    }));
+  }
+```
+
+| Bug Description | Solution |
+| ------------ | --------------- |
+| Warning logged in Terminal from Python regarding pagination and unordered lists:  `UnorderedObjectListWarning: Pagination may yield inconsistent results with an unordered object_list` | Added ordering when retrieving a queryset in the era, genre and category list view |
+
+<br>
+
+## **Known Bugs**
+
+<br>
+
+| Bug Description | Solutions Tried |
+| ------------ | --------------- |
+| Upon selecting an audio file for upload, the file path does not appear to be cleared on submission.  If the upload button is clicked again without re-selecting a file, the same file will be uploaded.  If the user clicks on the waveform to select another file but chooses the same file again, the icon does not change to indicate that a file has been selected.  | I have tried using the `URL.revokeObjectURL` approach to clear the path.  This was not successful but I believe with more time and further investigation, this could play a part in the solution.  I will include this fix in a future sprint.  For now I do not find it to be too problematic, especially because I have the client side validation limiting the total number of samples that can be uploaded for a snapshot.  Also samples must be approved by an administrator so they would flag if there were 3 identical samples and only approve 1 |
+| I noticed when testing the client side sorting by recommendations and comments that upon page load this sorting is only based on the first page of paginated results.  If the User scrolls and loads more results and clicks a sort icon again, the sorting will be based on all of the snapshots that have been fetched | Although not a bug as such, in future iterations it may be worth considering whether it would be better to carry this sorting out on the backend so it is applied to the whole queryset. |
+| When attempting to select an audio sample on ios devices, valid mp3 files remain greyed out and the user is not able to select.  This functionality works fine when selecting the same file from laptops/ desktop devices. | I have researched this issue and found the [following thread](https://github.com/react-dropzone/react-dropzone/issues/1039).  It seems to be an issue with IOS and will be a consideration to address in a future sprint |
+
+<br>
+
+[Back to top &uarr;](#contents)
+
+# **Credits**
+
+## **Code Used and Referenced**
+
+<br>
+
+* The Code Institute PP5 Advanced Frontend 'Moments' walk through project and associated DRF API were a great reference point when planning and building the Rewind App.  I have created custom models tailored to the specific needs of my own project and additional features and logic not present in 'Moments'.
+
+* [Display string representation of Many To Many Fields in json response rather than IDs](https://stackoverflow.com/questions/64079111/how-can-i-display-the-values-of-a-manytomany-field-in-django-rest-framework-inst)
+
+* [Implementing Staff Only Permissions with Django REST Framework](https://stackoverflow.com/questions/31714198/staff-only-permissions-in-django-rest-framework)
+
+* [Displaying default 'please select' placeholder in drop down menus](https://stackoverflow.com/questions/74600128/how-to-display-selected-value-in-dropdown-menu-example-please-pick-and-select)
+
+* [Populate form select options with data from DRF API](https://stackoverflow.com/questions/72301355/how-to-populate-select-options-from-an-api-call-in-react-js-on-page-load)
+
+* [Code Institute Slack thread referencing issue with infinite scrolling when running in development mode with gitpod.](https://code-institute-room.slack.com/archives/C02MTH5MBDG/p1695309984546839?thread_ts=1695305110.716799&cid=C02MTH5MBDG)
+
+* [Article referenced when fixing bug for default value not working in form select](https://github.com/react-bootstrap/react-bootstrap/issues/2091)
+
+* [Article referenced when implementing Alert and Toast popups](https://dev.to/jeffreythecoder/set-up-react-global-alert-popup-in-10mins-36l3)
+
+* [Article referenced when setting up Sample model to allow audio uploads to Cloudinary](https://github.com/klis87/django-cloudinary-storage/blob/master/README.md)
+
+* [Referenced when learning about file validation in Django](https://gist.github.com/llann/a571fa86408c68e0a4f9)
+
+* [Referenced when trying to combine multiple filter parameters in a url](https://stackoverflow.com/questions/34626050/drf-is-it-possible-to-combine-multiple-filter-parameters-in-the-url-with-some)
+
+* [Referenced when needing to check if a filtered array has returned any results](https://stackoverflow.com/questions/71621657/return-a-message-if-nothing-is-found-after-filtering-an-array-in-javascript)
+
+* [Sorting in Javascript](https://www.freecodecamp.org/news/how-does-the-javascript-sort-function-work/)
+
+* Setting Foreign Key Field in model serializer to null:
+  * [Article 1/ ](https://stackoverflow.com/questions/56917190/django-django-rest-framework-how-do-i-allow-model-serializer-to-set-models-fo)
+  * [Article 2](https://stackoverflow.com/questions/47076194/django-rest-framework-how-to-set-a-field-to-null-via-patch-request)
+
+* [Setting up Bootstrap Modals in React](https://www.codu.co/articles/creating-a-pop-up-modal-dialog-in-bootstrap-react-xgeujzcj)
+
+* [React Router Dom](https://www.geeksforgeeks.org/what-is-react-router-dom/)
+
+* [Remove intermittent black border on feature button hover](https://stackoverflow.com/questions/67209715/strange-black-outline-in-the-css-button)
+
+* [Writing comments for React code](https://dmitripavlutin.com/react-comments/)
+
+* [Styling the HTML audio element](https://stackoverflow.com/questions/75604231/audio-tag-minimal-play-button)
+
+* [Error Boundary implementation 1](https://www.freecodecamp.org/news/how-to-avoid-breaking-your-react-app-in-production/)
+
+* [Error Boundary implementation 2](https://refine.dev/blog/react-error-boundaries/#introduction)
+
+* [Using client login with DRF for unit tests](https://stackoverflow.com/questions/2619102/djangos-self-client-login-does-not-work-in-unit-tests)
+
+* [Installing and setting up ESLint](https://gist.github.com/ianmeigh/8e603b91a38d7829d959402bfcf29d3d)
+
+* [opening and reading files - used for uploading images in unit tests](https://blog.enterprisedna.co/python-open-file/#:~:text=In%20this%20code%2C%20'rb',file%20using%20a%20file%20pointer.&text=The%20output%20is%20binary%20data%20of%20the%20image.)
+
+<br>
+
+[Back to top &uarr;](#contents)
+
+## **Media**
+
+* TR808, Multi Cassettes and Retro Tape Deck images purchased from [Shutterstock](https://www.shutterstock.com/)
+
+* Royalty free images used throughout the site from [Pexels](https://www.pexels.com/)
+
+* Royalty free images used throughout the site from [Unsplash](https://unsplash.com/)
+  * Multiple Cassette Tapes - Photo by hosein zanbori on Unsplash
+  * Technics 1210 close up - Photo by Jan Kopřiva on Unsplash
+  * Roland 808 - Photo by Steve Harvey on Unsplash
+  * Roland 909 - Photo by Cone Trees on Unsplash
+  * Roland Gear Stack - Photo by Katalin Salles on Unsplash
+  * Modular Synth - Photo by Ryunosuke Kikuno on Unsplash
+  * Pile of Vinyl - Photo by Nihal Demirci Erenay on Unsplash
+
+* Royalty free icons used throughout the site from [Flaticon](https://www.flaticon.com)
+  * <a href="https://www.flaticon.com/free-icons/cassette" title="cassette icons">Cassette icons created by Smashicons - Flaticon</a>
+  * <a href="https://www.flaticon.com/free-icons/image-upload" title="image upload icons">Image upload icons created by Cap Cool - Flaticon</a>
+  * <a href="https://www.flaticon.com/free-icons/no-results" title="no results icons">No results icons created by Design Circle - Flaticon</a>
+  * <a href="https://www.flaticon.com/free-icons/sound-wave" title="sound wave icons">Sound wave icons created by Cap Cool - Flaticon</a>
+  * <a href="https://www.flaticon.com/free-icons/robot" title="robot icons">Robot icons created by Freepik - Flaticon</a>
+  * <a href="https://www.flaticon.com/free-icons/computer" title="computer icons">Computer icons created by Freepik - Flaticon</a>
+  * <a href="https://www.flaticon.com/free-icons/disc-jockey" title="disc jockey icons">Disc jockey icons created by Freepik - Flaticon</a>
+  * <a href="https://www.flaticon.com/free-icons/headphone" title="headphone icons">Headphone icons created by amonrat rungreangfangsai - Flaticon</a>
+  * <a href="https://www.flaticon.com/free-icons/turntable" title="turntable icons">Turntable icons created by Freepik - Flaticon</a>
+  * <a href="https://www.flaticon.com/free-icons/tape-recorder" title="tape recorder icons">Tape recorder icons created by Vectors Market - Flaticon</a>
+  * <a href="https://www.flaticon.com/free-icons/audio" title="audio icons">Audio icons created by Freepik - Flaticon</a>
+  * <a href="https://www.flaticon.com/free-icons/synthesizer" title="synthesizer icons">Synthesizer icons created by Freepik - Flaticon</a>
+  * <a href="https://www.flaticon.com/free-icons/tape" title="tape icons">Tape icons created by Smashicons - Flaticon</a>
+  * <a href="https://www.flaticon.com/free-icons/vinyl" title="vinyl icons">Vinyl icons created by Smashicons - Flaticon</a>
+  * <a href="https://www.flaticon.com/free-icons/message" title="message icons">Message icons created by chehuna - Flaticon</a>
+  * <a href="https://www.flaticon.com/free-icons/pending" title="pending icons">Pending icons created by vectaicon - Flaticon</a>
+  * <a href="https://www.flaticon.com/free-icons/amplifier" title="amplifier icons">Amplifier icons created by Freepik - Flaticon</a>
+  * <a href="https://www.flaticon.com/free-icons/loud-speaker" title="loud speaker icons">Loud speaker icons created by Freepik - Flaticon</a>
+  * <a href="https://www.flaticon.com/free-icons/walkman" title="walkman icons">Walkman icons created by Eucalyp - Flaticon</a>
+  * <a href="https://www.flaticon.com/free-icons/walkman" title="walkman icons">Walkman icons created by Freepik - Flaticon</a>
+
+* [chatGPT](https://chat.openai.com/) was used to generate a few pieces of text content for test snapshots.   Other content for the site was written by myself.
+
+<br>
+
+## **Acknowledgements**
+
+* To my family for supporting me through this journey!
+* To my PP5 Code Institute Mentor Anto Rodriguez for his advice and help during my Advanced Frontend project.
+* To my Code Institute Mentor Can Sucullu for his help, advice and feedback throughout the course.
+
+<br>
+
+[Back to top &uarr;](#contents)
