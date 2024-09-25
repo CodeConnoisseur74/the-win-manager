@@ -1,16 +1,22 @@
-# **Rewind**
+# **The Wins Manager**
+
+![The Wins Manager](docs/win-logo.png)
 
 <br>
 
-![Deployed Site Responsive Views](docs/features/)
+![Dashboard](docs/dashboard.png)
 
 <br>
 
-[View the deployed site on Heroku](https://)
+![Sign In](docs/intro-screen.png)
 
 <br>
 
-Rewind has been developed as part of the [Code Institute](https://codeinstitute.net/) Diploma in Full Stack Software Development (Advanced Front End Portfolio Project #5).  The Django REST Framework has been used to build a backend API.  This returns JSON data to the front end which has been built using React.  The aim of the site is to provide a platform for a community of like minded music/technology enthusiasts who enjoy sharing snippets of nostalgia to evoke memories of the past and engaging in conversations about these snapshots in time.
+[View the deployed site on Heroku](https://winmanager-6a83a594eb75.herokuapp.com/)
+
+<br>
+
+The Wins Manager has been developed as part of the [Code Institute](https://codeinstitute.net/) Diploma in Full Stack Software Development (Advanced Front End Portfolio Project #5).  The Django REST Framework has been used to build a backend API.  This returns JSON data to the front end which has been built using React with Material UI v5 for UX and UI purposes. 
 
 ## **CONTENTS**
 
@@ -54,7 +60,7 @@ Rewind has been developed as part of the [Code Institute](https://codeinstitute.
 
 The aim of the site is to create a community for music/technology enthusiasts with a particular emphasis on the ability to share memories and reminisce.  The term 'nostalgia' can be defined as "a feeling of sadness mixed with pleasure and affection when you think of happy times in the past".  This is a powerful emotion to tap into and cyclical patterns can be seen in fashion, music and technology.  The resurgence in the Vinyl market is a great demonstration of this.  Although the primary target site user may be those wishing to share their memories, this does not limit the target audience to those who witnessed trends and movements the first time round.  It will also engage a new generation where there is great interest for all things 'retro' and an enthusiasm to discover more about these bygone eras.
 
-Rewind will give users a platform to post their own 'snapshots' from the past and enter into discussion about fellow user's memories.  To ensure that site users can intuitively and effortlessly access content most relevant to their interests, they will be given the opportunity to tailor their user profiles to indicate their preferences.  This data will be used to recommend other profiles and snapshots that may be of interest to the user.  Users will also have the ability to recommend snapshots that they have enjoyed and this data will be stored in the database, so it can then be used as a mechanism for users to sort content.  To fit in with the busy lives of site users, they will also have the ability to pin snapshots while they scroll, so they can easily return to them at a later date.
+The Wins Manager will give users a platform to post their own 'snapshots' from the past and enter into discussion about fellow user's memories.  To ensure that site users can intuitively and effortlessly access content most relevant to their interests, they will be given the opportunity to tailor their user profiles to indicate their preferences.  This data will be used to recommend other profiles and snapshots that may be of interest to the user.  Users will also have the ability to recommend snapshots that they have enjoyed and this data will be stored in the database, so it can then be used as a mechanism for users to sort content.  To fit in with the busy lives of site users, they will also have the ability to pin snapshots while they scroll, so they can easily return to them at a later date.
 
 Although the initial build of the site focuses on music/technology, site traffic could be increased by expanding genres / categories to appeal to a more diverse range of users.  For example additional categories such as Fashion, Art, Design could be added as instances in the Category Model.
 
@@ -66,17 +72,17 @@ Although the initial build of the site focuses on music/technology, site traffic
 
 This project was approached following the principles of Agile Development, building the solution incrementally through repeated iterations.  Initially, 6 [epics](#Epics) were defined.  These were broad definitions of functionality for the site that would not fit into a single iteration.
 
-Epics were then broken down into user stories and logged as issues on GitHub using the following [customised template](https://github.com/rkillickdev/rewind/blob/main/.github/ISSUE_TEMPLATE/user-story.md).  Acceptance Criteria were defined as part of each user story to clearly present the objectives and conditions that must be satisfied for the user story to be marked as complete.  Implementation of the user story was then broken down into tasks - technical work required to facilitate execution of the user story.  Each user story was given a story points label to indicate the estimated amount of work required to complete the story.
+Epics were then broken down into user stories and logged as issues on GitHub using the following [customised template](https://github.com/CodeConnoisseur74/The Wins Manager/blob/main/.github/ISSUE_TEMPLATE/user-story.md).  Acceptance Criteria were defined as part of each user story to clearly present the objectives and conditions that must be satisfied for the user story to be marked as complete.  Implementation of the user story was then broken down into tasks - technical work required to facilitate execution of the user story.  Each user story was given a story points label to indicate the estimated amount of work required to complete the story.
 
-A 7th [DRF API Epic](https://github.com/rkillickdev/rewind/issues/30) was defined to plan work required to build the backend API using the Django REST Framework.  This epic was broken down into the key backend resources required to implement the functionality of the site.  Relevant user stories were linked and tasks allocated to complete the build of each resource. 
+A 7th [DRF API Epic](https://github.com/CodeConnoisseur74/The Wins Manager/issues/30) was defined to plan work required to build the backend API using the Django REST Framework.  This epic was broken down into the key backend resources required to implement the functionality of the site.  Relevant user stories were linked and tasks allocated to complete the build of each resource. 
 
-A [Product Backlog](https://github.com/rkillickdev/rewind/milestone/1) milestone was created on GitHub to establish a 'single authoritative source of work'.  I initially moved all user stories to the backlog before they were allocated to sprints.  The product backlog was refined throughout the course of development with user stories reprioritised as the project evolved.
+A [Product Backlog](https://github.com/CodeConnoisseur74/The Wins Manager/milestone/1) milestone was created on GitHub to establish a 'single authoritative source of work'.  I initially moved all user stories to the backlog before they were allocated to sprints.  The product backlog was refined throughout the course of development with user stories reprioritised as the project evolved.
 
 Timeboxing was used throughout the development of the project.  Week long 'sprints' (otherwise referred to as iterations) were defined using Milestones on Github.  User stories from the product backlog were then allocated to a sprint following the principles of MoSCoW prioritisation.  Each user story was assigned a label specifying "Must Have", "Could Have" or "Should Have" to indicate expectation of its completion.  Stories were then tackled according to level of priority.  When defining prioritisation levels for each user story in a sprint, I was mindful that the percentage of "Must Haves" should 'not exceed 60% of the overall effort planned for the iteration'.  A 20% contingency of "Could Haves" was set, therefore leaving the remaining 20% for "Should Haves".  If it was clear that a user story would not be completed in the current sprint, it was labelled as "Won't Have" and returned to the Product Backlog.  This was then allocated to a future sprint with a higher prioritisation level.
 
-Throughout the development process, I used a kanban board to provide up to date information about the status of progress for each iteration.  The board was created and managed using GitHub Projects and can be viewed [here](https://github.com/users/rkillickdev/projects/5).
+Throughout the development process, I used a kanban board to provide up to date information about the status of progress for each iteration.  The board was created and managed using GitHub Projects and can be viewed [here](https://github.com/users/CodeConnoisseur74/winmanager).
 
-![Rewing Kanban Board](docs/agile/pp5-kanaban-board.png)
+![Kanban Board](docs/agile/pp5-kanaban-board.png)
 
 User stories for each sprint were initially allocated to the 'Todo' column and then transferred to the 'In Progress' column as they were worked on.  Once each task for the user story had been completed and all acceptance criteria satisfied, the issue was marked as complete and moved to the 'Done' column.
 
@@ -84,43 +90,43 @@ User stories for each sprint were initially allocated to the 'Todo' column and t
 
 ### **Epics**
 
-#### **EPIC: Navigation & User Authentication [#1](https://github.com/rkillickdev/rewind/issues/1)**
+#### **EPIC: Navigation & User Authentication [#1](https://github.com/CodeConnoisseur74/The Wins Manager/issues/1)**
 
 `
 Users should be able to navigate the site effortlessly and access the site content in an intuitive manner. Certain features should only be accessible to authenticated users that have created a user profile.
 `
 
-#### **EPIC: Snapshot Lists [#8](https://github.com/rkillickdev/rewind/issues/8)**
+#### **EPIC: Snapshot Lists [#8](https://github.com/CodeConnoisseur74/The Wins Manager/issues/8)**
 
 `
 Snapshots posted to the site should be available for all user to view, with authenticated users given additional control over the type of content they want to view.
 `
 
-#### **EPIC: Create Snapshots [#12](https://github.com/rkillickdev/rewind/issues/12)**
+#### **EPIC: Create Snapshots [#12](https://github.com/CodeConnoisseur74/The Wins Manager/issues/12)**
 
 `
 Logged in users should have the ability to post snapshots that will then be attached to their profile and available for other site users to enjoy.
 `
 
-#### **EPIC: Snapshot Details [#15](https://github.com/rkillickdev/rewind/issues/15)**
+#### **EPIC: Snapshot Details [#15](https://github.com/CodeConnoisseur74/The Wins Manager/issues/15)**
 
 `
 The detail page should display a specified snapshot post. All site users should have the ability to 'read' snapshots, logged in users should have the ability to comment on other user's snapshots and update/delete their own.
 `
 
-#### **EPIC: Recommend and Pin Snapshots [#21](https://github.com/rkillickdev/rewind/issues/21)**
+#### **EPIC: Recommend and Pin Snapshots [#21](https://github.com/CodeConnoisseur74/The Wins Manager/issues/21)**
 
 `
 As the user is viewing content on the site, they should have the ability to recommend snapshots and also pin any snapshot that catches their interest that they might want to return to later.
 `
 
-#### **EPIC: Profiles [#24](https://github.com/rkillickdev/rewind/issues/24)**
+#### **EPIC: Profiles [#24](https://github.com/CodeConnoisseur74/The Wins Manager/issues/24)**
 
 `
 Logged in users should have the ability to update and tailor their own profile details. They should also be able to view the profiles of other site users and their associated snapshot posts. Users should be recommended other profiles to follow based on musical genre preferences specified in their own profiles.
 `
 
-#### **EPIC: DRF API [#30](https://github.com/rkillickdev/rewind/issues/30)**
+#### **EPIC: DRF API [#30](https://github.com/CodeConnoisseur74/The Wins Manager/issues/30)**
 
 `
 Build and deploy an API using the Django REST Framework that enables implementation of the functionality outlined in the project user stories.
@@ -132,48 +138,48 @@ Build and deploy an API using the Django REST Framework that enables implementat
 
 ### **User Stories**
 
-#### **EPIC: Navigation & User Authentication [#1](https://github.com/rkillickdev/rewind/issues/1)**
+#### **EPIC: Navigation & User Authentication [#1](https://github.com/CodeConnoisseur74/The Wins Manager/issues/1)**
 
-* As a **user** I can **access a navbar on every page** so that **navigation of the site is intuitive** [#2](https://github.com/rkillickdev/rewind/issues/2)
-* As a **user** I can **navigate the content of the site without the page refreshing** so that **content is accessed quickly and user experience is enhanced** [#3](https://github.com/rkillickdev/rewind/issues/3)
-* As a **user** I can **sign up and create a user account** so that **I can access additional site functionality only available to authenticated users** [#4](https://github.com/rkillickdev/rewind/issues/4)
-* As a **user** I can **sign in using my existing credentials** so that **I can view my account and continue enjoying site functionality only accessible to authenticated users** [#5](https://github.com/rkillickdev/rewind/issues/5)
-* As a **user** I can **see whether I am already logged in** so that **I am aware of my status and the features of the site I can access** [#6](https://github.com/rkillickdev/rewind/issues/6)
-* As a **user** I can **sign out from the site** so that **no one else using my device can access my account** [#7](https://github.com/rkillickdev/rewind/issues/7)
+* As a **user** I can **access a navbar on every page** so that **navigation of the site is intuitive** [#2](https://github.com/CodeConnoisseur74/The Wins Manager/issues/2)
+* As a **user** I can **navigate the content of the site without the page refreshing** so that **content is accessed quickly and user experience is enhanced** [#3](https://github.com/CodeConnoisseur74/The Wins Manager/issues/3)
+* As a **user** I can **sign up and create a user account** so that **I can access additional site functionality only available to authenticated users** [#4](https://github.com/CodeConnoisseur74/The Wins Manager/issues/4)
+* As a **user** I can **sign in using my existing credentials** so that **I can view my account and continue enjoying site functionality only accessible to authenticated users** [#5](https://github.com/CodeConnoisseur74/The Wins Manager/issues/5)
+* As a **user** I can **see whether I am already logged in** so that **I am aware of my status and the features of the site I can access** [#6](https://github.com/CodeConnoisseur74/The Wins Manager/issues/6)
+* As a **user** I can **sign out from the site** so that **no one else using my device can access my account** [#7](https://github.com/CodeConnoisseur74/The Wins Manager/issues/7)
 
-#### **EPIC: Snapshot Lists [#8](https://github.com/rkillickdev/rewind/issues/8)**
+#### **EPIC: Snapshot Lists [#8](https://github.com/CodeConnoisseur74/The Wins Manager/issues/8)**
 
-* As a **user** I can **view all snapshots posted** so that **I can get an overview of the type of content available on the site and decide whether I would like to sign up** [#9](https://github.com/rkillickdev/rewind/issues/9)
-* As a **user** I can **search snapshots by keywords** so that **I can filter results displayed by their text content or by era, genre or category of a snapshot** [#10](https://github.com/rkillickdev/rewind/issues/10)
-* As a **user** I can **choose to order the list by 'most recommended' or 'most talked about'** so that **I can view most popular snapshots first** [#11](https://github.com/rkillickdev/rewind/issues/11)
-* As a **user** I can **filter the list of snapshots on the home page by era, genre and category** so that **I can view snapshots most relevant to my interests** [#39](https://github.com/rkillickdev/rewind/issues/39)
+* As a **user** I can **view all snapshots posted** so that **I can get an overview of the type of content available on the site and decide whether I would like to sign up** [#9](https://github.com/CodeConnoisseur74/The Wins Manager/issues/9)
+* As a **user** I can **search snapshots by keywords** so that **I can filter results displayed by their text content or by era, genre or category of a snapshot** [#10](https://github.com/CodeConnoisseur74/The Wins Manager/issues/10)
+* As a **user** I can **choose to order the list by 'most recommended' or 'most talked about'** so that **I can view most popular snapshots first** [#11](https://github.com/CodeConnoisseur74/The Wins Manager/issues/11)
+* As a **user** I can **filter the list of snapshots on the home page by era, genre and category** so that **I can view snapshots most relevant to my interests** [#39](https://github.com/CodeConnoisseur74/The Wins Manager/issues/39)
 
-#### **EPIC: Create Snapshots [#12](https://github.com/rkillickdev/rewind/issues/12)**
+#### **EPIC: Create Snapshots [#12](https://github.com/CodeConnoisseur74/The Wins Manager/issues/12)**
 
-* As a **logged in user** I can **post image snapshots** so that **I can share my nostalgic memories with other site users** [#13](https://github.com/rkillickdev/rewind/issues/13) 
-* As a **logged in user** I can **upload audio clips when creating a snapshot** so that **I can share audio memories with other site users** [#14](https://github.com/rkillickdev/rewind/issues/14)
+* As a **logged in user** I can **post image snapshots** so that **I can share my nostalgic memories with other site users** [#13](https://github.com/CodeConnoisseur74/The Wins Manager/issues/13) 
+* As a **logged in user** I can **upload audio clips when creating a snapshot** so that **I can share audio memories with other site users** [#14](https://github.com/CodeConnoisseur74/The Wins Manager/issues/14)
 
-#### **EPIC: Snapshot Details [#15](https://github.com/rkillickdev/rewind/issues/15)**
+#### **EPIC: Snapshot Details [#15](https://github.com/CodeConnoisseur74/The Wins Manager/issues/15)**
 
-* As a **user** I can **view a snapshot detail page** so that **I can read the full description of the snapshot and any associated comments and samples** [#16](https://github.com/rkillickdev/rewind/issues/16)
-* As a **logged in user** I can **edit my own snapshots** so that **I can update and amend the details of my original post** [#17](https://github.com/rkillickdev/rewind/issues/17)
-* As a **logged in user** I can **comment on another user's snapshot** so that **I can share my thoughts and interact with the Rewind community** [#18](https://github.com/rkillickdev/rewind/issues/18)
+* As a **user** I can **view a snapshot detail page** so that **I can read the full description of the snapshot and any associated comments and samples** [#16](https://github.com/CodeConnoisseur74/The Wins Manager/issues/16)
+* As a **logged in user** I can **edit my own snapshots** so that **I can update and amend the details of my original post** [#17](https://github.com/CodeConnoisseur74/The Wins Manager/issues/17)
+* As a **logged in user** I can **comment on another user's snapshot** so that **I can share my thoughts and interact with the The Wins Manager community** [#18](https://github.com/CodeConnoisseur74/The Wins Manager/issues/18)
 * As a **logged in user** I can **edit my own comments** so that **I can amend and update my thoughts**
- [#19](https://github.com/rkillickdev/rewind/issues/19)
-* As a **logged in user** I can **delete my own comments** so that **I can control whether a previous comment remains visible to other site users** [#20](https://github.com/rkillickdev/rewind/issues/20)
+ [#19](https://github.com/CodeConnoisseur74/The Wins Manager/issues/19)
+* As a **logged in user** I can **delete my own comments** so that **I can control whether a previous comment remains visible to other site users** [#20](https://github.com/CodeConnoisseur74/The Wins Manager/issues/20)
 
-#### **EPIC: Recommend and Pin Snapshots [#21](https://github.com/rkillickdev/rewind/issues/21)**
+#### **EPIC: Recommend and Pin Snapshots [#21](https://github.com/CodeConnoisseur74/The Wins Manager/issues/21)**
 
-* As a **logged in user** I can **recommend a snapshot** so that **I can show my appreciation of another user's post and encourage others to view it** [#22](https://github.com/rkillickdev/rewind/issues/22)
-* As a **logged in user** I can **pin any snapshots of interest while browsing the site** so that **I can build a list of posts to return to later** [#23](https://github.com/rkillickdev/rewind/issues/23)
+* As a **logged in user** I can **recommend a snapshot** so that **I can show my appreciation of another user's post and encourage others to view it** [#22](https://github.com/CodeConnoisseur74/The Wins Manager/issues/22)
+* As a **logged in user** I can **pin any snapshots of interest while browsing the site** so that **I can build a list of posts to return to later** [#23](https://github.com/CodeConnoisseur74/The Wins Manager/issues/23)
 
-#### **EPIC: Profiles [#24](https://github.com/rkillickdev/rewind/issues/24)**
+#### **EPIC: Profiles [#24](https://github.com/CodeConnoisseur74/The Wins Manager/issues/24)**
 
-* As a **logged in user** I can **edit the details of my profile** so that **I can update my profile pic, bio details and preferences for era, musical genre and category** [#25](https://github.com/rkillickdev/rewind/issues/25)
-* As a **user** I can **view the profile pages of other site users** so that **I can learn more about them and the type of content they are posting** [#26](https://github.com/rkillickdev/rewind/issues/26)
-* As a **logged in user** I can **update my username  and password** so that **I can choose how my name is displayed to other users and to ensure my login credentials remain secure** [#27](https://github.com/rkillickdev/rewind/issues/27)
-* As a **logged in user** I can **view suggested profiles** so that **I can decide whether their previous snapshot posts are of interest to me** [#28](https://github.com/rkillickdev/rewind/issues/28)
-* As a **logged in user** I can **choose to follow profiles that are posting interesting content** so that **I can be updated with more of their posts in the future** [#29](https://github.com/rkillickdev/rewind/issues/29)
+* As a **logged in user** I can **edit the details of my profile** so that **I can update my profile pic, bio details and preferences for era, musical genre and category** [#25](https://github.com/CodeConnoisseur74/The Wins Manager/issues/25)
+* As a **user** I can **view the profile pages of other site users** so that **I can learn more about them and the type of content they are posting** [#26](https://github.com/CodeConnoisseur74/The Wins Manager/issues/26)
+* As a **logged in user** I can **update my username  and password** so that **I can choose how my name is displayed to other users and to ensure my login credentials remain secure** [#27](https://github.com/CodeConnoisseur74/The Wins Manager/issues/27)
+* As a **logged in user** I can **view suggested profiles** so that **I can decide whether their previous snapshot posts are of interest to me** [#28](https://github.com/CodeConnoisseur74/The Wins Manager/issues/28)
+* As a **logged in user** I can **choose to follow profiles that are posting interesting content** so that **I can be updated with more of their posts in the future** [#29](https://github.com/CodeConnoisseur74/The Wins Manager/issues/29)
 
 <br>
 
@@ -203,9 +209,9 @@ In order to satisfy the goals and user stories outlined in the [strategy plane](
 
 ## **Database Schema**
 
-![rewind final database schema](docs/database-schema/pp5-rewind-database-schema-final.png)
+![The Wins Manager final database schema](docs/database-schema/pp5-The Wins Manager-database-schema-final.png)
 
-From the original planning phase to the final site, a few tweaks were made to the database schema to suit the functionality of the site.  In particular, I eventually decided to create a model for samples rather than including it as a field in the snapshot model.  The soundbyte field remains as part of the snapshot model for now but is redundant.  The original database schema v01 can be viewed [here](docs/database-schema/pp5-rewind-database-schema-v01.png)
+From the original planning phase to the final site, a few tweaks were made to the database schema to suit the functionality of the site.  In particular, I eventually decided to create a model for samples rather than including it as a field in the snapshot model.  The soundbyte field remains as part of the snapshot model for now but is redundant.  The original database schema v01 can be viewed [here](docs/database-schema/pp5-The Wins Manager-database-schema-v01.png)
 
 The following custom models have been implemented as part of the development process:
 
@@ -376,15 +382,15 @@ To secure certain Django Views and ensure they are only accessible to registered
 
 * `IsAuthenticatedOrReadOnly` is a Django REST Framework built in permission class.  Requests for unauthenticated users are only permitted if the request method is one of the "safe" methods; `GET`, `HEAD` or `OPTIONS`.  This ensures that only logged in users are granted write permissions.
 
-* `IsOwnerOrReadOnly` is a custom class stored in rewind/permissions.py which extends DRF permissions.BasePermission. The method `has_object_permissions` defined within the class, returns a boolean value.  If the request method received is one of the "safe" methods, true is returned as all users are permitted to make these requests.  If not a safe method, true is only returned if the current user is the owner of an object.  This ensures that users can only update or delete an object that they own.  This is an important security consideration .  Although functionality to update and delete objects owned by another user is not provided in the user interface, this alone does not provide adequate protection.  Objects in the database could still be targeted using specific urls.  The inclusion of permission_classes add an additional layer of defence.
+* `IsOwnerOrReadOnly` is a custom class stored in The Wins Manager/permissions.py which extends DRF permissions.BasePermission. The method `has_object_permissions` defined within the class, returns a boolean value.  If the request method received is one of the "safe" methods, true is returned as all users are permitted to make these requests.  If not a safe method, true is only returned if the current user is the owner of an object.  This ensures that users can only update or delete an object that they own.  This is an important security consideration .  Although functionality to update and delete objects owned by another user is not provided in the user interface, this alone does not provide adequate protection.  Objects in the database could still be targeted using specific urls.  The inclusion of permission_classes add an additional layer of defence.
 
-* `ReadOnly` is a custom class stored in rewind/permissions.py which extends DRF permissions.BasePermission.  If the request method received is one of the "safe" methods, true is returned.  I added this custom permission to the ListCreateAPIView for eras, genres and categories to ensure that all users have read permissions but only admin users have permission to create new instances.
+* `ReadOnly` is a custom class stored in The Wins Manager/permissions.py which extends DRF permissions.BasePermission.  If the request method received is one of the "safe" methods, true is returned.  I added this custom permission to the ListCreateAPIView for eras, genres and categories to ensure that all users have read permissions but only admin users have permission to create new instances.
 
 ```python
 permission_classes = [permissions.IsAdminUser|ReadOnly]
 ```
 
-* Unit tests have been written to check the functionality of these permission classes.  Documentation for this can be found in the [TESTING.md](https://github.com/rkillickdev/rewind/blob/main/TESTING.md) file.
+* Unit tests have been written to check the functionality of these permission classes.  Documentation for this can be found in the [TESTING.md](https://github.com/CodeConnoisseur74/The Wins Manager/blob/main/TESTING.md) file.
 
 ### **Protection Of Sensitive Details**
 ___
@@ -405,13 +411,13 @@ Wireframes were created using [Balsamiq](https://balsamiq.com/wireframes/) and s
 
 <br>
 
-![Rewind wireframe mobile List Views](docs/wireframes/mobile/pp5-wireframe-mobile-list-views.png)
+![The Wins Manager wireframe mobile List Views](docs/wireframes/mobile/pp5-wireframe-mobile-list-views.png)
 
-![Rewind wireframe mobile Detail Views](docs/wireframes/mobile/pp5-wireframe-mobile-detail-views.png)
+![The Wins Manager wireframe mobile Detail Views](docs/wireframes/mobile/pp5-wireframe-mobile-detail-views.png)
 
-![Rewind wireframe mobile Profile Views](docs/wireframes/mobile/pp5-wireframe-mobile-profile-views.png)
+![The Wins Manager wireframe mobile Profile Views](docs/wireframes/mobile/pp5-wireframe-mobile-profile-views.png)
 
-![Rewind wireframe mobile Snapshot Forms](docs/wireframes/mobile/pp5-wireframe-mobile-form-views.png)
+![The Wins Manager wireframe mobile Snapshot Forms](docs/wireframes/mobile/pp5-wireframe-mobile-form-views.png)
 
 </details>
 
@@ -419,13 +425,13 @@ Wireframes were created using [Balsamiq](https://balsamiq.com/wireframes/) and s
 
 <br>
 
-![Rewind wireframe desktop List Views](docs/wireframes/desktop/pp5-wireframe-desktop-list-views.png)
+![The Wins Manager wireframe desktop List Views](docs/wireframes/desktop/pp5-wireframe-desktop-list-views.png)
 
-![Rewind wireframe desktop Detail Views](docs/wireframes/desktop/pp5-wireframe-desktop-detail-views.png)
+![The Wins Manager wireframe desktop Detail Views](docs/wireframes/desktop/pp5-wireframe-desktop-detail-views.png)
 
-![Rewind wireframe desktop Profile Views](docs/wireframes/desktop/pp5-wireframe-desktop-profiles-views.png)
+![The Wins Manager wireframe desktop Profile Views](docs/wireframes/desktop/pp5-wireframe-desktop-profiles-views.png)
 
-![Rewind wireframe desktop Form Views](docs/wireframes/desktop/pp5-wireframe-desktop-form-views.png)
+![The Wins Manager wireframe desktop Form Views](docs/wireframes/desktop/pp5-wireframe-desktop-form-views.png)
 
 </details>
 
@@ -447,7 +453,7 @@ Wireframes were created using [Balsamiq](https://balsamiq.com/wireframes/) and s
 
 | | User Story | Acceptance Criteria Satisfied | 
 | --- | ------------ | :---: | 
-| [#2](https://github.com/rkillickdev/rewind/issues/2) | As a user I can access a navbar on every page so that navigation of the site is intuitive | Pass |
+| [#2](https://github.com/CodeConnoisseur74/The Wins Manager/issues/2) | As a user I can access a navbar on every page so that navigation of the site is intuitive | Pass |
 ___
 
 The NavBar component is displayed at the top of all pages.  In order to achieve this, it has been included as the first component in the return statement of `App.js`
@@ -474,7 +480,7 @@ The Profile link is coupled with an avatar.  If the user has edited their profil
 
 | | User Story | Acceptance Criteria Satisfied | 
 | --- | ------------ | :---: | 
-| [#6](https://github.com/rkillickdev/rewind/issues/6) | As a user I can see whether I am already logged in so that I am aware of my status and the features of the site I can access | Pass |
+| [#6](https://github.com/CodeConnoisseur74/The Wins Manager/issues/6) | As a user I can see whether I am already logged in so that I am aware of my status and the features of the site I can access | Pass |
 ___
 
 To ensure good user experience and satisfy the site owner's goal of responsive design across a range of device sizes, the navigation menu collapses down into a hamburger menu on screen sizes below 992px.  This prevents the navbar from feeling cluttered on smaller devices and the instantly recognisable hamburger icon ensures that site navigation remains intuitive for users.
@@ -493,7 +499,7 @@ The React Router library is used to handle routing for the application, with spe
 
 | | User Story | Acceptance Criteria Satisfied | 
 | --- | ------------ | :---: | 
-| [#3](https://github.com/rkillickdev/rewind/issues/3) | As a user I can navigate the content of the site without the page refreshing so that content is accessed quickly and user experience is enhanced | Pass |
+| [#3](https://github.com/CodeConnoisseur74/The Wins Manager/issues/3) | As a user I can navigate the content of the site without the page refreshing so that content is accessed quickly and user experience is enhanced | Pass |
 ___
 
 </details>
@@ -510,7 +516,7 @@ Clicking on the 'Sign up' nav link renders the `SignUpForm` component where a ne
 
 | | User Story | Acceptance Criteria Satisfied | 
 | --- | ------------ | :---: | 
-| [#4](https://github.com/rkillickdev/rewind/issues/4) | As a user I can sign up and create a user account so that I can access additional site functionality only available to authenticated users  | Pass |
+| [#4](https://github.com/CodeConnoisseur74/The Wins Manager/issues/4) | As a user I can sign up and create a user account so that I can access additional site functionality only available to authenticated users  | Pass |
 ___
 
 </details>
@@ -527,7 +533,7 @@ Clicking on the 'Sign in' nav link renders the `SignInForm` component where a us
 
 | | User Story | Acceptance Criteria Satisfied | 
 | --- | ------------ | :---: | 
-| [#5](https://github.com/rkillickdev/rewind/issues/5) | As a user I can sign in using my existing credentials so that I can view my account and continue enjoying site functionality only accessible to authenticated users | Pass |
+| [#5](https://github.com/CodeConnoisseur74/The Wins Manager/issues/5) | As a user I can sign in using my existing credentials so that I can view my account and continue enjoying site functionality only accessible to authenticated users | Pass |
 ___
 
 </details>
@@ -546,7 +552,7 @@ The SnapshotsPage component is rendered using the React Router whenever the user
 
 | | User Story | Acceptance Criteria Satisfied | 
 | --- | ------------ | :---: |
-| [#10](https://github.com/rkillickdev/rewind/issues/10) | As a user I can search snapshots by keywords so that I can filter results displayed by their text content or by era, genre or category of a snapshot | Pass |
+| [#10](https://github.com/CodeConnoisseur74/The Wins Manager/issues/10) | As a user I can search snapshots by keywords so that I can filter results displayed by their text content or by era, genre or category of a snapshot | Pass |
 
 ___
 
@@ -556,7 +562,7 @@ ___
 
 | | User Story | Acceptance Criteria Satisfied | 
 | --- | ------------ | :---: |
-| [#11](https://github.com/rkillickdev/rewind/issues/11) | As a user I can choose to order the list by 'most recommended' or 'most talked about' so that I can view most popular snapshots first | Pass |
+| [#11](https://github.com/CodeConnoisseur74/The Wins Manager/issues/11) | As a user I can choose to order the list by 'most recommended' or 'most talked about' so that I can view most popular snapshots first | Pass |
 
 ___
 
@@ -572,7 +578,7 @@ ___
 
 | | User Story | Acceptance Criteria Satisfied | 
 | --- | ------------ | :---: | 
-| [#9](https://github.com/rkillickdev/rewind/issues/9) | As a user I can view all snapshots posted so that I can get an overview of the type of content available on the site and decide whether I would like to sign up | Pass |
+| [#9](https://github.com/CodeConnoisseur74/The Wins Manager/issues/9) | As a user I can view all snapshots posted so that I can get an overview of the type of content available on the site and decide whether I would like to sign up | Pass |
 
 ___
 
@@ -604,7 +610,7 @@ ___
 
 | | User Story | Acceptance Criteria Satisfied | 
 | --- | ------------ | :---: | 
-| [#22](https://github.com/rkillickdev/rewind/issues/22) | As a logged in user I can recommend a snapshot so that I can show my appreciation of another user's post and encourage others to view it  | Pass |
+| [#22](https://github.com/CodeConnoisseur74/The Wins Manager/issues/22) | As a logged in user I can recommend a snapshot so that I can show my appreciation of another user's post and encourage others to view it  | Pass |
 
 ___
 
@@ -614,7 +620,7 @@ ___
 
 | | User Story | Acceptance Criteria Satisfied | 
 | --- | ------------ | :---: | 
-| [#23](https://github.com/rkillickdev/rewind/issues/23) | As a logged in user I can pin any snapshots of interest while browsing the site so that I can build a list of posts to return to later   | Pass |
+| [#23](https://github.com/CodeConnoisseur74/The Wins Manager/issues/23) | As a logged in user I can pin any snapshots of interest while browsing the site so that I can build a list of posts to return to later   | Pass |
 
 ___
 
@@ -674,7 +680,7 @@ ___
 
 | | User Story | Acceptance Criteria Satisfied | 
 | --- | ------------ | :---: |
-| [#13](https://github.com/rkillickdev/rewind/issues/13) | As a logged in user I can post image snapshots so that I can share my nostalgic memories with other site users | Pass |
+| [#13](https://github.com/CodeConnoisseur74/The Wins Manager/issues/13) | As a logged in user I can post image snapshots so that I can share my nostalgic memories with other site users | Pass |
 
 ___
 
@@ -692,7 +698,7 @@ ___
 
 | | User Story | Acceptance Criteria Satisfied | 
 | --- | ------------ | :---: |
-| [#16](https://github.com/rkillickdev/rewind/issues/16) | As a user I can view a snapshot detail page so that I can read the full description of the snapshot and any associated comments and samples | Passed |
+| [#16](https://github.com/CodeConnoisseur74/The Wins Manager/issues/16) | As a user I can view a snapshot detail page so that I can read the full description of the snapshot and any associated comments and samples | Passed |
 
  ___
 
@@ -719,7 +725,7 @@ ___
 
 | | User Story | Acceptance Criteria Satisfied | 
 | --- | ------------ | :---: |
-| [#14](https://github.com/rkillickdev/rewind/issues/14) | As a logged in user I can upload audio clips when creating a snapshot so that I can share audio memories with other site users | Pass |
+| [#14](https://github.com/CodeConnoisseur74/The Wins Manager/issues/14) | As a logged in user I can upload audio clips when creating a snapshot so that I can share audio memories with other site users | Pass |
 
 ___
 
@@ -729,7 +735,7 @@ ___
 
 | | User Story | Acceptance Criteria Satisfied | 
 | --- | ------------ | :---: |
-| [#18](https://github.com/rkillickdev/rewind/issues/18) | As a logged in user I can comment on another user's snapshot so that I can share my thoughts and interact with the Rewind community | Passed |
+| [#18](https://github.com/CodeConnoisseur74/The Wins Manager/issues/18) | As a logged in user I can comment on another user's snapshot so that I can share my thoughts and interact with the The Wins Manager community | Passed |
 
 ___
 
@@ -745,7 +751,7 @@ ___
 
 | | User Story | Acceptance Criteria Satisfied | 
 | --- | ------------ | :---: |
-| [#17](https://github.com/rkillickdev/rewind/issues/17) | As a logged in user I can edit my own snapshots so that I can update and amend the details of my original post | Passed |
+| [#17](https://github.com/CodeConnoisseur74/The Wins Manager/issues/17) | As a logged in user I can edit my own snapshots so that I can update and amend the details of my original post | Passed |
 
 ___
 
@@ -767,7 +773,7 @@ ___
 
 | | User Story | Acceptance Criteria Satisfied | 
 | --- | ------------ | :---: |
-| [#19](https://github.com/rkillickdev/rewind/issues/19) | As a logged in user I can edit my own comments so that I can amend and update my thoughts | Passed |
+| [#19](https://github.com/CodeConnoisseur74/The Wins Manager/issues/19) | As a logged in user I can edit my own comments so that I can amend and update my thoughts | Passed |
 
 ___
 
@@ -777,7 +783,7 @@ ___
 
 | | User Story | Acceptance Criteria Satisfied | 
 | --- | ------------ | :---: |
-| [#20](https://github.com/rkillickdev/rewind/issues/20) | As a logged in user I can delete my own comments so that I can control whether a previous comment remains visible to other site users | Passed |
+| [#20](https://github.com/CodeConnoisseur74/The Wins Manager/issues/20) | As a logged in user I can delete my own comments so that I can control whether a previous comment remains visible to other site users | Passed |
 
 ___
 
@@ -821,7 +827,7 @@ ___
 
 | | User Story | Acceptance Criteria Satisfied | 
 | --- | ------------ | :---: |
-| [#28](https://github.com/rkillickdev/rewind/issues/28) | As a logged in user I can view suggested profiles so that I can decide whether their previous snapshot posts are of interest to me | Pass |
+| [#28](https://github.com/CodeConnoisseur74/The Wins Manager/issues/28) | As a logged in user I can view suggested profiles so that I can decide whether their previous snapshot posts are of interest to me | Pass |
 
 ___
 
@@ -829,7 +835,7 @@ ___
 
 | | User Story | Acceptance Criteria Satisfied | 
 | --- | ------------ | :---: |
-| [#29](https://github.com/rkillickdev/rewind/issues/29) | As a logged in user I can choose to follow profiles that are posting interesting content so that I can be updated with more of their posts in the future | Pass |
+| [#29](https://github.com/CodeConnoisseur74/The Wins Manager/issues/29) | As a logged in user I can choose to follow profiles that are posting interesting content so that I can be updated with more of their posts in the future | Pass |
 
 ___
 
@@ -857,7 +863,7 @@ ___
 
 | | User Story | Acceptance Criteria Satisfied | 
 | --- | ------------ | :---: |
-| [#26](https://github.com/rkillickdev/rewind/issues/26) | As a user I can view the profile pages of other site users so that I can learn more about them and the type of content they are posting | Pass |
+| [#26](https://github.com/CodeConnoisseur74/The Wins Manager/issues/26) | As a user I can view the profile pages of other site users so that I can learn more about them and the type of content they are posting | Pass |
 
 ___
 
@@ -895,7 +901,7 @@ ___
 
 | | User Story | Acceptance Criteria Satisfied | 
 | --- | ------------ | :---: |
-| [#25](https://github.com/rkillickdev/rewind/issues/25) | As a logged in user I can edit the details of my profile so that I can update my profile pic, bio details and preferences for era, musical genre and category | Pass |
+| [#25](https://github.com/CodeConnoisseur74/The Wins Manager/issues/25) | As a logged in user I can edit the details of my profile so that I can update my profile pic, bio details and preferences for era, musical genre and category | Pass |
 
 ___
 
@@ -911,7 +917,7 @@ ___
 
 | | User Story | Acceptance Criteria Satisfied | 
 | --- | ------------ | :---: |
-| [#27](https://github.com/rkillickdev/rewind/issues/27) | As a logged in user I can update my username and password so that I can choose how my name is displayed to other users and to ensure my login credentials remain secure | Pass |
+| [#27](https://github.com/CodeConnoisseur74/The Wins Manager/issues/27) | As a logged in user I can update my username and password so that I can choose how my name is displayed to other users and to ensure my login credentials remain secure | Pass |
 
 ___
 
@@ -939,7 +945,7 @@ ___
 
 | | User Story | Acceptance Criteria Satisfied | 
 | --- | ------------ | :---: |
-| [#7](https://github.com/rkillickdev/rewind/issues/7) | As a user I can sign out from the site so that no one else using my device can access my account | Pass |
+| [#7](https://github.com/CodeConnoisseur74/The Wins Manager/issues/7) | As a user I can sign out from the site so that no one else using my device can access my account | Pass |
 
 ___
 
@@ -953,7 +959,7 @@ ___
 
 ![Footer](docs/features/pp5-feature-footer.png)
 
-* A simple Footer component is rendered on each page.  The GitHub profile name of the site developer is displayed and a clickable GitHub icon that directs the user to the repository for the Rewind App in a new browser tab.
+* A simple Footer component is rendered on each page.  The GitHub profile name of the site developer is displayed and a clickable GitHub icon that directs the user to the repository for the The Wins Manager App in a new browser tab.
 ___
 
 </details>
@@ -1107,7 +1113,7 @@ To ensure that the site is as accessible as possible for all users and compatibl
 * Descriptive alt attributes have been given to all images.
 * Aria labels have been used for interactive elements where no accessible name is provided.
 
-I used the [Wave Chrome Extension](https://wave.webaim.org/extension/) to check the accessibility of each page,  Results for this can be viewed in the [TESTING.md file](https://github.com/rkillickdev/rewind/blob/main/TESTING.md)
+I used the [Wave Chrome Extension](https://wave.webaim.org/extension/) to check the accessibility of each page,  Results for this can be viewed in the [TESTING.md file](https://github.com/CodeConnoisseur74/The Wins Manager/blob/main/TESTING.md)
 
 </details>
 
@@ -1117,7 +1123,7 @@ I used the [Wave Chrome Extension](https://wave.webaim.org/extension/) to check 
 
 <br>
 
-The Rewind app features full CRUD functionality on the Front-End UI, implemented through the code written in React. This allows users to work with records from the Django REST Framework API.
+The The Wins Manager app features full CRUD functionality on the Front-End UI, implemented through the code written in React. This allows users to work with records from the Django REST Framework API.
 
 `CREATE` - Users can sign up which creates a new user account and associated profile.  Once authenticated, users can create snapshots, comments and samples.
 
@@ -1137,7 +1143,7 @@ I have also ensured that regular site users only have **read only** access to th
 
 <br>
 
-Models for the site can be accessed and manipulated from the Django Admin panel by entering the url `https://rkdev-rewind-ed88f8459fe7.herokuapp.com/admin`.  The designated superuser has total control over this.  At the moment  an administrator can only create update or delete instances of the Era, Genre or Category models via the admin panel.  Eventually functionality to carry out these actions from the frontend user interface could be implemented.  I have also written the `approve_samples` method in samples/admin.py, which enables an administrator to set `approved=True` for a sample once they are satisfied that the content is appropriate for other site users.
+Models for the site can be accessed and manipulated from the Django Admin panel by entering the url `https://rkdev-The Wins Manager-ed88f8459fe7.herokuapp.com/admin`.  The designated superuser has total control over this.  At the moment  an administrator can only create update or delete instances of the Era, Genre or Category models via the admin panel.  Eventually functionality to carry out these actions from the frontend user interface could be implemented.  I have also written the `approve_samples` method in samples/admin.py, which enables an administrator to set `approved=True` for a sample once they are satisfied that the content is appropriate for other site users.
 
 ![Django Admin Panel](docs/features/pp5-django-admin-panel.png)
 
@@ -1155,7 +1161,7 @@ Functionality and features that are not within the scope of this project, but th
 
 | | User Story | Acceptance Criteria Satisfied | 
 | --- | ------------ | :---: |
-| [#39](https://github.com/rkillickdev/rewind/issues/39) | As a user I can filter the list of snapshots on the home page by era, genre and category so that I can view snapshots most relevant to my interests  | Future Feature |
+| [#39](https://github.com/CodeConnoisseur74/The Wins Manager/issues/39) | As a user I can filter the list of snapshots on the home page by era, genre and category so that I can view snapshots most relevant to my interests  | Future Feature |
 
 ___
 
@@ -1273,7 +1279,7 @@ Initial inspiration for the colours used throughout the app came from a classic 
 
 I used this imagery to build a colour palette with the palette generator tool on the [coolors](https://coolors.co/) website.  I found that I needed to tweak some colours to ensure contrast ratios meet acceptable standards.
 
-![Generated colour palette](docs/surface-plane/pp5-rewind-colour-palette.png)
+![Generated colour palette](docs/surface-plane/pp5-The Wins Manager-colour-palette.png)
 
 ___
 
@@ -1298,7 +1304,7 @@ Static images used throughout the site have been chosen to tie in with the retro
 ![App surface plane imagery](docs/surface-plane/pp5-surface-plane-imagery-merge.png)
 
 
-The brand logo used in the navbar has been chosen to evoke feelings of nostalgia and links well to the App name 'Rewind' - a nod to an age where 'rewinding cassette tapes was part of daily life. The colour scheme used is consistent with the rest of the site.
+The brand logo used in the navbar has been chosen to evoke feelings of nostalgia and links well to the App name 'The Wins Manager' - a nod to an age where 'The Wins Managering cassette tapes was part of daily life. The colour scheme used is consistent with the rest of the site.
 
 ![App brand logo](docs/features/pp5-favicon-cassette-orange-logo.png)
 
@@ -1381,7 +1387,7 @@ ___
 
 # **Testing**
 
-Please follow this link to the [TESTING.md file](https://github.com/rkillickdev/rewind/blob/main/TESTING.md) for documentation about the testing procedure I followed for this project.
+Please follow this link to the [TESTING.md file](https://github.com/CodeConnoisseur74/The Wins Manager/blob/main/TESTING.md) for documentation about the testing procedure I followed for this project.
 
 <br>
 
@@ -1391,7 +1397,7 @@ Please follow this link to the [TESTING.md file](https://github.com/rkillickdev/
 
 I made sure to keep my requirements.txt file up to date throughout development, running the command `pip3 freeze --local > requirements.txt` from the terminal whenever any new libraries were installed.  It is important that all requirements are added to this file before deployment so Heroku installs the necessary dependencies.
 
-In development mode, the sqlite3 database provided by Django was used but this was not suitable for use in a production environment.  The deployed site uses a PostgreSQL database hosted by [elephantSQL](https://www.elephantsql.com/) that Heroku can access.  It was therefore necessary to create an account with elephantSQL, and create a new database instance selecting the Tiny Turtle(free) plan.  My database instance is also named 'rewind'.  From the ElephantSQL dashboard, clicking on the database reveals a 'details' page where you can access the database URL, which is necessary for use in both the production and development environments.
+In development mode, the sqlite3 database provided by Django was used but this was not suitable for use in a production environment.  The deployed site uses a PostgreSQL database hosted by [elephantSQL](https://www.elephantsql.com/) that Heroku can access.  It was therefore necessary to create an account with elephantSQL, and create a new database instance selecting the Tiny Turtle(free) plan.  My database instance is also named 'The Wins Manager'.  From the ElephantSQL dashboard, clicking on the database reveals a 'details' page where you can access the database URL, which is necessary for use in both the production and development environments.
 
 To implement functionality of the PostgreSQL database with Django, the following libraries were installed using the terminal command:
 
@@ -1434,7 +1440,7 @@ A Procfile file is required that provides the commands to Heroku to build and ru
 
 ```
   release: python manage.py makemigrations && python manage.py migrate
-  web: gunicorn rewind.wsgi
+  web: gunicorn The Wins Manager.wsgi
 ```
 
 ## Setting up a unified project
@@ -1526,7 +1532,7 @@ I followed the following steps recommended by Code Institute:
   STATIC_ROOT = BASE_DIR / 'staticfiles'
   WHITENOISE_ROOT = BASE_DIR / 'staticfiles' / 'build'
   ```
-8. In the `urls.py file` of the DRF application (rewind/urls.py):
+8. In the `urls.py file` of the DRF application (The Wins Manager/urls.py):
 
 * Remove the root_route view from the .views imports
 * Import the TemplateView from the generic Django views:
@@ -1567,7 +1573,7 @@ The following steps were followed to deploy the site to Heroku:
 
 1.  Create an account and login to [Heroku](https://id.heroku.com/login)
 2.  In the Heroku dashboard, click the 'New' button at the top right of the screen and then select "Create new app".
-3.  I selected the name 'rkdev-rewind' ,set my region to Europe and clicked on the 'Create app' button.
+3.  I selected the name 'rkdev-The Wins Manager' ,set my region to Europe and clicked on the 'Create app' button.
 
 ![Heroku Create App](docs/deployment/pp5-heroku-create-app.png)
 
@@ -1584,9 +1590,9 @@ The following steps were followed to deploy the site to Heroku:
     * CLIENT_ORIGIN: (**set to the URL of combined project. Keep the https:// at the beginning but remove the trailing slash at the end**)
 
 6.  Next select the 'Deploy' tab, select GitHub as the deployment method, and click the 'Connect to GitHub' button.
-7.  Search for the GitHub repository name (rewind) in the 'App Connected to GitHub' section and then click the 'connect' button'
+7.  Search for the GitHub repository name (The Wins Manager) in the 'App Connected to GitHub' section and then click the 'connect' button'
 8.  You can now choose to enable automatic deploys or deploy manually.  When the 'automatic deploys' button is clicked and enabled, Heroku will rebuild the app every time a new change is pushed to GitHub.  In the 'Manual deploy' section, the 'Deploy branch' button can be clicked to deploy manually.
-9.  I chose to deploy manually. Once the app is built, a link is provided to the [deployed app](https://rkdev-rewind-ed88f8459fe7.herokuapp.com/).
+9.  I chose to deploy manually. Once the app is built, a link is provided to the [deployed app](https://rkdev-The Wins Manager-ed88f8459fe7.herokuapp.com/).
 
 <br>
 
@@ -1595,13 +1601,13 @@ The following steps were followed to deploy the site to Heroku:
 ### **How to fork:**
 
 1. Log in (or sign up) to GitHub.
-2. Find the required repository, in this case: rkillickdev/rewind
+2. Find the required repository, in this case: CodeConnoisseur74/The Wins Manager
 3. Click on the "fork" button at the top right of the page.
 
 ### **How to clone:**
 
 1. Log in (or sign up) to GitHub.
-2. Find the required repository, in this case: rkillickdev/rewind
+2. Find the required repository, in this case: CodeConnoisseur74/The Wins Manager
 3. Click on the green code button.  This will give you the choice of cloning the repository using HTTPS, an SSH key or GitHub CLI.  Make your selection and copy the provided URL link.
 4. Open the Terminal in your IDE of choice.
 5. Change the current working directory to the location where you want the cloned directory.
@@ -1771,96 +1777,51 @@ setSnapshot((prevSnapshot) => ({
 
 <br>
 
-* The Code Institute PP5 Advanced Frontend 'Moments' walk through project and associated DRF API were a great reference point when planning and building the Rewind App.  I have created custom models tailored to the specific needs of my own project and additional features and logic not present in 'Moments'.
+* The Code Institute PP5 Advanced Frontend 'Moments' walk through project and associated DRF API were a great reference point when planning and building the The Wins Manager App.  I have created custom models tailored to the specific needs of my own project and additional features and logic not present in 'Moments'.
 
-* [Display string representation of Many To Many Fields in json response rather than IDs](https://stackoverflow.com/questions/64079111/how-can-i-display-the-values-of-a-manytomany-field-in-django-rest-framework-inst)
+* [Display string representation of Many To Many Fields in json response rather than IDs]()
 
-* [Implementing Staff Only Permissions with Django REST Framework](https://stackoverflow.com/questions/31714198/staff-only-permissions-in-django-rest-framework)
+* [Implementing Staff Only Permissions with Django REST Framework]()
 
-* [Displaying default 'please select' placeholder in drop down menus](https://stackoverflow.com/questions/74600128/how-to-display-selected-value-in-dropdown-menu-example-please-pick-and-select)
+* [Displaying default 'please select' placeholder in drop down menus]()
 
-* [Populate form select options with data from DRF API](https://stackoverflow.com/questions/72301355/how-to-populate-select-options-from-an-api-call-in-react-js-on-page-load)
+* [Populate form select options with data from DRF API]()
 
-* [Code Institute Slack thread referencing issue with infinite scrolling when running in development mode with gitpod.](https://code-institute-room.slack.com/archives/C02MTH5MBDG/p1695309984546839?thread_ts=1695305110.716799&cid=C02MTH5MBDG)
+* [Code Institute Slack thread referencing issue with infinite scrolling when running in development mode with gitpod.]()
 
-* [Article referenced when fixing bug for default value not working in form select](https://github.com/react-bootstrap/react-bootstrap/issues/2091)
+* [Article referenced when fixing bug for default value not working in form select]()
 
-* [Article referenced when implementing Alert and Toast popups](https://dev.to/jeffreythecoder/set-up-react-global-alert-popup-in-10mins-36l3)
+* [Article referenced when implementing Alert and Toast popups]()
 
-* [Article referenced when setting up Sample model to allow audio uploads to Cloudinary](https://github.com/klis87/django-cloudinary-storage/blob/master/README.md)
+* [Referenced when learning about file validation in Django]()
 
-* [Referenced when learning about file validation in Django](https://gist.github.com/llann/a571fa86408c68e0a4f9)
+* [Referenced when trying to combine multiple filter parameters in a url]()
 
-* [Referenced when trying to combine multiple filter parameters in a url](https://stackoverflow.com/questions/34626050/drf-is-it-possible-to-combine-multiple-filter-parameters-in-the-url-with-some)
+* [Referenced when needing to check if a filtered array has returned any results]()
 
-* [Referenced when needing to check if a filtered array has returned any results](https://stackoverflow.com/questions/71621657/return-a-message-if-nothing-is-found-after-filtering-an-array-in-javascript)
-
-* [Sorting in Javascript](https://www.freecodecamp.org/news/how-does-the-javascript-sort-function-work/)
+* [Sorting in Javascript]()
 
 * Setting Foreign Key Field in model serializer to null:
-  * [Article 1/ ](https://stackoverflow.com/questions/56917190/django-django-rest-framework-how-do-i-allow-model-serializer-to-set-models-fo)
-  * [Article 2](https://stackoverflow.com/questions/47076194/django-rest-framework-how-to-set-a-field-to-null-via-patch-request)
+  * [Article 1/ ]()
+  * [Article 2]()
 
-* [Setting up Bootstrap Modals in React](https://www.codu.co/articles/creating-a-pop-up-modal-dialog-in-bootstrap-react-xgeujzcj)
+* [Setting up Material UI V5 Modals in React]()
 
 * [React Router Dom](https://www.geeksforgeeks.org/what-is-react-router-dom/)
 
-* [Remove intermittent black border on feature button hover](https://stackoverflow.com/questions/67209715/strange-black-outline-in-the-css-button)
+* [Remove intermittent black border on feature button hover]()
 
 * [Writing comments for React code](https://dmitripavlutin.com/react-comments/)
 
 * [Styling the HTML audio element](https://stackoverflow.com/questions/75604231/audio-tag-minimal-play-button)
 
-* [Error Boundary implementation 1](https://www.freecodecamp.org/news/how-to-avoid-breaking-your-react-app-in-production/)
-
-* [Error Boundary implementation 2](https://refine.dev/blog/react-error-boundaries/#introduction)
-
-* [Using client login with DRF for unit tests](https://stackoverflow.com/questions/2619102/djangos-self-client-login-does-not-work-in-unit-tests)
+* [Using client login with DRF for unit tests](https://stackoverflow.com)
 
 * [Installing and setting up ESLint](https://gist.github.com/ianmeigh/8e603b91a38d7829d959402bfcf29d3d)
-
-* [opening and reading files - used for uploading images in unit tests](https://blog.enterprisedna.co/python-open-file/#:~:text=In%20this%20code%2C%20'rb',file%20using%20a%20file%20pointer.&text=The%20output%20is%20binary%20data%20of%20the%20image.)
-
+* 
 <br>
 
 [Back to top &uarr;](#contents)
-
-## **Media**
-
-* TR808, Multi Cassettes and Retro Tape Deck images purchased from [Shutterstock](https://www.shutterstock.com/)
-
-* Royalty free images used throughout the site from [Pexels](https://www.pexels.com/)
-
-* Royalty free images used throughout the site from [Unsplash](https://unsplash.com/)
-  * Multiple Cassette Tapes - Photo by hosein zanbori on Unsplash
-  * Technics 1210 close up - Photo by Jan Kopřiva on Unsplash
-  * Roland 808 - Photo by Steve Harvey on Unsplash
-  * Roland 909 - Photo by Cone Trees on Unsplash
-  * Roland Gear Stack - Photo by Katalin Salles on Unsplash
-  * Modular Synth - Photo by Ryunosuke Kikuno on Unsplash
-  * Pile of Vinyl - Photo by Nihal Demirci Erenay on Unsplash
-
-* Royalty free icons used throughout the site from [Flaticon](https://www.flaticon.com)
-  * <a href="https://www.flaticon.com/free-icons/cassette" title="cassette icons">Cassette icons created by Smashicons - Flaticon</a>
-  * <a href="https://www.flaticon.com/free-icons/image-upload" title="image upload icons">Image upload icons created by Cap Cool - Flaticon</a>
-  * <a href="https://www.flaticon.com/free-icons/no-results" title="no results icons">No results icons created by Design Circle - Flaticon</a>
-  * <a href="https://www.flaticon.com/free-icons/sound-wave" title="sound wave icons">Sound wave icons created by Cap Cool - Flaticon</a>
-  * <a href="https://www.flaticon.com/free-icons/robot" title="robot icons">Robot icons created by Freepik - Flaticon</a>
-  * <a href="https://www.flaticon.com/free-icons/computer" title="computer icons">Computer icons created by Freepik - Flaticon</a>
-  * <a href="https://www.flaticon.com/free-icons/disc-jockey" title="disc jockey icons">Disc jockey icons created by Freepik - Flaticon</a>
-  * <a href="https://www.flaticon.com/free-icons/headphone" title="headphone icons">Headphone icons created by amonrat rungreangfangsai - Flaticon</a>
-  * <a href="https://www.flaticon.com/free-icons/turntable" title="turntable icons">Turntable icons created by Freepik - Flaticon</a>
-  * <a href="https://www.flaticon.com/free-icons/tape-recorder" title="tape recorder icons">Tape recorder icons created by Vectors Market - Flaticon</a>
-  * <a href="https://www.flaticon.com/free-icons/audio" title="audio icons">Audio icons created by Freepik - Flaticon</a>
-  * <a href="https://www.flaticon.com/free-icons/synthesizer" title="synthesizer icons">Synthesizer icons created by Freepik - Flaticon</a>
-  * <a href="https://www.flaticon.com/free-icons/tape" title="tape icons">Tape icons created by Smashicons - Flaticon</a>
-  * <a href="https://www.flaticon.com/free-icons/vinyl" title="vinyl icons">Vinyl icons created by Smashicons - Flaticon</a>
-  * <a href="https://www.flaticon.com/free-icons/message" title="message icons">Message icons created by chehuna - Flaticon</a>
-  * <a href="https://www.flaticon.com/free-icons/pending" title="pending icons">Pending icons created by vectaicon - Flaticon</a>
-  * <a href="https://www.flaticon.com/free-icons/amplifier" title="amplifier icons">Amplifier icons created by Freepik - Flaticon</a>
-  * <a href="https://www.flaticon.com/free-icons/loud-speaker" title="loud speaker icons">Loud speaker icons created by Freepik - Flaticon</a>
-  * <a href="https://www.flaticon.com/free-icons/walkman" title="walkman icons">Walkman icons created by Eucalyp - Flaticon</a>
-  * <a href="https://www.flaticon.com/free-icons/walkman" title="walkman icons">Walkman icons created by Freepik - Flaticon</a>
 
 * [chatGPT](https://chat.openai.com/) was used to generate a few pieces of text content for test snapshots.   Other content for the site was written by myself.
 
