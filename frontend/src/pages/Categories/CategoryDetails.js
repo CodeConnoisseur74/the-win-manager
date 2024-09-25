@@ -62,6 +62,45 @@ export default function CategoryDetails() {
             <Typography variant="h6" mb={4}>
                 {id ? "Edit Category" : "Create Category"}
             </Typography>
+
+
+            {/* Show message if the form is empty (for new category) */}
+            {!id && !resource && (
+                <Box sx={{
+                    mb: 4,
+                    textAlign: "center",
+                }}>
+                    <Typography
+                        variant="body1"
+                        sx={{
+                            fontSize: {
+                                xs: '1rem', // Small screens
+                                sm: '1.25rem', // Medium screens
+                                md: '1.5rem', // Large screens
+                            },
+                            fontWeight: "bold",
+                            mb: 2,
+                        }}
+                    >
+                        Please click the "CREATE CATEGORY" button to create a category.
+                    </Typography>
+                    <Typography
+                        variant="body2"
+                        sx={{
+                            fontSize: {
+                                xs: '0.85rem', // Small screens
+                                sm: '1rem', // Medium screens
+                                md: '1.1rem', // Large screens
+                            },
+                            textAlign: "center",
+                            color: "text.secondary",
+                        }}
+                    >
+                        You can color code your categories by either choosing a color or customizing your own color by providing the HEX color code.
+                    </Typography>
+                </Box>
+            )}
+
             <Formik onSubmit={handleSubmit}
                 initialValues={initialValues}
                 enableReinitialize

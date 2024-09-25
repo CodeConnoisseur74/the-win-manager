@@ -1,4 +1,3 @@
-import winLogo from "../../assets/win-logo.svg";
 import {
     AppBar,
     IconButton,
@@ -171,15 +170,6 @@ export function AppHeader({ mobileOpen, setMobileOpen }) {
                 >
                     <MenuIcon />
                 </IconButton>
-
-                {/* Logo */}
-                <Box
-                    component="img"
-                    sx={{ height: 50, mr: 2 }}
-                    alt="Logo"
-                    src={winLogo}  // Use the imported logo variable
-                />
-
                 <Typography variant="h6" noWrap sx={{ flexGrow: 1 }}>
                     The Wins Manager
                 </Typography>

@@ -72,6 +72,7 @@ export default function Wins() {
 
     return (
         <div>
+            {/* Delete confirmation dialog */}
             <Dialog open={open} onClose={handleDeleteClose}>
                 <DialogTitle>
                     Are you sure you want to delete this win?
@@ -87,6 +88,7 @@ export default function Wins() {
             </Dialog>
 
             <Filters onSubmit={onSubmitSearch} />
+
             <Typography
                 variant="subtitle1"
                 sx={{
@@ -108,20 +110,51 @@ export default function Wins() {
                 </Button>
             </Box>
 
-            <Masonry breakpointCols={breakpoints}
-                className="my-masonry-grid"
-                columnClassName='my-masonry-grid_column'>
-                {resourceList.results.map((win) => {
-                    return (
-                        <div key={win.id}>
-                            <WinListItem win={win} handleConfirmDelete={handleConfirmDelete}
-                                handleUpdateCompleted={handleUpdateCompleted}
-                            />
-                        </div>
-                    );
-                })}
-            </Masonry>
-
+            {/* Display instructional message when no wins are found */}
+            {resourceList.results.length === 0 ? (
+                <Box sx={{ textAlign: "center", mb: 4 }}>
+                    <Typography
+                        variant="h6"
+                        sx={{
+                            fontSize: {
+                                xs: '1rem', // Small screens
+                                sm: '1.25rem', // Medium screens
+                                md: '1.5rem', // Large screens
+                            },
+                            fontWeight: "bold",
+                        }}
+                    >
+                        No wins found
+                    </Typography>
+                    <Typography
+                        variant="body1"
+                        sx={{
+                            fontSize: {
+                                xs: '0.85rem', // Small screens
+                                sm: '1rem', // Medium screens
+                                md: '1.1rem', // Large screens
+                            },
+                            color: "text.secondary",
+                        }}
+                    >
+                        Please click the "Create Win" button to create your first win. Wins can be organized by categories and priorities, and you can mark them as completed once done.
+                    </Typography>
+                </Box>
+            ) : (
+                <Masonry breakpointCols={breakpoints}
+                    className="my-masonry-grid"
+                    columnClassName='my-masonry-grid_column'>
+                    {resourceList.results.map((win) => {
+                        return (
+                            <div key={win.id}>
+                                <WinListItem win={win} handleConfirmDelete={handleConfirmDelete}
+                                    handleUpdateCompleted={handleUpdateCompleted}
+                                />
+                            </div>
+                        );
+                    })}
+                </Masonry>
+            )}
 
             <Box sx={{ display: "flex", justifyContent: "flex-end" }}>
                 <Pagination
