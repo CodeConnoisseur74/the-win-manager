@@ -53,5 +53,10 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "devDependencies": {
+    "fast-text-encoding": "^1.0.6",
+    "msw": "^2.4.9",
+    "util": "^0.12.5"
   }
 }

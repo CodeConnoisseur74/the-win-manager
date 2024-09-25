@@ -78,7 +78,12 @@ inline-quotes = "single"
 # Tests can use magic values, assertions, and relative imports
 "tests/**/*" = ["PLR2004", "S101", "TID252"]
 
-[tool.pytest.ini_options]
-addopts = "--quiet --failed-first --reuse-db --nomigrations -p no:warnings -m 'not slow' --benchmark-skip"
-testpaths = ["tests"]
-markers = ["slow: marks tests as slow"]
+# [tool.pytest.ini_options]
+# addopts = "--quiet --failed-first --reuse-db --nomigrations -p no:warnings -m 'not slow' --benchmark-skip"
+# testpaths = ["tests"]
+# markers = ["slow: marks tests as slow"]
+
+# [tool.pytest.ini_options]
+# DJANGO_SETTINGS_MODULE = "manager.settings"
+# python_files = ["test_*.py", "*_test.py"]
+
