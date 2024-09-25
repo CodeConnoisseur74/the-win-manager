@@ -32,20 +32,12 @@ const getDesignTokens = (mode) => {
                 main: mode === 'light' ? '#ff9800' : '#ffb74d', // Customize your warning color for dark mode
             },
             info: {
-                main: mode === 'light' ? '#2196f3' : '#81d4fa', // Customize your info color for dark mode
+                main: mode === 'light' ? '#bb86fc' : '#E1BEE7', // Customize your info color for dark mode
             },
             success: {
                 main: mode === 'light' ? '#4caf50' : '#66bb6a', // Customize your success color for dark mode
             },
         },
-        components: {
-            AppBar: {
-                backgroundColor: mode === 'light' ? '#dc004e' : '#bb86fc', // Customize your AppBar color
-            },
-            Drawer: {
-                backgroundColor: mode === 'light' ? '#dc004e' : '##bb86fc', // Customize your Sidebar color
-            },
-        }
     };
 };
 
