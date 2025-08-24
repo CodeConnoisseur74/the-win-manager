@@ -1830,8 +1830,7 @@ setSnapshot((prevSnapshot) => ({
 ## **Acknowledgements**
 
 * To my family for supporting me through this journey!
-* To my PP5 Code Institute Mentor Anto Rodriguez for his advice and help during my Advanced Frontend project.
-* To my Code Institute Mentor Can Sucullu for his help, advice and feedback throughout the course.
+* To my PP5 Code Institute Mentor Yulia for his advice and help during my Advanced Frontend project.
 
 <br>
 
